@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		390A71582809148F00D6EDC5 /* SpoqaHanSansNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */; };
+		390A71592809148F00D6EDC5 /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */; };
+		390A715A2809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */; };
+		390A715B2809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */; };
+		390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */; };
+		3913A0BA280921DD008E8FC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3913A0B9280921DD008E8FC1 /* GoogleService-Info.plist */; };
+		3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3913A0BC28093708008E8FC1 /* PasswordViewController.swift */; };
+		39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E6282807D5DE0065544A /* AppDelegate.swift */; };
+		39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E62A2807D5DE0065544A /* SceneDelegate.swift */; };
+		39E5E6302807D5DE0065544A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E62E2807D5DE0065544A /* Main.storyboard */; };
+		39E5E6322807D5DE0065544A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6312807D5DE0065544A /* Assets.xcassets */; };
+		39E5E6352807D5DE0065544A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6332807D5DE0065544A /* LaunchScreen.storyboard */; };
+		39E5E6432807D67F0065544A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E6422807D67F0065544A /* BaseViewController.swift */; };
+		39E5E6452807D68D0065544A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E6442807D68D0065544A /* HomeViewController.swift */; };
+		39E5E6492807D7080065544A /* MyTaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E6482807D7080065544A /* MyTaxViewController.swift */; };
+		39E5E64B2807D7100065544A /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E64A2807D7100065544A /* MoreViewController.swift */; };
+		39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E64C2807D72C0065544A /* MyAssetsViewController.swift */; };
+		39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6502807DA7D0065544A /* tab_me_animate.json */; };
+		39E5E6542807DA7D0065544A /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6512807DA7D0065544A /* tab_message_animate.json */; };
+		39E5E6552807DA7D0065544A /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6522807DA7D0065544A /* tab_search_animate.json */; };
+		E6EBDF0B064D0ED1C1DC9B0D /* Pods_CryptoTax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0271AEDCCE15588C6424C8 /* Pods_CryptoTax.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.otf"; sourceTree = "<group>"; };
+		390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
+		390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Thin.otf"; sourceTree = "<group>"; };
+		390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
+		390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
+		3913A0B8280920EB008E8FC1 /* CryptoTax.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoTax.entitlements; sourceTree = "<group>"; };
+		3913A0B9280921DD008E8FC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3913A0BC28093708008E8FC1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		39E5E6252807D5DE0065544A /* CryptoTax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39E5E6282807D5DE0065544A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39E5E62A2807D5DE0065544A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		39E5E62F2807D5DE0065544A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		39E5E6312807D5DE0065544A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39E5E6342807D5DE0065544A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		39E5E6362807D5DE0065544A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39E5E6422807D67F0065544A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		39E5E6442807D68D0065544A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		39E5E6482807D7080065544A /* MyTaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxViewController.swift; sourceTree = "<group>"; };
+		39E5E64A2807D7100065544A /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		39E5E64C2807D72C0065544A /* MyAssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAssetsViewController.swift; sourceTree = "<group>"; };
+		39E5E6502807DA7D0065544A /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
+		39E5E6512807DA7D0065544A /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
+		39E5E6522807DA7D0065544A /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
+		CB21A0A1C051BBBDE37C96BD /* Pods-CryptoTax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTax.debug.xcconfig"; path = "Target Support Files/Pods-CryptoTax/Pods-CryptoTax.debug.xcconfig"; sourceTree = "<group>"; };
+		CE06D2CB775DA5ACE7F928AB /* Pods-CryptoTax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTax.release.xcconfig"; path = "Target Support Files/Pods-CryptoTax/Pods-CryptoTax.release.xcconfig"; sourceTree = "<group>"; };
+		DF0271AEDCCE15588C6424C8 /* Pods_CryptoTax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39E5E6222807D5DE0065544A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6EBDF0B064D0ED1C1DC9B0D /* Pods_CryptoTax.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20ECFB6652FF354354EA42AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF0271AEDCCE15588C6424C8 /* Pods_CryptoTax.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		390A71522809141600D6EDC5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */,
+				390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */,
+				390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */,
+				390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */,
+				390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3913A0BB280936F7008E8FC1 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				3913A0BC28093708008E8FC1 /* PasswordViewController.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		39E5E61C2807D5DE0065544A = {
+			isa = PBXGroup;
+			children = (
+				39E5E6272807D5DE0065544A /* CryptoTax */,
+				39E5E6262807D5DE0065544A /* Products */,
+				6A40A6C028A9519012DF441E /* Pods */,
+				20ECFB6652FF354354EA42AA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		39E5E6262807D5DE0065544A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39E5E6252807D5DE0065544A /* CryptoTax.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39E5E6272807D5DE0065544A /* CryptoTax */ = {
+			isa = PBXGroup;
+			children = (
+				3913A0B8280920EB008E8FC1 /* CryptoTax.entitlements */,
+				39E5E6282807D5DE0065544A /* AppDelegate.swift */,
+				39E5E62A2807D5DE0065544A /* SceneDelegate.swift */,
+				39E5E63C2807D60C0065544A /* ViewControllers */,
+				39E5E64E2807DA4C0065544A /* Resources */,
+				39E5E62E2807D5DE0065544A /* Main.storyboard */,
+				39E5E6332807D5DE0065544A /* LaunchScreen.storyboard */,
+				39E5E6362807D5DE0065544A /* Info.plist */,
+				3913A0B9280921DD008E8FC1 /* GoogleService-Info.plist */,
+			);
+			path = CryptoTax;
+			sourceTree = "<group>";
+		};
+		39E5E63C2807D60C0065544A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3913A0BB280936F7008E8FC1 /* Password */,
+				39E5E6412807D66D0065544A /* Base */,
+				39E5E6402807D6500065544A /* MyAssets */,
+				39E5E63F2807D62A0065544A /* More */,
+				39E5E63E2807D6230065544A /* MyTax */,
+				39E5E63D2807D6180065544A /* Home */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		39E5E63D2807D6180065544A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				39E5E6442807D68D0065544A /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		39E5E63E2807D6230065544A /* MyTax */ = {
+			isa = PBXGroup;
+			children = (
+				39E5E6482807D7080065544A /* MyTaxViewController.swift */,
+			);
+			path = MyTax;
+			sourceTree = "<group>";
+		};
+		39E5E63F2807D62A0065544A /* More */ = {
+			isa = PBXGroup;
+			children = (
+				39E5E64A2807D7100065544A /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		39E5E6402807D6500065544A /* MyAssets */ = {
+			isa = PBXGroup;
+			children = (
+				39E5E64C2807D72C0065544A /* MyAssetsViewController.swift */,
+			);
+			path = MyAssets;
+			sourceTree = "<group>";
+		};
+		39E5E6412807D66D0065544A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				39E5E6422807D67F0065544A /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		39E5E64E2807DA4C0065544A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				390A71522809141600D6EDC5 /* Fonts */,
+				39E5E64F2807DA5D0065544A /* Lotties */,
+				39E5E6312807D5DE0065544A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39E5E64F2807DA5D0065544A /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				39E5E6502807DA7D0065544A /* tab_me_animate.json */,
+				39E5E6512807DA7D0065544A /* tab_message_animate.json */,
+				39E5E6522807DA7D0065544A /* tab_search_animate.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
+		6A40A6C028A9519012DF441E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB21A0A1C051BBBDE37C96BD /* Pods-CryptoTax.debug.xcconfig */,
+				CE06D2CB775DA5ACE7F928AB /* Pods-CryptoTax.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39E5E6242807D5DE0065544A /* CryptoTax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39E5E6392807D5DE0065544A /* Build configuration list for PBXNativeTarget "CryptoTax" */;
+			buildPhases = (
+				9F17E680E8031E3436FFB91F /* [CP] Check Pods Manifest.lock */,
+				39E5E6212807D5DE0065544A /* Sources */,
+				39E5E6222807D5DE0065544A /* Frameworks */,
+				39E5E6232807D5DE0065544A /* Resources */,
+				0B4592A58D6FD50FCCFEB861 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoTax;
+			productName = CryptoTax;
+			productReference = 39E5E6252807D5DE0065544A /* CryptoTax.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39E5E61D2807D5DE0065544A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					39E5E6242807D5DE0065544A = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 39E5E6202807D5DE0065544A /* Build configuration list for PBXProject "CryptoTax" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39E5E61C2807D5DE0065544A;
+			productRefGroup = 39E5E6262807D5DE0065544A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39E5E6242807D5DE0065544A /* CryptoTax */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39E5E6232807D5DE0065544A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39E5E6542807DA7D0065544A /* tab_message_animate.json in Resources */,
+				390A715B2809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf in Resources */,
+				390A71592809148F00D6EDC5 /* SpoqaHanSansNeo-Medium.otf in Resources */,
+				39E5E6552807DA7D0065544A /* tab_search_animate.json in Resources */,
+				39E5E6352807D5DE0065544A /* LaunchScreen.storyboard in Resources */,
+				3913A0BA280921DD008E8FC1 /* GoogleService-Info.plist in Resources */,
+				390A71582809148F00D6EDC5 /* SpoqaHanSansNeo-Regular.otf in Resources */,
+				39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */,
+				390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */,
+				39E5E6322807D5DE0065544A /* Assets.xcassets in Resources */,
+				39E5E6302807D5DE0065544A /* Main.storyboard in Resources */,
+				390A715A2809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B4592A58D6FD50FCCFEB861 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoTax/Pods-CryptoTax-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoTax/Pods-CryptoTax-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoTax/Pods-CryptoTax-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F17E680E8031E3436FFB91F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoTax-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39E5E6212807D5DE0065544A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39E5E64B2807D7100065544A /* MoreViewController.swift in Sources */,
+				3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */,
+				39E5E6492807D7080065544A /* MyTaxViewController.swift in Sources */,
+				39E5E6452807D68D0065544A /* HomeViewController.swift in Sources */,
+				39E5E6432807D67F0065544A /* BaseViewController.swift in Sources */,
+				39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */,
+				39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */,
+				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		39E5E62E2807D5DE0065544A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39E5E62F2807D5DE0065544A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		39E5E6332807D5DE0065544A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39E5E6342807D5DE0065544A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39E5E6372807D5DE0065544A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		39E5E6382807D5DE0065544A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39E5E63A2807D5DE0065544A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB21A0A1C051BBBDE37C96BD /* Pods-CryptoTax.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CryptoTax/CryptoTax.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84LNMLBJ5P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoTax/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.xxsoft.cryptotax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		39E5E63B2807D5DE0065544A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE06D2CB775DA5ACE7F928AB /* Pods-CryptoTax.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CryptoTax/CryptoTax.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84LNMLBJ5P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoTax/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.xxsoft.cryptotax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39E5E6202807D5DE0065544A /* Build configuration list for PBXProject "CryptoTax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39E5E6372807D5DE0065544A /* Debug */,
+				39E5E6382807D5DE0065544A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39E5E6392807D5DE0065544A /* Build configuration list for PBXNativeTarget "CryptoTax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39E5E63A2807D5DE0065544A /* Debug */,
+				39E5E63B2807D5DE0065544A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39E5E61D2807D5DE0065544A /* Project object */;
+}
