@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             guard let token = token else {
                 return
             }
-            print("Token : ", token)
+            print("FIR Token : ", token)
         }
     }
 

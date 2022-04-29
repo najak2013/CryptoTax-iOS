@@ -1,0 +1,11 @@
+framework module CryptoTaxLibs {
+  umbrella header "CryptoTaxLibs.h"
+
+  export *
+  module * { export * }
+}
+
+module CryptoTaxLibs.Swift {
+    header "CryptoTaxLibs-Swift.h"
+    requires objc
+}
