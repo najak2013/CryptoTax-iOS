@@ -14,7 +14,7 @@
 		390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */; };
 		3913A0BA280921DD008E8FC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3913A0B9280921DD008E8FC1 /* GoogleService-Info.plist */; };
 		3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3913A0BC28093708008E8FC1 /* PasswordViewController.swift */; };
-		39B457C3281F74B6008B4F93 /* CryptoTaxLibs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B457C2281F74B6008B4F93 /* CryptoTaxLibs.framework */; };
+		397DD7BC281F7B6D000E64FF /* CryptoTaxLibs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397DD7BB281F7B6D000E64FF /* CryptoTaxLibs.framework */; };
 		39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E6282807D5DE0065544A /* AppDelegate.swift */; };
 		39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5E62A2807D5DE0065544A /* SceneDelegate.swift */; };
 		39E5E6302807D5DE0065544A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E62E2807D5DE0065544A /* Main.storyboard */; };
@@ -40,7 +40,8 @@
 		390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
 		3913A0B9280921DD008E8FC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3913A0BC28093708008E8FC1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		39B457C2281F74B6008B4F93 /* CryptoTaxLibs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoTaxLibs.framework; sourceTree = "<group>"; };
+		397DD7B8281F7862000E64FF /* CryptoTaxDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoTaxDebug.entitlements; sourceTree = "<group>"; };
+		397DD7BB281F7B6D000E64FF /* CryptoTaxLibs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoTaxLibs.framework; sourceTree = "<group>"; };
 		39E5E6252807D5DE0065544A /* CryptoTax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E5E6282807D5DE0065544A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E5E62A2807D5DE0065544A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B98F58C336653EB82BBB74A8 /* Pods_CryptoTax.framework in Frameworks */,
-				39B457C3281F74B6008B4F93 /* CryptoTaxLibs.framework in Frameworks */,
+				397DD7BC281F7B6D000E64FF /* CryptoTaxLibs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +105,7 @@
 		39B987DB281A4CAD00CD7AE2 /* CustomLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				39B457C2281F74B6008B4F93 /* CryptoTaxLibs.framework */,
+				397DD7BB281F7B6D000E64FF /* CryptoTaxLibs.framework */,
 			);
 			path = CustomLibrary;
 			sourceTree = "<group>";
@@ -130,6 +131,7 @@
 		39E5E6272807D5DE0065544A /* CryptoTax */ = {
 			isa = PBXGroup;
 			children = (
+				397DD7B8281F7862000E64FF /* CryptoTaxDebug.entitlements */,
 				39B987DB281A4CAD00CD7AE2 /* CustomLibrary */,
 				39E5E6282807D5DE0065544A /* AppDelegate.swift */,
 				39E5E62A2807D5DE0065544A /* SceneDelegate.swift */,
@@ -502,7 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CryptoTax/CryptoTax.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CryptoTax/CryptoTaxDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84LNMLBJ5P;
