@@ -2,8 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>WooridaumB.otf</string>
+		<string>WooridaumL.otf</string>
+		<string>WooridaumR.otf</string>
 		<string>SpoqaHanSansNeo-Thin.otf</string>
 		<string>SpoqaHanSansNeo-Regular.otf</string>
 		<string>SpoqaHanSansNeo-Light.otf</string>
