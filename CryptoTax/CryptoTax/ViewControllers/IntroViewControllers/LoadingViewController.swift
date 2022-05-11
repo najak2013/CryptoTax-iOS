@@ -27,12 +27,8 @@ class LoadingViewController: BaseViewController {
         }
         
         guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WellcomeViewController") as? WellcomeViewController else { return }
+        wellcomeVC.name = userName
         self.navigationController?.pushViewController(wellcomeVC, animated: true)
-        
-        // HomeViewController
-        
-        // WellcomeViewController
-        
     }
     
 }

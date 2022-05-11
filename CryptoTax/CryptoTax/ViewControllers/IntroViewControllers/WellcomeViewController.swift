@@ -7,15 +7,20 @@
 
 import UIKit
 
-class WellcomeViewController: BaseViewController {
+class WellcomeViewController: UIViewController {
 
-    var name: String = "김지태"
+    
+    var name: String = ""
+    @IBOutlet weak var wellcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
+        wellcomeLabel.text = "\(name)님\n환영합니다!"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
 

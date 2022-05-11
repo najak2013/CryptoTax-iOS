@@ -12,9 +12,6 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//        print("안녕하세요.")
-//
 //        let userInfo = [
 //            "userCI" : "김지태",
 //            "userAccessKey" : "",
@@ -29,16 +26,4 @@ class HomeViewController: BaseViewController {
 //        print("세금 정보 요청 완료 결과를 기다려주세요.")
 
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

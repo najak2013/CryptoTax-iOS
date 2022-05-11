@@ -13,9 +13,10 @@
 		390A715B2809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */; };
 		390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */; };
 		3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3913A0BC28093708008E8FC1 /* PasswordViewController.swift */; };
+		39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39327340282B9F21002EFFAF /* WellcomeViewController.swift */; };
+		39327344282BA3EF002EFFAF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39327343282BA3EF002EFFAF /* Utils.swift */; };
 		39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAC282B933B008DB62B /* SmsAuthViewController.swift */; };
 		39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAF282B9509008DB62B /* AllProtocol.swift */; };
-		39441CB2282B9DD1008DB62B /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CB1282B9DD1008DB62B /* WellcomeViewController.swift */; };
 		3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */; };
 		3989B0B428224FEC00B6D602 /* WooridaumR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3989B0B128224FEB00B6D602 /* WooridaumR.otf */; };
 		3989B0B528224FEC00B6D602 /* WooridaumB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3989B0B228224FEC00B6D602 /* WooridaumB.otf */; };
@@ -52,9 +53,10 @@
 		390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
 		390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
 		3913A0BC28093708008E8FC1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		39327340282B9F21002EFFAF /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
+		39327343282BA3EF002EFFAF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		39441CAC282B933B008DB62B /* SmsAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsAuthViewController.swift; sourceTree = "<group>"; };
 		39441CAF282B9509008DB62B /* AllProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProtocol.swift; sourceTree = "<group>"; };
-		39441CB1282B9DD1008DB62B /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
 		3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPermissionModalViewController.swift; sourceTree = "<group>"; };
 		3989B0B128224FEB00B6D602 /* WooridaumR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WooridaumR.otf; sourceTree = "<group>"; };
 		3989B0B228224FEC00B6D602 /* WooridaumB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WooridaumB.otf; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = Password;
 			sourceTree = "<group>";
 		};
+		39327342282BA3E1002EFFAF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				39327343282BA3EF002EFFAF /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		39441CAE282B94D0008DB62B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +188,7 @@
 				39A700232821206A00DE5CE2 /* UserRegistViewController.swift */,
 				39441CAC282B933B008DB62B /* SmsAuthViewController.swift */,
 				39D6C87C282A016E00B21C9E /* LoadingViewController.swift */,
-				39441CB1282B9DD1008DB62B /* WellcomeViewController.swift */,
+				39327340282B9F21002EFFAF /* WellcomeViewController.swift */,
 				3944DCD62828CD770084C475 /* IntroBottomModals */,
 			);
 			path = IntroViewControllers;
@@ -210,6 +220,7 @@
 				39B987DB281A4CAD00CD7AE2 /* CustomLibrary */,
 				39441CAE282B94D0008DB62B /* Protocol */,
 				39E5E63C2807D60C0065544A /* ViewControllers */,
+				39327342282BA3E1002EFFAF /* Utils */,
 				39E5E64E2807DA4C0065544A /* Resources */,
 				39E5E62E2807D5DE0065544A /* Main.storyboard */,
 				39E5E6332807D5DE0065544A /* LaunchScreen.storyboard */,
@@ -439,7 +450,8 @@
 				39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */,
 				39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */,
 				39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */,
-				39441CB2282B9DD1008DB62B /* WellcomeViewController.swift in Sources */,
+				39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */,
+				39327344282BA3EF002EFFAF /* Utils.swift in Sources */,
 				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
