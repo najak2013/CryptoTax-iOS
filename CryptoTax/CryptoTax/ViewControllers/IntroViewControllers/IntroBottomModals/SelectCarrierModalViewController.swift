@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectCarrierModalViewController: UIViewController {
+class SelectCarrierModalViewController: BaseViewController {
     
     let carriers: [String] = ["SKT", "KT", "LG U+", "SKT 알뜰폰", "KT 알뜰폰", "LG U+ 알뜰폰"]
     var delegate: SelectCarrierProtocol?

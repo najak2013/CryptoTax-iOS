@@ -1,18 +1,21 @@
 //
-//  MyTaxViewController.swift
+//  WellcomeViewController.swift
 //  CryptoTax
 //
-//  Created by kimjitae on 2022/04/14.
+//  Created by kimjitae on 2022/05/11.
 //
 
 import UIKit
 
-class MyTaxViewController: BaseViewController {
+class WellcomeViewController: BaseViewController {
 
+    var name: String = "김지태"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
 

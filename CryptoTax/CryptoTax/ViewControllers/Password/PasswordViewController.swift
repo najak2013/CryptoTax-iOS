@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PasswordViewController: UIViewController {
+class PasswordViewController: BaseViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     

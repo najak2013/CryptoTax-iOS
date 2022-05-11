@@ -7,12 +7,13 @@
 
 import UIKit
 
-class UserAuthViewController: UIViewController {
+class UserAuthViewController: BaseViewController {
 
     @IBOutlet weak var contentViewConst: NSLayoutConstraint!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var contentView: UIView!
     
+    var delegate: NextViewProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,7 @@ class UserAuthViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: {_ in
             self.dismiss(animated: false)
+            self.delegate?.nextView(self)
         })
     }
 }

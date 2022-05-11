@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+class LoadingViewController: BaseViewController {
 
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
@@ -16,22 +16,23 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         topLabel.text = "\(userName)님의\n거래소 거래내역을\n찾고 있어요"
-        
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        for i in 0...100 {
+            self.percentageLabel.text = "\(i)% 완료"
+        }
+        
+        guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WellcomeViewController") as? WellcomeViewController else { return }
+        self.navigationController?.pushViewController(wellcomeVC, animated: true)
+        
+        // HomeViewController
+        
+        // WellcomeViewController
+        
     }
-    */
-
+    
 }

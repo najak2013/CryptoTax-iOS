@@ -30,11 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             }
             print("Success in APNS registry")
         }
-        
         application.registerForRemoteNotifications()
-        
-    
-        
         return true
     }
     

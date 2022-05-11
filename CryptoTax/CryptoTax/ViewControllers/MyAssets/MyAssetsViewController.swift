@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyAssetsViewController: UIViewController {
+class MyAssetsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

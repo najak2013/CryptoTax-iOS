@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IntroPermissionModalViewController: UIViewController {
+class IntroPermissionModalViewController: BaseViewController {
 
 
     var delegate: NextViewProtocol?

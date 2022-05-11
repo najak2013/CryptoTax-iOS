@@ -10,10 +10,11 @@ import UIKit
 class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectCarrierProtocol {
     
     
+    
+    @IBOutlet var constraints: [NSLayoutConstraint]!
     @IBOutlet var textfields: [UITextField]!
     @IBOutlet var userInputViews: [UIView]!
     @IBOutlet var circleViews: [UIView]!
-    
     @IBOutlet var underLines: [UIView]!
     
     
@@ -21,9 +22,7 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
     var uiLabels: [UILabel] = []
     var placeholders: [String] = []
     
-    
     var count: Int = 0
-    
     var userCarrier: String?
     
     @IBOutlet weak var bottomBuntton: UIButton!
@@ -41,26 +40,12 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         circleViewInit()
     }
     
-    
-    @IBAction func carrierButton(_ sender: Any) {
-        guard let SelectCarrierModalVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCarrierModalViewController") as? SelectCarrierModalViewController else { return }
-        SelectCarrierModalVC.modalPresentationStyle = .overFullScreen
-        
-        SelectCarrierModalVC.delegate = self
-        
-        present(SelectCarrierModalVC, animated: false, completion: nil)
-    }
-    
-    func getCarrier(_ vc: UIViewController, carrier: String) {
-        activeFloatLabel(textfieldIndex: 2, textfield: textfields[2])
-        textfields[2].text = carrier
-    }
-    
     func keyboardButtonInit() {
         button.backgroundColor = UIColor(red: 0.2549, green: 0.4078, blue: 0.9647, alpha: 1.0)
         button.setTitle("확인", for: .normal)
     }
     
+    //MARK: - View 투명하게
     func viewAlphaInit() {
         for view in userInputViews {
             let viewIndex = userInputViews.firstIndex(of: view)!
@@ -70,6 +55,7 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         }
     }
     
+    //MARK: - 주민번호 View 원형
     func circleViewInit() {
         for view in circleViews {
             view.layer.cornerRadius = view.layer.frame.width / 2
@@ -77,21 +63,20 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         }
     }
     
-
     
+    //MARK: - Textfield 초기 설정
     func textfieldInit() {
         for textfield in textfields {
-            print("델리게이트 생성")
             // textfield 델리게이트 설정
             textfield.delegate = self
-            
             // textfield float을 위한 Label 생성
             createFloatLabel(textfield: textfield)
-            
+            // placeholder 정보 저장
             placeholders.append(textfield.placeholder!)
         }
     }
     
+    //MARK: - Float 용 Label
     func createFloatLabel(textfield: UITextField) {
         let floatLabel = UILabel()
         floatLabel.frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y, width: textfield.frame.width, height: 18)
@@ -101,11 +86,13 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         uiLabels.append(floatLabel)
     }
         
-    
-    
- 
-    @IBOutlet var constraints: [NSLayoutConstraint]!
-    
+    //MARK: - 통신사 선택
+    @IBAction func carrierButton(_ sender: Any) {
+        guard let SelectCarrierModalVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCarrierModalViewController") as? SelectCarrierModalViewController else { return }
+        SelectCarrierModalVC.modalPresentationStyle = .overFullScreen
+        SelectCarrierModalVC.delegate = self
+        present(SelectCarrierModalVC, animated: false, completion: nil)
+    }
     
     //휴대폰 번호
     //통신사
@@ -128,20 +115,13 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         } else {
             guard let userAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "UserAuthViewController") as? UserAuthViewController else { return }
             userAuthVC.modalPresentationStyle = .overFullScreen
+            userAuthVC.delegate = self
             present(userAuthVC, animated: false, completion: nil)
         }
     }
     
-    func defaultUnderLine(textfieldIndex: Int, textfield: UITextField) {
-            print("defaultUnderLine")
-            underLines[textfieldIndex].backgroundColor = UIColor(red: 0.949, green: 0.9569, blue: 0.9647, alpha: 1.0)
-        }
     
-    func activeUnderLine(textfieldIndex: Int, textfield: UITextField) {
-        print("activeUnderLine")
-        underLines[textfieldIndex].backgroundColor = UIColor(red: 0.2549, green: 0.4078, blue: 0.9647, alpha: 1.0)
-    }
-    
+    //MARK: - Textfield Edit 여부
     func textFieldDidBeginEditing(_ textfield: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textfield)!
         activeFloatLabel(textfieldIndex: textfieldIndex, textfield: textfield)
@@ -156,6 +136,17 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         defaultUnderLine(textfieldIndex: textfieldIndex, textfield: textfield)
     }
     
+    //MARK: - 밑줄 활성화 여부
+    func defaultUnderLine(textfieldIndex: Int, textfield: UITextField) {
+                print("defaultUnderLine")
+                underLines[textfieldIndex].backgroundColor = UIColor(red: 0.949, green: 0.9569, blue: 0.9647, alpha: 1.0)
+            }
+    func activeUnderLine(textfieldIndex: Int, textfield: UITextField) {
+        print("activeUnderLine")
+        underLines[textfieldIndex].backgroundColor = UIColor(red: 0.2549, green: 0.4078, blue: 0.9647, alpha: 1.0)
+    }
+    
+    //MARK: - placeholder Float 여부
     func defaultFloatLabel(textfieldIndex: Int, textfield: UITextField) {
         if textfieldIndex != 4 {
             uiLabels[textfieldIndex].font = uiLabels[textfieldIndex].font.withSize(textfield.font!.pointSize)
@@ -178,14 +169,23 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         }
     }
     
-    
+    //MARK: - Protocol 동작
+    func getCarrier(_ vc: UIViewController, carrier: String) {
+        activeFloatLabel(textfieldIndex: 2, textfield: textfields[2])
+        textfields[2].text = carrier
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 }
 
-
+extension UserRegistViewController: NextViewProtocol {
+    func nextView(_ vc: UIViewController) {
+        guard let smsAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "SmsAuthViewController") as? SmsAuthViewController else { return }
+        self.navigationController?.pushViewController(smsAuthVC, animated: true)
+    }
+}
 
 
 
@@ -221,7 +221,3 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
 //        }
 //    }
 //}
-
-protocol SelectCarrierProtocol {
-    func getCarrier(_ vc: UIViewController, carrier: String)
-}
