@@ -14,11 +14,13 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
     @IBOutlet var userInputViews: [UIView]!
     @IBOutlet var circleViews: [UIView]!
     
+    @IBOutlet var underLines: [UIView]!
+    
     
     let button = UIButton(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 57))
     var uiLabels: [UILabel] = []
     var placeholders: [String] = []
-    var underLines: [CALayer] = []
+    
     
     var count: Int = 0
     
@@ -28,12 +30,15 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        textfieldInit()
-        circleViewInit()
         viewAlphaInit()
         keyboardButtonInit()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textfieldInit()
+        circleViewInit()
     }
     
     
@@ -43,7 +48,7 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         
         SelectCarrierModalVC.delegate = self
         
-        present(SelectCarrierModalVC, animated: true, completion: nil)
+        present(SelectCarrierModalVC, animated: false, completion: nil)
     }
     
     func getCarrier(_ vc: UIViewController, carrier: String) {
@@ -68,11 +73,11 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
     func circleViewInit() {
         for view in circleViews {
             view.layer.cornerRadius = view.layer.frame.width / 2
-            view.layer.borderWidth = 1
-            view.layer.borderColor = UIColor(hue: 0.6028, saturation: 0.16, brightness: 0.5, alpha: 1.0).cgColor
             view.clipsToBounds = true
         }
     }
+    
+
     
     func textfieldInit() {
         for textfield in textfields {
@@ -82,27 +87,15 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
             
             // textfield float을 위한 Label 생성
             createFloatLabel(textfield: textfield)
-            // textfield 밑 줄 생성
-            createUnderLine(textfield: textfield)
             
             placeholders.append(textfield.placeholder!)
-            print(textfield.placeholder!)
-            // 애니메이션 적용을 위한 투명도 설정
-            let textfieldIndex = textfields.firstIndex(of: textfield)!
-            defaultUnderLine(textfieldIndex: textfieldIndex, textfield: textfield)
         }
-    }
-    
-    func createUnderLine(textfield: UITextField) {
-        let underLine = CALayer()
-        underLine.frame = CGRect(x: 0, y: textfield.frame.size.height - 10, width: textfield.frame.width + 2, height: 1)
-        underLines.append(underLine)
     }
     
     func createFloatLabel(textfield: UITextField) {
         let floatLabel = UILabel()
-        floatLabel.frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y, width: textfield.frame.width, height: textfield.frame.height)
-        floatLabel.font = floatLabel.font.withSize(textfield.font!.pointSize)
+        floatLabel.frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y, width: textfield.frame.width, height: 18)
+        floatLabel.font = floatLabel.font.withSize(14)
         floatLabel.text = textfield.placeholder
         floatLabel.textColor = UIColor(red: 0.5529, green: 0.5804, blue: 0.6275, alpha: 1.0)
         uiLabels.append(floatLabel)
@@ -126,7 +119,7 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
             }, completion: nil)
             for i in 0 ..< count{
                 
-                constraints[i].constant += 85
+                constraints[i].constant += 79
                 
                 UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
                     self.view.layoutIfNeeded()
@@ -135,19 +128,27 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         } else {
             guard let userAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "UserAuthViewController") as? UserAuthViewController else { return }
             userAuthVC.modalPresentationStyle = .overFullScreen
-            present(userAuthVC, animated: true, completion: nil)
+            present(userAuthVC, animated: false, completion: nil)
         }
     }
     
+    func defaultUnderLine(textfieldIndex: Int, textfield: UITextField) {
+            print("defaultUnderLine")
+            underLines[textfieldIndex].backgroundColor = UIColor(red: 0.949, green: 0.9569, blue: 0.9647, alpha: 1.0)
+        }
+    
+    func activeUnderLine(textfieldIndex: Int, textfield: UITextField) {
+        print("activeUnderLine")
+        underLines[textfieldIndex].backgroundColor = UIColor(red: 0.2549, green: 0.4078, blue: 0.9647, alpha: 1.0)
+    }
+    
     func textFieldDidBeginEditing(_ textfield: UITextField) {
-        print("textFieldDidBeginEditing")
         let textfieldIndex = textfields.firstIndex(of: textfield)!
-        activeUnderLine(textfieldIndex: textfieldIndex, textfield: textfield)
         activeFloatLabel(textfieldIndex: textfieldIndex, textfield: textfield)
+        activeUnderLine(textfieldIndex: textfieldIndex, textfield: textfield)
     }
     
     func textFieldDidEndEditing(_ textfield: UITextField) {
-        print("textFieldDidEndEditing")
         let textfieldIndex = textfields.firstIndex(of: textfield)!
         if textfield.text?.isEmpty ?? false {
             defaultFloatLabel(textfieldIndex: textfieldIndex, textfield: textfield)
@@ -155,24 +156,11 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         defaultUnderLine(textfieldIndex: textfieldIndex, textfield: textfield)
     }
     
-    func defaultUnderLine(textfieldIndex: Int, textfield: UITextField) {
-        print("defaultUnderLine")
-        underLines[textfieldIndex].backgroundColor = UIColor(red: 0.949, green: 0.9569, blue: 0.9647, alpha: 1.0).cgColor
-        textfield.borderStyle = .none
-        textfield.layer.addSublayer(underLines[textfieldIndex])
-    }
-    func activeUnderLine(textfieldIndex: Int, textfield: UITextField) {
-        print("activeUnderLine")
-        underLines[textfieldIndex].backgroundColor = UIColor(red: 0.2549, green: 0.4078, blue: 0.9647, alpha: 1.0).cgColor
-        textfield.layer.addSublayer(underLines[textfieldIndex])
-    }
-    
     func defaultFloatLabel(textfieldIndex: Int, textfield: UITextField) {
-        print("defaultFloatLabel")
         if textfieldIndex != 4 {
             uiLabels[textfieldIndex].font = uiLabels[textfieldIndex].font.withSize(textfield.font!.pointSize)
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                self.uiLabels[textfieldIndex].frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y - 3, width: textfield.frame.width, height: textfield.frame.height)
+                self.uiLabels[textfieldIndex].frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y + self.uiLabels[textfieldIndex].frame.height + 7, width: textfield.frame.width, height: 18)
             }, completion: nil)
             
             textfield.placeholder = placeholders[textfieldIndex]
@@ -180,13 +168,12 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         }
     }
     func activeFloatLabel(textfieldIndex: Int, textfield: UITextField) {
-        print("activeFloatLabel")
         if textfieldIndex != 4 {
             userInputViews[textfieldIndex].addSubview(uiLabels[textfieldIndex])
             textfield.placeholder = ""
             uiLabels[textfieldIndex].font = uiLabels[textfieldIndex].font.withSize(textfield.font!.pointSize - 9)
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-                self.uiLabels[textfieldIndex].frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y + 3 - (textfield.frame.height / 2), width: textfield.frame.width, height: textfield.frame.height)
+                self.uiLabels[textfieldIndex].frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y - self.uiLabels[textfieldIndex].frame.height - 7, width: textfield.frame.width, height: 18)
             }, completion: nil)
         }
     }
