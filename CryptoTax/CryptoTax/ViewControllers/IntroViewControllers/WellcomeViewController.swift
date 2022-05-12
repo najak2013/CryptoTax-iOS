@@ -10,7 +10,7 @@ import UIKit
 class WellcomeViewController: UIViewController {
 
     
-    var name: String = ""
+    var name: String = "김지태"
     @IBOutlet weak var wellcomeLabel: UILabel!
     
     override func viewDidLoad() {
@@ -21,6 +21,9 @@ class WellcomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        sleep(3)
+        dismiss(animated: true)
     }
     
 
