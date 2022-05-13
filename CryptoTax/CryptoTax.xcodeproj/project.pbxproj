@@ -23,6 +23,9 @@
 		3989B0B628224FEC00B6D602 /* WooridaumL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3989B0B328224FEC00B6D602 /* WooridaumL.otf */; };
 		39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */; };
 		39A700242821206A00DE5CE2 /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A700232821206A00DE5CE2 /* UserRegistViewController.swift */; };
+		39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D2E9282E128E0075A73B /* AES256CBC.swift */; };
+		39A7D2EC282E27DF0075A73B /* ExchangeTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D2EB282E27DE0075A73B /* ExchangeTestData.swift */; };
+		39A7D2EF282E4D760075A73B /* SelfRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D2EE282E4D760075A73B /* SelfRegistViewController.swift */; };
 		39D5A1862820D77400BDF54A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D5A1852820D77400BDF54A /* IntroViewController.swift */; };
 		39D6C8732828FAAE00B21C9E /* SelectCarrierModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */; };
 		39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */; };
@@ -42,7 +45,10 @@
 		39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6502807DA7D0065544A /* tab_me_animate.json */; };
 		39E5E6542807DA7D0065544A /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6512807DA7D0065544A /* tab_message_animate.json */; };
 		39E5E6552807DA7D0065544A /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6522807DA7D0065544A /* tab_search_animate.json */; };
-		39EFF4E6282CF5C3003C9426 /* CollectionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EFF4E5282CF5C3003C9426 /* CollectionTestViewController.swift */; };
+		39EFF4E6282CF5C3003C9426 /* ExchangeConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EFF4E5282CF5C3003C9426 /* ExchangeConnectionViewController.swift */; };
+		39EFF4E9282E028B003C9426 /* CommonConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EFF4E8282E028B003C9426 /* CommonConnections.swift */; };
+		39EFF4EB282E02C6003C9426 /* UserConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EFF4EA282E02C6003C9426 /* UserConnections.swift */; };
+		39EFF4EE282E0402003C9426 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EFF4ED282E0402003C9426 /* ResponseModel.swift */; };
 		B98F58C336653EB82BBB74A8 /* Pods_CryptoTax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E540768DD4F17390A1F9E76 /* Pods_CryptoTax.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,9 @@
 		3989B0B328224FEC00B6D602 /* WooridaumL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WooridaumL.otf; sourceTree = "<group>"; };
 		39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39A700232821206A00DE5CE2 /* UserRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
+		39A7D2E9282E128E0075A73B /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
+		39A7D2EB282E27DE0075A73B /* ExchangeTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTestData.swift; sourceTree = "<group>"; };
+		39A7D2EE282E4D760075A73B /* SelfRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfRegistViewController.swift; sourceTree = "<group>"; };
 		39D5A1852820D77400BDF54A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCarrierModalViewController.swift; sourceTree = "<group>"; };
 		39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carrierTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,7 +94,10 @@
 		39E5E6502807DA7D0065544A /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
 		39E5E6512807DA7D0065544A /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
 		39E5E6522807DA7D0065544A /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
-		39EFF4E5282CF5C3003C9426 /* CollectionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTestViewController.swift; sourceTree = "<group>"; };
+		39EFF4E5282CF5C3003C9426 /* ExchangeConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeConnectionViewController.swift; sourceTree = "<group>"; };
+		39EFF4E8282E028B003C9426 /* CommonConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConnections.swift; sourceTree = "<group>"; };
+		39EFF4EA282E02C6003C9426 /* UserConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConnections.swift; sourceTree = "<group>"; };
+		39EFF4ED282E0402003C9426 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		CB21A0A1C051BBBDE37C96BD /* Pods-CryptoTax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTax.debug.xcconfig"; path = "Target Support Files/Pods-CryptoTax/Pods-CryptoTax.debug.xcconfig"; sourceTree = "<group>"; };
 		CE06D2CB775DA5ACE7F928AB /* Pods-CryptoTax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTax.release.xcconfig"; path = "Target Support Files/Pods-CryptoTax/Pods-CryptoTax.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				39327343282BA3EF002EFFAF /* Utils.swift */,
+				39A7D2E9282E128E0075A73B /* AES256CBC.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -174,6 +187,15 @@
 				3989B0B128224FEB00B6D602 /* WooridaumR.otf */,
 			);
 			path = Fonts2;
+			sourceTree = "<group>";
+		};
+		39A7D2ED282E4D440075A73B /* AddExchange */ = {
+			isa = PBXGroup;
+			children = (
+				39EFF4E5282CF5C3003C9426 /* ExchangeConnectionViewController.swift */,
+				39A7D2EE282E4D760075A73B /* SelfRegistViewController.swift */,
+			);
+			path = AddExchange;
 			sourceTree = "<group>";
 		};
 		39B987DB281A4CAD00CD7AE2 /* CustomLibrary */ = {
@@ -223,6 +245,8 @@
 				39B987DB281A4CAD00CD7AE2 /* CustomLibrary */,
 				39441CAE282B94D0008DB62B /* Protocol */,
 				39E5E63C2807D60C0065544A /* ViewControllers */,
+				39EFF4E7282E0263003C9426 /* Connection */,
+				39EFF4EC282E03D1003C9426 /* Models */,
 				39327342282BA3E1002EFFAF /* Utils */,
 				39E5E64E2807DA4C0065544A /* Resources */,
 				39E5E62E2807D5DE0065544A /* Main.storyboard */,
@@ -237,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				39E5E6422807D67F0065544A /* BaseViewController.swift */,
+				39A7D2ED282E4D440075A73B /* AddExchange */,
 				39D5A1842820D76300BDF54A /* IntroViewControllers */,
 				3913A0BB280936F7008E8FC1 /* Password */,
 				39E5E6402807D6500065544A /* MyAssets */,
@@ -303,9 +328,26 @@
 		39EFF4E4282CF5AD003C9426 /* TestCode */ = {
 			isa = PBXGroup;
 			children = (
-				39EFF4E5282CF5C3003C9426 /* CollectionTestViewController.swift */,
+				39A7D2EB282E27DE0075A73B /* ExchangeTestData.swift */,
 			);
 			path = TestCode;
+			sourceTree = "<group>";
+		};
+		39EFF4E7282E0263003C9426 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				39EFF4E8282E028B003C9426 /* CommonConnections.swift */,
+				39EFF4EA282E02C6003C9426 /* UserConnections.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		39EFF4EC282E03D1003C9426 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				39EFF4ED282E0402003C9426 /* ResponseModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6A40A6C028A9519012DF441E /* Pods */ = {
@@ -453,16 +495,22 @@
 				39A700242821206A00DE5CE2 /* UserRegistViewController.swift in Sources */,
 				39E5E6492807D7080065544A /* MyTaxViewController.swift in Sources */,
 				39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */,
+				39EFF4E9282E028B003C9426 /* CommonConnections.swift in Sources */,
 				39D6C87D282A016E00B21C9E /* LoadingViewController.swift in Sources */,
 				39E5E6452807D68D0065544A /* HomeViewController.swift in Sources */,
 				39D6C87F282A03BA00B21C9E /* UserAuthViewController.swift in Sources */,
 				39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */,
 				39E5E6432807D67F0065544A /* BaseViewController.swift in Sources */,
+				39A7D2EF282E4D760075A73B /* SelfRegistViewController.swift in Sources */,
+				39EFF4EE282E0402003C9426 /* ResponseModel.swift in Sources */,
 				39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */,
+				39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */,
 				39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */,
+				39EFF4EB282E02C6003C9426 /* UserConnections.swift in Sources */,
+				39A7D2EC282E27DF0075A73B /* ExchangeTestData.swift in Sources */,
 				39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */,
 				39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */,
-				39EFF4E6282CF5C3003C9426 /* CollectionTestViewController.swift in Sources */,
+				39EFF4E6282CF5C3003C9426 /* ExchangeConnectionViewController.swift in Sources */,
 				39327344282BA3EF002EFFAF /* Utils.swift in Sources */,
 				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,
 			);
