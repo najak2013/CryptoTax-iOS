@@ -9,9 +9,13 @@ import UIKit
 
 class MyTaxViewController: BaseViewController {
 
+    @IBOutlet weak var floatViewBottomConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let tabBarHeight = self.tabBarController?.tabBar.frame.size.height
+        
+        floatViewBottomConstraint.constant = tabBarHeight!
         // Do any additional setup after loading the view.
     }
     
@@ -25,5 +29,8 @@ class MyTaxViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func 버튼테스트(_ sender: Any) {
+        print("안녕하세요.")
+    }
+    
 }

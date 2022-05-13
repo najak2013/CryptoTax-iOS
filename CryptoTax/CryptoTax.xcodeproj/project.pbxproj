@@ -42,6 +42,7 @@
 		39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6502807DA7D0065544A /* tab_me_animate.json */; };
 		39E5E6542807DA7D0065544A /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6512807DA7D0065544A /* tab_message_animate.json */; };
 		39E5E6552807DA7D0065544A /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E5E6522807DA7D0065544A /* tab_search_animate.json */; };
+		39EFF4E6282CF5C3003C9426 /* CollectionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EFF4E5282CF5C3003C9426 /* CollectionTestViewController.swift */; };
 		B98F58C336653EB82BBB74A8 /* Pods_CryptoTax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E540768DD4F17390A1F9E76 /* Pods_CryptoTax.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		39E5E6502807DA7D0065544A /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
 		39E5E6512807DA7D0065544A /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
 		39E5E6522807DA7D0065544A /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
+		39EFF4E5282CF5C3003C9426 /* CollectionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTestViewController.swift; sourceTree = "<group>"; };
 		CB21A0A1C051BBBDE37C96BD /* Pods-CryptoTax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTax.debug.xcconfig"; path = "Target Support Files/Pods-CryptoTax/Pods-CryptoTax.debug.xcconfig"; sourceTree = "<group>"; };
 		CE06D2CB775DA5ACE7F928AB /* Pods-CryptoTax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTax.release.xcconfig"; path = "Target Support Files/Pods-CryptoTax/Pods-CryptoTax.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 		39E5E6272807D5DE0065544A /* CryptoTax */ = {
 			isa = PBXGroup;
 			children = (
+				39EFF4E4282CF5AD003C9426 /* TestCode */,
 				39E5E6282807D5DE0065544A /* AppDelegate.swift */,
 				39E5E62A2807D5DE0065544A /* SceneDelegate.swift */,
 				39B987DB281A4CAD00CD7AE2 /* CustomLibrary */,
@@ -295,6 +298,14 @@
 				39E5E6522807DA7D0065544A /* tab_search_animate.json */,
 			);
 			path = Lotties;
+			sourceTree = "<group>";
+		};
+		39EFF4E4282CF5AD003C9426 /* TestCode */ = {
+			isa = PBXGroup;
+			children = (
+				39EFF4E5282CF5C3003C9426 /* CollectionTestViewController.swift */,
+			);
+			path = TestCode;
 			sourceTree = "<group>";
 		};
 		6A40A6C028A9519012DF441E /* Pods */ = {
@@ -451,6 +462,7 @@
 				39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */,
 				39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */,
 				39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */,
+				39EFF4E6282CF5C3003C9426 /* CollectionTestViewController.swift in Sources */,
 				39327344282BA3EF002EFFAF /* Utils.swift in Sources */,
 				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,
 			);
