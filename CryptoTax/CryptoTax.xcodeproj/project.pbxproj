@@ -18,9 +18,6 @@
 		39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAC282B933B008DB62B /* SmsAuthViewController.swift */; };
 		39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAF282B9509008DB62B /* AllProtocol.swift */; };
 		3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */; };
-		3989B0B428224FEC00B6D602 /* WooridaumR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3989B0B128224FEB00B6D602 /* WooridaumR.otf */; };
-		3989B0B528224FEC00B6D602 /* WooridaumB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3989B0B228224FEC00B6D602 /* WooridaumB.otf */; };
-		3989B0B628224FEC00B6D602 /* WooridaumL.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3989B0B328224FEC00B6D602 /* WooridaumL.otf */; };
 		39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */; };
 		39A700242821206A00DE5CE2 /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A700232821206A00DE5CE2 /* UserRegistViewController.swift */; };
 		39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D2E9282E128E0075A73B /* AES256CBC.swift */; };
@@ -65,9 +62,6 @@
 		39441CAC282B933B008DB62B /* SmsAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsAuthViewController.swift; sourceTree = "<group>"; };
 		39441CAF282B9509008DB62B /* AllProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProtocol.swift; sourceTree = "<group>"; };
 		3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPermissionModalViewController.swift; sourceTree = "<group>"; };
-		3989B0B128224FEB00B6D602 /* WooridaumR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WooridaumR.otf; sourceTree = "<group>"; };
-		3989B0B228224FEC00B6D602 /* WooridaumB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WooridaumB.otf; sourceTree = "<group>"; };
-		3989B0B328224FEC00B6D602 /* WooridaumL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WooridaumL.otf; sourceTree = "<group>"; };
 		39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39A700232821206A00DE5CE2 /* UserRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
 		39A7D2E9282E128E0075A73B /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
@@ -125,11 +119,6 @@
 		390A71522809141600D6EDC5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */,
-				390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */,
-				390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */,
-				390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */,
-				390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -177,16 +166,6 @@
 				3944DC492824E5260084C475 /* carrierTableCell */,
 			);
 			path = IntroBottomModals;
-			sourceTree = "<group>";
-		};
-		3989B0B028224FDD00B6D602 /* Fonts2 */ = {
-			isa = PBXGroup;
-			children = (
-				3989B0B228224FEC00B6D602 /* WooridaumB.otf */,
-				3989B0B328224FEC00B6D602 /* WooridaumL.otf */,
-				3989B0B128224FEB00B6D602 /* WooridaumR.otf */,
-			);
-			path = Fonts2;
 			sourceTree = "<group>";
 		};
 		39A7D2ED282E4D440075A73B /* AddExchange */ = {
@@ -242,6 +221,11 @@
 				39EFF4E4282CF5AD003C9426 /* TestCode */,
 				39E5E6282807D5DE0065544A /* AppDelegate.swift */,
 				39E5E62A2807D5DE0065544A /* SceneDelegate.swift */,
+				390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */,
+				390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */,
+				390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */,
+				390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */,
+				390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */,
 				39B987DB281A4CAD00CD7AE2 /* CustomLibrary */,
 				39441CAE282B94D0008DB62B /* Protocol */,
 				39E5E63C2807D60C0065544A /* ViewControllers */,
@@ -307,7 +291,6 @@
 		39E5E64E2807DA4C0065544A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3989B0B028224FDD00B6D602 /* Fonts2 */,
 				39E5E6312807D5DE0065544A /* Assets.xcassets */,
 				390A71522809141600D6EDC5 /* Fonts */,
 				39E5E64F2807DA5D0065544A /* Lotties */,
@@ -426,14 +409,11 @@
 				39D6C8792828FB2D00B21C9E /* carrierTableViewCell.xib in Resources */,
 				39E5E6352807D5DE0065544A /* LaunchScreen.storyboard in Resources */,
 				39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */,
-				3989B0B528224FEC00B6D602 /* WooridaumB.otf in Resources */,
 				390A71582809148F00D6EDC5 /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */,
 				390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */,
 				39E5E6322807D5DE0065544A /* Assets.xcassets in Resources */,
-				3989B0B428224FEC00B6D602 /* WooridaumR.otf in Resources */,
 				39E5E6302807D5DE0065544A /* Main.storyboard in Resources */,
-				3989B0B628224FEC00B6D602 /* WooridaumL.otf in Resources */,
 				390A715A2809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

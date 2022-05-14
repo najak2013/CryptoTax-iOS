@@ -8,9 +8,6 @@
 	<dict/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>WooridaumB.otf</string>
-		<string>WooridaumL.otf</string>
-		<string>WooridaumR.otf</string>
 		<string>SpoqaHanSansNeo-Thin.otf</string>
 		<string>SpoqaHanSansNeo-Regular.otf</string>
 		<string>SpoqaHanSansNeo-Light.otf</string>
