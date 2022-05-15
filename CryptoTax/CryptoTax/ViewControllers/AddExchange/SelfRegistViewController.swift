@@ -7,19 +7,73 @@
 
 import UIKit
 
-class SelfRegistViewController: UIViewController {
+class SelfRegistViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var contentViewTop: NSLayoutConstraint!
     @IBOutlet weak var bottomButtonLeading: NSLayoutConstraint!
     @IBOutlet weak var bottomButtonTrailing: NSLayoutConstraint!
     @IBOutlet weak var bottomButtonBottom: NSLayoutConstraint!
+
+    @IBOutlet var userInputViews: [UIView]!
+    @IBOutlet var underLines: [UIView]!
+    
+    
+    @IBOutlet var textfields: [UITextField]!
+    var uiLabels: [UILabel] = []
+    var placeholders: [String] = []
+    
+    var section: Int = 0
+    var exchange: String = ""
+    var row: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        textfieldInit()
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func okButton(_ sender: Any) {
+        var textfieldCheck: Bool = true
+        for textfield in textfields {
+            if textfield.text?.isEmpty ?? false {
+                let textfieldIndex = textfields.firstIndex(of: textfield)!
+                TextFieldUnderLineController().errorUnderLine(underLine: underLines[textfieldIndex])
+                textfieldCheck = false
+            }
+        }
+        
+        if textfieldCheck {
+            let exchangeData = ExchangeTestData.shared
+            
+            if !exchangeData.exchangeState[section][row] {
+                exchangeData.exchangeState[section][row] = true
+            }
+            if !exchangeData.exchangeSelected[section].contains(exchange) {
+                exchangeData.exchangeSelected[section].append(exchange)
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    
+    //MARK: - Textfield 초기 설정
+    func textfieldInit() {
+        for textfield in textfields {
+            // textfield 델리게이트 설정
+            textfield.delegate = self
+            // textfield float을 위한 Label 생성
+            uiLabels.append(TextFieldFloatLabelController().createFloatLabel(textfield: textfield))
+            // placeholder 정보 저장
+            placeholders.append(textfield.placeholder!)
+        }
     }
     
     @objc func keyboardWillShow(_ sender: Notification) {
@@ -48,15 +102,24 @@ class SelfRegistViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - Textfield Edit 여부
+    func textFieldDidBeginEditing(_ textfield: UITextField) {
+        let textfieldIndex = textfields.firstIndex(of: textfield)!
+        TextFieldFloatLabelController().activeFloatLabel(textfield: textfield, userInputView: userInputViews[textfieldIndex], uiLabel: uiLabels[textfieldIndex])
+        TextFieldUnderLineController().activeUnderLine(underLine: underLines[textfieldIndex])
     }
-    */
+    
+    func textFieldDidEndEditing(_ textfield: UITextField) {
+        let textfieldIndex = textfields.firstIndex(of: textfield)!
+        if textfield.text?.isEmpty ?? false {
+            TextFieldFloatLabelController().defaultFloatLabel(textfield: textfield, uiLabel: uiLabels[textfieldIndex], placeholder: placeholders[textfieldIndex])
+        }
+        TextFieldUnderLineController().defaultUnderLine(underLine: underLines[textfieldIndex])
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -64,14 +127,3 @@ class SelfRegistViewController: UIViewController {
 }
 
 
-func getPublicIPAddress() -> String {
-    var publicIP = ""
-    do {
-        try publicIP = String(contentsOf: URL(string: "https://www.bluewindsolution.com/tools/getpublicip.php")!, encoding: String.Encoding.utf8)
-        publicIP = publicIP.trimmingCharacters(in: CharacterSet.whitespaces)
-    }
-    catch {
-        print("Error: \(error)")
-    }
-    return publicIP
-}

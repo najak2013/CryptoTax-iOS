@@ -12,15 +12,14 @@ class ExchangeConnectionViewController: UIViewController {
 
     @IBOutlet weak var ExchangeCollectionView: UICollectionView!
     
-    
-        
     @IBOutlet weak var animationBarConstraint: NSLayoutConstraint!
-    
     
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet var sectionButtons: [UIButton]!
     
     @IBOutlet weak var bottomButtonView: UIView!
+    
+    let exchangeData = ExchangeTestData.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +38,16 @@ class ExchangeConnectionViewController: UIViewController {
         bottomViewHide()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(exchangeData.exchangeState)
+        print(exchangeData.exchangeSelected)
+        print(exchangeData.exchangeList)
+        ExchangeCollectionView.reloadData()
+        
+        
+    }
+    
     @objc func sectionAnimation(sender: UIButton) {
         print(sender.tag)
         
@@ -50,7 +59,6 @@ class ExchangeConnectionViewController: UIViewController {
     }
     
     func bottomViewHide() {
-        let exchangeData = ExchangeTestData.shared
         let selectedExchangeCount = exchangeData.exchangeSelected[0].count + exchangeData.exchangeSelected[1].count + exchangeData.exchangeSelected[2].count
         if selectedExchangeCount > 0 {
             bottomButtonView.isHidden = false
@@ -59,6 +67,16 @@ class ExchangeConnectionViewController: UIViewController {
         }
         connectButton.setTitle("\(selectedExchangeCount)개 연결하기", for: .normal)
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func exchangeConnectButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 extension ExchangeConnectionViewController {
@@ -91,17 +109,14 @@ extension ExchangeConnectionViewController {
 extension ExchangeConnectionViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let exchangeData = ExchangeTestData.shared
         return exchangeData.exchangeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let exchangeData = ExchangeTestData.shared
         return exchangeData.exchangeList[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let exchangeData = ExchangeTestData.shared
         let exchangeName = exchangeData.exchangeList[indexPath.section][indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExchangeCollectionViewCell", for: indexPath) as! ExchangeCollectionViewCell
         
@@ -136,7 +151,6 @@ extension ExchangeConnectionViewController: UICollectionViewDataSource {
 extension ExchangeConnectionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let exchangeData = ExchangeTestData.shared
         let selectedExchange = exchangeData.exchangeList[indexPath.section][indexPath.row]
         
         if exchangeData.exchangeState[indexPath.section][indexPath.row] {
@@ -152,9 +166,15 @@ extension ExchangeConnectionViewController: UICollectionViewDelegate {
         } else {
             print("선택한 거래소를 수동으로 입력해주세요.")
             guard let selfRegistVC = self.storyboard?.instantiateViewController(withIdentifier: "SelfRegistViewController") as? SelfRegistViewController else { return }
+            selfRegistVC.section = indexPath.section
+            selfRegistVC.row = indexPath.row
+            selfRegistVC.exchange = selectedExchange
             self.navigationController?.pushViewController(selfRegistVC, animated: true)
         }
 
+        print(exchangeData.exchangeState)
+        print(exchangeData.exchangeSelected)
+        print(exchangeData.exchangeList)
         ExchangeCollectionView.reloadData()
     }
     

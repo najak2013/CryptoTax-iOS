@@ -33,4 +33,11 @@ class MyTaxViewController: BaseViewController {
         print("안녕하세요.")
     }
     
+    @IBAction func addExchange(_ sender: Any) {
+        guard let addExchangeVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? UINavigationController else { return }
+        addExchangeVC.modalPresentationStyle = .fullScreen
+        
+        self.navigationController?.pushViewController(addExchangeVC, animated: true)
+    }
+    
 }

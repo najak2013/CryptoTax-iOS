@@ -119,6 +119,11 @@
 		390A71522809141600D6EDC5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */,
+				390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */,
+				390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */,
+				390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */,
+				390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -221,11 +226,6 @@
 				39EFF4E4282CF5AD003C9426 /* TestCode */,
 				39E5E6282807D5DE0065544A /* AppDelegate.swift */,
 				39E5E62A2807D5DE0065544A /* SceneDelegate.swift */,
-				390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */,
-				390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */,
-				390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */,
-				390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */,
-				390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */,
 				39B987DB281A4CAD00CD7AE2 /* CustomLibrary */,
 				39441CAE282B94D0008DB62B /* Protocol */,
 				39E5E63C2807D60C0065544A /* ViewControllers */,

@@ -6,14 +6,29 @@
 //
 
 import UIKit
+import CryptoSwift
+import Alamofire
+
+
+//MARK: - 수정 예정
+/**
+ 1. 텍스트필드 클릭하면 해당 작업 문구를 상단에 표시
+ 2. 주민번호 길이를 체크하는 부분을 수정 - 입력할 때는 상관없지만 다음 절차로 넘어갔다 다시 주민번호를 입력하면 길이가 부족해도 넘어가짐
+ 3. 이름 특수문자 들어간 경우 체크
+ 4. 전화번호 '-'를 표시해주기
+ */
 
 class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectCarrierProtocol {
     
-    
-    
     @IBOutlet var constraints: [NSLayoutConstraint]!
     @IBOutlet var textfields: [UITextField]!
+    
+    
+    
     @IBOutlet var userInputViews: [UIView]!
+    
+    
+    
     @IBOutlet var circleViews: [UIView]!
     @IBOutlet var underLines: [UIView]!
     
@@ -22,7 +37,7 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
     var uiLabels: [UILabel] = []
     var placeholders: [String] = []
     
-    var count: Int = 0
+    var inputField: Int = 0
     var userCarrier: String?
     
     @IBOutlet weak var bottomBuntton: UIButton!
@@ -32,6 +47,9 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         viewAlphaInit()
         keyboardButtonInit()
         
+        
+        let dd = "970401"
+        print(dd.count)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,22 +88,12 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
             // textfield 델리게이트 설정
             textfield.delegate = self
             // textfield float을 위한 Label 생성
-            createFloatLabel(textfield: textfield)
+            uiLabels.append(TextFieldFloatLabelController().createFloatLabel(textfield: textfield))
             // placeholder 정보 저장
             placeholders.append(textfield.placeholder!)
         }
     }
     
-    //MARK: - Float 용 Label
-    func createFloatLabel(textfield: UITextField) {
-        let floatLabel = UILabel()
-        floatLabel.frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y, width: textfield.frame.width, height: 18)
-        floatLabel.font = floatLabel.font.withSize(14)
-        floatLabel.text = textfield.placeholder
-        floatLabel.textColor = UIColor(red: 0.5529, green: 0.5804, blue: 0.6275, alpha: 1.0)
-        uiLabels.append(floatLabel)
-    }
-        
     //MARK: - 통신사 선택
     @IBAction func carrierButton(_ sender: Any) {
         guard let SelectCarrierModalVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCarrierModalViewController") as? SelectCarrierModalViewController else { return }
@@ -94,25 +102,17 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         present(SelectCarrierModalVC, animated: false, completion: nil)
     }
     
-    //휴대폰 번호
-    //통신사
-    //주민등록번호
-    //이름
     @IBAction func nextButton(_ sender: Any) {
-        if count != 3 {
-            count += 1
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                self.userInputViews[self.count].alpha = 1
-            }, completion: nil)
-            for i in 0 ..< count{
-                
-                constraints[i].constant += 79
-                
-                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                    self.view.layoutIfNeeded()
-                }, completion: nil)
+        nextInputField()
+    }
+    
+    func nextInputField() {
+        if inputfieldCheck() && inputField < 3 {
+            inputField += 1
+            if inputField != 4 {
+                inputfieldAnimation()
             }
-        } else {
+        } else if inputfieldCheck() && inputField == 3 {
             guard let userAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "UserAuthViewController") as? UserAuthViewController else { return }
             userAuthVC.modalPresentationStyle = .overFullScreen
             userAuthVC.delegate = self
@@ -120,59 +120,101 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         }
     }
     
+    func inputfieldCheck() -> Bool {
+        var checkResult: Bool = true
+        for field in 0 ... inputField {
+            if field == 0 && textfieldEmptyCheck(textfieldArray: [textfields[field]]) {
+                // 이름
+                TextFieldUnderLineController().defaultUnderLine(underLine: underLines[field])
+            } else if field == 1 && textfieldEmptyCheck(textfieldArray: [textfields[field], textfields[4]]) {
+                // 주민번호
+                TextFieldUnderLineController().defaultUnderLine(underLine: underLines[field])
+                TextFieldUnderLineController().defaultUnderLine(underLine: underLines[4])
+            } else if field == 2 && textfieldEmptyCheck(textfieldArray: [textfields[field]]){
+                // 통신사
+                TextFieldUnderLineController().defaultUnderLine(underLine: underLines[field])
+            } else if field == 3 && textfieldEmptyCheck(textfieldArray: [textfields[field]]) {
+                // 전화번호
+                TextFieldUnderLineController().defaultUnderLine(underLine: underLines[field])
+            } else {
+                checkResult = false
+            }
+        }
+        return checkResult
+    }
+    
+    func textfieldEmptyCheck(textfieldArray: [UITextField]) -> Bool{
+        var checkResult: Bool = true
+        for textfield in textfieldArray {
+            let textfieldIndex = textfields.firstIndex(of: textfield)!
+            if textfield.text?.isEmpty ?? false {
+                checkResult = false
+                TextFieldUnderLineController().errorUnderLine(underLine: underLines[textfieldIndex])
+            }
+        }
+        return checkResult
+    }
+    
+    
+    func inputfieldAnimation() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            self.userInputViews[self.inputField].alpha = 1
+        }, completion: nil)
+        for i in 0 ..< inputField {
+            constraints[i].constant += 79
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let textfieldIndex = textfields.firstIndex(of: textField)!
+        if textfieldIndex == 1 {
+            guard let text = textField.text else { return }
+            if text.count == 6 {
+                textfields[4].becomeFirstResponder()
+            }
+        } else if textfieldIndex == 4 {
+            guard let text = textField.text else { return }
+            if text.count == 1 {
+                textField.resignFirstResponder()
+                if inputField == 1 {
+                    nextInputField()
+                }
+            }
+        }
+            
+        
+        
+    }
     
     //MARK: - Textfield Edit 여부
     func textFieldDidBeginEditing(_ textfield: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textfield)!
-        activeFloatLabel(textfieldIndex: textfieldIndex, textfield: textfield)
-        activeUnderLine(textfieldIndex: textfieldIndex, textfield: textfield)
+        if textfieldIndex != 4 {
+            TextFieldFloatLabelController().activeFloatLabel(textfield: textfield, userInputView: userInputViews[textfieldIndex], uiLabel: uiLabels[textfieldIndex])
+        }
+        TextFieldUnderLineController().activeUnderLine(underLine: underLines[textfieldIndex])
     }
     
     func textFieldDidEndEditing(_ textfield: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textfield)!
-        if textfield.text?.isEmpty ?? false {
-            defaultFloatLabel(textfieldIndex: textfieldIndex, textfield: textfield)
-        }
-        defaultUnderLine(textfieldIndex: textfieldIndex, textfield: textfield)
-    }
-    
-    //MARK: - 밑줄 활성화 여부
-    func defaultUnderLine(textfieldIndex: Int, textfield: UITextField) {
-                print("defaultUnderLine")
-                underLines[textfieldIndex].backgroundColor = UIColor(red: 0.949, green: 0.9569, blue: 0.9647, alpha: 1.0)
+        if textfieldIndex != 4 {
+            if textfield.text?.isEmpty ?? false {
+                TextFieldFloatLabelController().defaultFloatLabel(textfield: textfield, uiLabel: uiLabels[textfieldIndex], placeholder: placeholders[textfieldIndex])
             }
-    func activeUnderLine(textfieldIndex: Int, textfield: UITextField) {
-        print("activeUnderLine")
-        underLines[textfieldIndex].backgroundColor = UIColor(red: 0.2549, green: 0.4078, blue: 0.9647, alpha: 1.0)
-    }
-    
-    //MARK: - placeholder Float 여부
-    func defaultFloatLabel(textfieldIndex: Int, textfield: UITextField) {
-        if textfieldIndex != 4 {
-            uiLabels[textfieldIndex].font = uiLabels[textfieldIndex].font.withSize(textfield.font!.pointSize)
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                self.uiLabels[textfieldIndex].frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y + self.uiLabels[textfieldIndex].frame.height + 7, width: textfield.frame.width, height: 18)
-            }, completion: nil)
-            
-            textfield.placeholder = placeholders[textfieldIndex]
-            self.uiLabels[textfieldIndex].removeFromSuperview()
         }
-    }
-    func activeFloatLabel(textfieldIndex: Int, textfield: UITextField) {
-        if textfieldIndex != 4 {
-            userInputViews[textfieldIndex].addSubview(uiLabels[textfieldIndex])
-            textfield.placeholder = ""
-            uiLabels[textfieldIndex].font = uiLabels[textfieldIndex].font.withSize(textfield.font!.pointSize - 9)
-            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-                self.uiLabels[textfieldIndex].frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y - self.uiLabels[textfieldIndex].frame.height - 7, width: textfield.frame.width, height: 18)
-            }, completion: nil)
-        }
+        TextFieldUnderLineController().defaultUnderLine(underLine: underLines[textfieldIndex])
     }
     
     //MARK: - Protocol 동작
     func getCarrier(_ vc: UIViewController, carrier: String) {
-        activeFloatLabel(textfieldIndex: 2, textfield: textfields[2])
+        TextFieldFloatLabelController().activeFloatLabel(textfield: textfields[2], userInputView: userInputViews[2], uiLabel: uiLabels[2])
         textfields[2].text = carrier
+        if inputField == 2 {
+            nextInputField()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -190,34 +232,3 @@ extension UserRegistViewController: NextViewProtocol {
 
 
 
-//
-//extension UIViewController {
-//
-//    func setKeyboardObserver() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object:nil)
-//    }
-//
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//          if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//                  let keyboardRectangle = keyboardFrame.cgRectValue
-//                  let keyboardHeight = keyboardRectangle.height
-//              UIView.animate(withDuration: 1) {
-//                  self.view.window?.frame.origin.y -= keyboardHeight
-//              }
-//          }
-//      }
-//
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//        if self.view.window?.frame.origin.y != 0 {
-//            if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//                    let keyboardRectangle = keyboardFrame.cgRectValue
-//                    let keyboardHeight = keyboardRectangle.height
-//                UIView.animate(withDuration: 1) {
-//                    self.view.window?.frame.origin.y += keyboardHeight
-//                }
-//            }
-//        }
-//    }
-//}

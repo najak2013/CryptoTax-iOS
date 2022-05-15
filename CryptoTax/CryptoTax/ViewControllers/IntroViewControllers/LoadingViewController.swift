@@ -7,6 +7,12 @@
 
 import UIKit
 
+//MARK: - 수정 예정
+/**
+ 1. 서버를 통해서 유저 세금 정보를 조회하기
+ 2. 끝나면 다음으로 넘어가기
+ */
+
 class LoadingViewController: BaseViewController {
 
     @IBOutlet weak var topLabel: UILabel!
