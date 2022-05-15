@@ -34,10 +34,14 @@ class MyTaxViewController: BaseViewController {
     }
     
     @IBAction func addExchange(_ sender: Any) {
-        guard let addExchangeVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? UINavigationController else { return }
-        addExchangeVC.modalPresentationStyle = .fullScreen
+        guard let addExchangeVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? ExchangeConnectionViewController else { return }
+//        addExchangeVC.modalPresentationStyle = .fullScreen
         
         self.navigationController?.pushViewController(addExchangeVC, animated: true)
+        
+        
+//        guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
+//        self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
 }
