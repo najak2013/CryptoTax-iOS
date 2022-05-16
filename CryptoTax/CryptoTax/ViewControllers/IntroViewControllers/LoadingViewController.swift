@@ -32,8 +32,8 @@ class LoadingViewController: BaseViewController {
             self.percentageLabel.text = "\(i)% 완료"
         }
         
-        guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WellcomeViewController") as? WellcomeViewController else { return }
-        wellcomeVC.name = userName
+        guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "UserRegistViewController") as? UserRegistViewController else { return }
+//        wellcomeVC.name = userName
         self.navigationController?.pushViewController(wellcomeVC, animated: true)
     }
     

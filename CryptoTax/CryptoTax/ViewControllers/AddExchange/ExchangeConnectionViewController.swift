@@ -73,14 +73,22 @@ class ExchangeConnectionViewController: UIViewController {
     }
     
     @IBAction func exchangeConnectButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
+        
+        if FirstStart.shared.isFirst {
+            guard let loadingVC = self.storyboard?.instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController else { return }
+            self.navigationController?.pushViewController(loadingVC, animated: true)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
     }
     
     
 }
 
 extension ExchangeConnectionViewController {
-    
+    // 가로 개수를 유동적으로
     fileprivate func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection in
 

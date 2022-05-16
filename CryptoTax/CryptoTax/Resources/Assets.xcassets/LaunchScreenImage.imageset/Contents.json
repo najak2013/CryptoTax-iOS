@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "LaunchScreenImage.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "스크린샷 2022-05-03 오후 12.20.49.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -22,6 +22,7 @@ class WellcomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        FirstStart.shared.isFirst = false
         sleep(3)
         dismiss(animated: true)
     }

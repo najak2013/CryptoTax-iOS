@@ -46,10 +46,6 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
         super.viewDidLoad()
         viewAlphaInit()
         keyboardButtonInit()
-        
-        
-        let dd = "970401"
-        print(dd.count)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -184,9 +180,6 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
                 }
             }
         }
-            
-        
-        
     }
     
     //MARK: - Textfield Edit 여부
@@ -224,7 +217,9 @@ class UserRegistViewController: BaseViewController, UITextFieldDelegate, SelectC
 
 extension UserRegistViewController: NextViewProtocol {
     func nextView(_ vc: UIViewController) {
-        guard let smsAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "SmsAuthViewController") as? SmsAuthViewController else { return }
+//        guard let smsAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "SmsAuthViewController") as? SmsAuthViewController else { return }
+        
+        guard let smsAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? ExchangeConnectionViewController else { return }
         self.navigationController?.pushViewController(smsAuthVC, animated: true)
     }
 }
