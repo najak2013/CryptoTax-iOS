@@ -12,4 +12,9 @@ target 'CryptoTax' do
   pod 'Alamofire', '~> 5.4'
   pod 'Locksmith'
   pod 'CryptoSwift', '~> 1.4.1'
+
+  pod 'Charts', '3.5.0'
+  pod 'TinyConstraints' 
 end
+
+

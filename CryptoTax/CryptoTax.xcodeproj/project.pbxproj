@@ -18,6 +18,9 @@
 		39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAC282B933B008DB62B /* SmsAuthViewController.swift */; };
 		39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAF282B9509008DB62B /* AllProtocol.swift */; };
 		3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */; };
+		39870AC72832833200995A83 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39870AC52832833200995A83 /* FirstTableViewCell.swift */; };
+		39870AC82832833200995A83 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39870AC62832833200995A83 /* FirstTableViewCell.xib */; };
+		39870AF42833AF9B00995A83 /* BarChartTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39870AF32833AF9B00995A83 /* BarChartTestViewController.swift */; };
 		39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */; };
 		39A700242821206A00DE5CE2 /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A700232821206A00DE5CE2 /* UserRegistViewController.swift */; };
 		39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D2E9282E128E0075A73B /* AES256CBC.swift */; };
@@ -62,6 +65,9 @@
 		39441CAC282B933B008DB62B /* SmsAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsAuthViewController.swift; sourceTree = "<group>"; };
 		39441CAF282B9509008DB62B /* AllProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProtocol.swift; sourceTree = "<group>"; };
 		3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPermissionModalViewController.swift; sourceTree = "<group>"; };
+		39870AC52832833200995A83 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		39870AC62832833200995A83 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
+		39870AF32833AF9B00995A83 /* BarChartTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTestViewController.swift; sourceTree = "<group>"; };
 		39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39A700232821206A00DE5CE2 /* UserRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
 		39A7D2E9282E128E0075A73B /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
@@ -171,6 +177,43 @@
 				3944DC492824E5260084C475 /* carrierTableCell */,
 			);
 			path = IntroBottomModals;
+			sourceTree = "<group>";
+		};
+		39870AC0283281BD00995A83 /* Card01 */ = {
+			isa = PBXGroup;
+			children = (
+				39870AC52832833200995A83 /* FirstTableViewCell.swift */,
+				39870AC62832833200995A83 /* FirstTableViewCell.xib */,
+			);
+			path = Card01;
+			sourceTree = "<group>";
+		};
+		39870AC1283281D400995A83 /* Card02 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Card02;
+			sourceTree = "<group>";
+		};
+		39870AC2283281E400995A83 /* Card03 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Card03;
+			sourceTree = "<group>";
+		};
+		39870AC3283281E900995A83 /* Card04 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Card04;
+			sourceTree = "<group>";
+		};
+		39870AC4283281EE00995A83 /* Card05 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Card05;
 			sourceTree = "<group>";
 		};
 		39A7D2ED282E4D440075A73B /* AddExchange */ = {
@@ -284,6 +327,11 @@
 			isa = PBXGroup;
 			children = (
 				39E5E64C2807D72C0065544A /* MyAssetsViewController.swift */,
+				39870AC0283281BD00995A83 /* Card01 */,
+				39870AC1283281D400995A83 /* Card02 */,
+				39870AC2283281E400995A83 /* Card03 */,
+				39870AC3283281E900995A83 /* Card04 */,
+				39870AC4283281EE00995A83 /* Card05 */,
 			);
 			path = MyAssets;
 			sourceTree = "<group>";
@@ -312,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				39A7D2EB282E27DE0075A73B /* ExchangeTestData.swift */,
+				39870AF32833AF9B00995A83 /* BarChartTestViewController.swift */,
 			);
 			path = TestCode;
 			sourceTree = "<group>";
@@ -410,6 +459,7 @@
 				39E5E6352807D5DE0065544A /* LaunchScreen.storyboard in Resources */,
 				39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */,
 				390A71582809148F00D6EDC5 /* SpoqaHanSansNeo-Regular.otf in Resources */,
+				39870AC82832833200995A83 /* FirstTableViewCell.xib in Resources */,
 				39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */,
 				390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */,
 				39E5E6322807D5DE0065544A /* Assets.xcassets in Resources */,
@@ -476,6 +526,7 @@
 				39E5E6492807D7080065544A /* MyTaxViewController.swift in Sources */,
 				39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */,
 				39EFF4E9282E028B003C9426 /* CommonConnections.swift in Sources */,
+				39870AC72832833200995A83 /* FirstTableViewCell.swift in Sources */,
 				39D6C87D282A016E00B21C9E /* LoadingViewController.swift in Sources */,
 				39E5E6452807D68D0065544A /* HomeViewController.swift in Sources */,
 				39D6C87F282A03BA00B21C9E /* UserAuthViewController.swift in Sources */,
@@ -492,6 +543,7 @@
 				39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */,
 				39EFF4E6282CF5C3003C9426 /* ExchangeConnectionViewController.swift in Sources */,
 				39327344282BA3EF002EFFAF /* Utils.swift in Sources */,
+				39870AF42833AF9B00995A83 /* BarChartTestViewController.swift in Sources */,
 				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

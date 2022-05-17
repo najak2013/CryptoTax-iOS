@@ -21,16 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         // Override point for customization after application launch.
         
         
-        let commonConenctions = CommonConnections()
-        
-        commonConenctions.initAPI(initCompletionHandler: { initResult in
-            switch initResult {
-            case let .success(initResult):
-                print(initResult)
-            case let .failure(error):
-                print(error)
-            }
-        })
+//        let commonConenctions = CommonConnections()
+//
+//        commonConenctions.initAPI(initCompletionHandler: { initResult in
+//            switch initResult {
+//            case let .success(initResult):
+//                print(initResult)
+//            case let .failure(error):
+//                print(error)
+//            }
+//        })
         
         FirebaseApp.configure()
         
