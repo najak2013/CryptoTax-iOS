@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bl4-mw-cDA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZGL-bj-FnT">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -826,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwo-m9-rEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="913"/>
+            <point key="canvasLocation" x="1618" y="912"/>
         </scene>
         <!--더보기-->
         <scene sceneID="dQe-2S-kkI">
@@ -908,7 +908,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IO8-Et-1cU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="746"/>
+            <point key="canvasLocation" x="241" y="746"/>
         </scene>
         <!--자산-->
         <scene sceneID="1NH-EX-xts">
@@ -924,7 +924,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOd-Ag-fKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890.39999999999998" y="-14.039408866995075"/>
+            <point key="canvasLocation" x="241" y="-14"/>
         </scene>
         <!--내 세금-->
         <scene sceneID="8Ht-rK-klT">
@@ -940,7 +940,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIy-zE-Ot3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205.59999999999999" y="-14.039408866995075"/>
+            <point key="canvasLocation" x="-500" y="-14"/>
         </scene>
         <!--Self Regist View Controller-->
         <scene sceneID="rSD-lM-6qI">
@@ -1678,7 +1678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUA-aV-NLT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="746"/>
+            <point key="canvasLocation" x="888.79999999999995" y="745.56650246305423"/>
         </scene>
         <!--My Tax View Controller-->
         <scene sceneID="Qnp-Cd-9SI">
@@ -1694,11 +1694,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-he-hBq">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n18-CY-6eZ">
-                                                <rect key="frame" x="328.33333333333331" y="54.666666666666657" width="22" height="22"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n18-CY-6eZ">
+                                                <rect key="frame" x="328.33333333333331" y="54.666666666666657" width="36" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="8xm-Bg-xM3"/>
-                                                    <constraint firstAttribute="width" constant="22" id="wDW-ze-7M8"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1798,10 +1797,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeg-nq-xJb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="123" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="137" height="20"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘까지 예상 세금" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xuk-y5-CMQ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="123" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="137" height="20"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="20" id="fEy-SJ-ttq"/>
                                                                                 </constraints>
@@ -1816,7 +1815,6 @@
                                                                             <constraint firstAttribute="trailing" secondItem="Xuk-y5-CMQ" secondAttribute="trailing" id="N2s-9C-FjV"/>
                                                                             <constraint firstItem="Xuk-y5-CMQ" firstAttribute="top" secondItem="Qeg-nq-xJb" secondAttribute="top" id="ZVX-eU-xqt"/>
                                                                             <constraint firstItem="Xuk-y5-CMQ" firstAttribute="leading" secondItem="Qeg-nq-xJb" secondAttribute="leading" id="pbU-XT-0Lw"/>
-                                                                            <constraint firstAttribute="width" constant="123" id="qws-g9-yg4"/>
                                                                             <constraint firstAttribute="bottom" secondItem="Xuk-y5-CMQ" secondAttribute="bottom" id="wYO-De-jh6"/>
                                                                         </constraints>
                                                                     </view>
@@ -2974,7 +2972,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWj-G2-yg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="999"/>
+            <point key="canvasLocation" x="-502" y="998"/>
         </scene>
         <!--Home-->
         <scene sceneID="JxN-dc-tMa">
@@ -2991,7 +2989,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ1-fu-SsQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="-14.039408866995075"/>
+            <point key="canvasLocation" x="889" y="-14"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ooQ-m5-SB2">

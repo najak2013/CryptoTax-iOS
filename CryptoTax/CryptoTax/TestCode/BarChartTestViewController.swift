@@ -40,13 +40,12 @@ class BarChartTestViewController: UIViewController, ChartViewDelegate {
         barChartView.rightAxis.drawAxisLineEnabled = false
         
         
-        
         barChartView.rightAxis.enabled = false
         
         
         
         barChartView.leftAxis.enabled = true
-        
+        barChartView.leftAxis.gridColor = .white
 
         // 경계선 활성화 여부
         barChartView.drawBordersEnabled = false
@@ -63,6 +62,7 @@ class BarChartTestViewController: UIViewController, ChartViewDelegate {
         
         
         let ll = ChartLimitLine(limit: 0.0, label: "")
+        ll.lineDashLengths = [3.0]
         barChartView.leftAxis.addLimitLine(ll)
         
         
@@ -97,7 +97,9 @@ class BarChartTestViewController: UIViewController, ChartViewDelegate {
         
 //        dataSet.highlightColor = .systemRed
         
+        dataSet.colors = [UIColor(red: 0.898, green: 0.9098, blue: 0.9216, alpha: 1.0)]
         
+        dataSet.highlightColor = UIColor(red: 0.3137, green: 0.3451, blue: 0.4, alpha: 1.0)
         let barChartData = BarChartData(dataSet: dataSet)
         barChartView.data = barChartData
     }

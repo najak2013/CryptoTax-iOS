@@ -11,12 +11,20 @@ import TinyConstraints
 
 class FirstTableViewCell: UITableViewCell, ChartViewDelegate {
     
+    @IBOutlet weak var toggleSwitchView: UIView!
+    
+    @IBOutlet weak var toggleLeading: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var toggleView: UIView!
+    
+    
+    @IBOutlet var toggleButtons: [UIButton]!
     
     @IBOutlet weak var graphView: UIView!
     
     lazy var lineChartView: LineChartView = {
         let chartView = LineChartView()
-        
         
         chartView.noDataText = "데이터가 없습니다."
         chartView.noDataFont = .systemFont(ofSize: 20)
@@ -57,6 +65,18 @@ class FirstTableViewCell: UITableViewCell, ChartViewDelegate {
         // Initialization code
         
         
+        toggleSwitchView.layer.cornerRadius = toggleSwitchView.layer.frame.height / 2
+        toggleSwitchView.clipsToBounds = true
+        
+        
+        toggleView.layer.cornerRadius = toggleView.layer.frame.height / 2
+//        toggleView.clipsToBounds = true
+        toggleView.layer.masksToBounds = false
+        toggleView.layer.shadowOpacity = 0.2
+        toggleView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        toggleView.layer.shadowRadius = 2
+        
+        
         graphView.addSubview(lineChartView)
         lineChartView.centerInSuperview()
         lineChartView.width(to: graphView)
@@ -69,7 +89,26 @@ class FirstTableViewCell: UITableViewCell, ChartViewDelegate {
         testData(dataPoints: unitsSold, lineValues: unitsSold)
         
         setData()
+        
+        for button in toggleButtons {
+            button.addTarget(self, action: #selector(toggleButtonAction), for: .touchUpInside)
+            print(button.frame.width)
+        }
+        
     }
+    
+    @objc func toggleButtonAction(_ sender: UIButton) {
+        print(sender.tag)
+        
+        
+        toggleLeading.constant = sender.frame.width * CGFloat(sender.tag)
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
     print(entry)
     }

@@ -10,6 +10,7 @@ import UIKit
 class MyAssetsViewController: BaseViewController {
 
     @IBOutlet weak var AssetsContentTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,15 +48,27 @@ extension MyAssetsViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             
             let cell = AssetsContentTableView.dequeueReusableCell(withIdentifier: "FirstTableViewCell", for: indexPath) as! FirstTableViewCell
+//
+//            print(AssetsContentTableView.constraints.)
             
+            cell.toggleView.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
+
+//
+//            cell.toggleViewConstraint.constant = cell.stackView.frame.width / 3
+//
+//            cell.toggleView.layer.cornerRadius = cell.toggleSwitchView.layer.frame.height / 2
+//            cell.toggleView.clipsToBounds = true
+        
             return cell
         }
         return UITableViewCell()
     }
-    
 }
 
 extension MyAssetsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = AssetsContentTableView.dequeueReusableCell(withIdentifier: "FirstTableViewCell", for: indexPath) as! FirstTableViewCell
+        print(cell.toggleButtons[0].frame.width)
+    }
 }
 
