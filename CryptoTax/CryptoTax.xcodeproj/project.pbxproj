@@ -39,6 +39,9 @@
 		39B18C1E283664AF000FE0B6 /* BalanceCoinModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B18C1D283664AF000FE0B6 /* BalanceCoinModels.swift */; };
 		39B18C202836678C000FE0B6 /* BalanceConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B18C1F2836678C000FE0B6 /* BalanceConnections.swift */; };
 		39B18C2628373E41000FE0B6 /* BalanceExchangeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B18C2528373E41000FE0B6 /* BalanceExchangeModels.swift */; };
+		39B18C2A2837872B000FE0B6 /* FinishedCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B18C282837872B000FE0B6 /* FinishedCoinTableViewCell.swift */; };
+		39B18C2B2837872B000FE0B6 /* FinishedCoinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B18C292837872B000FE0B6 /* FinishedCoinTableViewCell.xib */; };
+		39B18C30283797EF000FE0B6 /* MyAssetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B18C2F283797EF000FE0B6 /* MyAssetsViewModel.swift */; };
 		39D5A1862820D77400BDF54A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D5A1852820D77400BDF54A /* IntroViewController.swift */; };
 		39D6C8732828FAAE00B21C9E /* SelectCarrierModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */; };
 		39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */; };
@@ -98,6 +101,9 @@
 		39B18C1D283664AF000FE0B6 /* BalanceCoinModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCoinModels.swift; sourceTree = "<group>"; };
 		39B18C1F2836678C000FE0B6 /* BalanceConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceConnections.swift; sourceTree = "<group>"; };
 		39B18C2528373E41000FE0B6 /* BalanceExchangeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceExchangeModels.swift; sourceTree = "<group>"; };
+		39B18C282837872B000FE0B6 /* FinishedCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedCoinTableViewCell.swift; sourceTree = "<group>"; };
+		39B18C292837872B000FE0B6 /* FinishedCoinTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishedCoinTableViewCell.xib; sourceTree = "<group>"; };
+		39B18C2F283797EF000FE0B6 /* MyAssetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAssetsViewModel.swift; sourceTree = "<group>"; };
 		39D5A1852820D77400BDF54A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCarrierModalViewController.swift; sourceTree = "<group>"; };
 		39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carrierTableViewCell.swift; sourceTree = "<group>"; };
@@ -248,6 +254,23 @@
 			path = CoinOptionCell;
 			sourceTree = "<group>";
 		};
+		39B18C27283786F7000FE0B6 /* FinishedCoinCell */ = {
+			isa = PBXGroup;
+			children = (
+				39B18C282837872B000FE0B6 /* FinishedCoinTableViewCell.swift */,
+				39B18C292837872B000FE0B6 /* FinishedCoinTableViewCell.xib */,
+			);
+			path = FinishedCoinCell;
+			sourceTree = "<group>";
+		};
+		39B18C2D283797C9000FE0B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				39B18C2F283797EF000FE0B6 /* MyAssetsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		39B987DB281A4CAD00CD7AE2 /* CustomLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,9 +317,10 @@
 				39E5E62A2807D5DE0065544A /* SceneDelegate.swift */,
 				39B987DB281A4CAD00CD7AE2 /* CustomLibrary */,
 				39441CAE282B94D0008DB62B /* Protocol */,
-				39E5E63C2807D60C0065544A /* ViewControllers */,
-				39EFF4E7282E0263003C9426 /* Connection */,
+				39EFF4E7282E0263003C9426 /* Connections */,
 				39EFF4EC282E03D1003C9426 /* Models */,
+				39B18C2D283797C9000FE0B6 /* ViewModel */,
+				39E5E63C2807D60C0065544A /* ViewControllers */,
 				39327342282BA3E1002EFFAF /* Utils */,
 				39E5E64E2807DA4C0065544A /* Resources */,
 				39E5E62E2807D5DE0065544A /* Main.storyboard */,
@@ -349,11 +373,12 @@
 		39E5E6402807D6500065544A /* MyAssets */ = {
 			isa = PBXGroup;
 			children = (
-				39B18C1828365F33000FE0B6 /* CoinOptionCell */,
 				39E5E64C2807D72C0065544A /* MyAssetsViewController.swift */,
 				39870AC0283281BD00995A83 /* GraphCell */,
 				39870AC4283281EE00995A83 /* SpaceCell */,
 				39B18C1328365CC8000FE0B6 /* TopTitleCell */,
+				39B18C1828365F33000FE0B6 /* CoinOptionCell */,
+				39B18C27283786F7000FE0B6 /* FinishedCoinCell */,
 			);
 			path = MyAssets;
 			sourceTree = "<group>";
@@ -387,7 +412,7 @@
 			path = TestCode;
 			sourceTree = "<group>";
 		};
-		39EFF4E7282E0263003C9426 /* Connection */ = {
+		39EFF4E7282E0263003C9426 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
 				39EFF4E8282E028B003C9426 /* CommonConnections.swift */,
@@ -396,7 +421,7 @@
 				3900F0F42836283F000D9C30 /* ExchangeConnections.swift */,
 				39B18C1F2836678C000FE0B6 /* BalanceConnections.swift */,
 			);
-			path = Connection;
+			path = Connections;
 			sourceTree = "<group>";
 		};
 		39EFF4EC282E03D1003C9426 /* Models */ = {
@@ -489,6 +514,7 @@
 				3900F10428364FD4000D9C30 /* SpaceTableViewCell.xib in Resources */,
 				39E5E6352807D5DE0065544A /* LaunchScreen.storyboard in Resources */,
 				39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */,
+				39B18C2B2837872B000FE0B6 /* FinishedCoinTableViewCell.xib in Resources */,
 				390A71582809148F00D6EDC5 /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				39870AC82832833200995A83 /* FirstTableViewCell.xib in Resources */,
 				39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */,
@@ -551,6 +577,7 @@
 				39D6C8732828FAAE00B21C9E /* SelectCarrierModalViewController.swift in Sources */,
 				39D5A1862820D77400BDF54A /* IntroViewController.swift in Sources */,
 				39E5E64B2807D7100065544A /* MoreViewController.swift in Sources */,
+				39B18C30283797EF000FE0B6 /* MyAssetsViewModel.swift in Sources */,
 				39B18C202836678C000FE0B6 /* BalanceConnections.swift in Sources */,
 				3900F0F52836283F000D9C30 /* ExchangeConnections.swift in Sources */,
 				3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */,
@@ -572,6 +599,7 @@
 				39B18C2628373E41000FE0B6 /* BalanceExchangeModels.swift in Sources */,
 				39E5E6432807D67F0065544A /* BaseViewController.swift in Sources */,
 				39A7D2EF282E4D760075A73B /* SelfRegistViewController.swift in Sources */,
+				39B18C2A2837872B000FE0B6 /* FinishedCoinTableViewCell.swift in Sources */,
 				39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */,
 				39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */,
 				39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */,

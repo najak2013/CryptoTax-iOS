@@ -293,9 +293,10 @@ extension UserRegistViewController: NextViewProtocol {
             switch result {
             case let .success(result):
                 if result.code == "0000" {
-                    guard let userSession = result.more?.session else { return }
-                    guard let userName = result.more?.user?.name?.ko else { return }
+                    guard let userSession = result.more.session else { return }
+                    guard let userName = result.more.user?.name?.ko else { return }
                     let defaults = UserDefaults.standard
+                    
                     defaults.set(userSession, forKey:"userSession")
                     defaults.set(userName, forKey:"userName")
                     

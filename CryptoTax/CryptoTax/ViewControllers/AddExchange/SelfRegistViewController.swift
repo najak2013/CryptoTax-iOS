@@ -57,21 +57,31 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
         if textfieldCheck {
             let exchangeData = ExchangeTestData.shared
             
-            if !exchangeData.exchangeState[section][row] {
-                exchangeData.exchangeState[section][row] = true
-            }
-            if !exchangeData.exchangeSelected[section].contains(exchange) {
-                exchangeData.exchangeSelected[section].append(exchange)
-            }
-            
             guard let accessKey = textfields[0].text else { return }
             guard let secretKey = textfields[1].text else { return }
                         
-            ExchangeConnections().keyJoin(session: UserInfo().getUserSession(), exchangeName: exchange, accessKey: AES256Util.encrypt(string: accessKey), secretKey: AES256Util.encrypt(string: secretKey), exchangeKeyJoinHandler: { result in
+            ExchangeConnections().key(session: UserInfo().getUserSession(), exchangeName: exchange, accessKey: AES256Util.encrypt(string: accessKey), secretKey: AES256Util.encrypt(string: secretKey), exchangeKeyJoinHandler: { result in
                 switch result {
                 case let .success(result):
                     print("성공 결과 : ", result)
-                    self.navigationController?.popViewController(animated: true)
+                    print("여기입니다.")
+                    if result.code == "0000" {
+                        
+                        if !exchangeData.exchangeState[self.section][self.row] {
+                            exchangeData.exchangeState[self.section][self.row] = true
+                        }
+                        
+                        if !exchangeData.exchangeSelected[self.section].contains(self.exchange) {
+                            exchangeData.exchangeSelected[self.section].append(self.exchange)
+                        }
+                        print("성공")
+                        self.navigationController?.popViewController(animated: true)
+                    } else {
+                        let alert = UIAlertController(title: "서버등록 실패", message: "Error Code : \(result.code)", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .default)
+                        alert.addAction(okAction)
+                        self.present(alert, animated: false, completion: nil)
+                    }
                 case let .failure(error):
                     print("실패 결과 : ", error)
                 }

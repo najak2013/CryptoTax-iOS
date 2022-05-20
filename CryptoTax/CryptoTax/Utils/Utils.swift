@@ -13,31 +13,31 @@ import Locksmith
 public class AppFirstTime {
     // 유저 등록이 필요한 여부
     func userNeedToRegist() -> Bool {
-        if AppFirstTime.isFirstTime() {
-            print("어플리케이션 처음 실행입니다.")
+        print(isFirstTime(), userLogin())
+        if isFirstTime() || userLogin() {
+            print("가입 절차 진행")
             return true
         } else {
-            if !AppFirstTime.userLogin() {
-                return false
-            }
-            return true
+            print("가입절차 필요 없음")
+            return false
         }
     }
     
-    
-    static func userLogin() -> Bool {
+    func userLogin() -> Bool {
         let defaults = UserDefaults.standard
         if defaults.object(forKey: "userSession") == nil {
+            print("userLogin : 세션키가 없습니다.")
             return true
         } else {
             return false
         }
     }
     
-    static func isFirstTime() -> Bool {
+    func isFirstTime() -> Bool {
         let defaults = UserDefaults.standard
         if defaults.object(forKey: "isFirstTime") == nil {
             defaults.set("No", forKey:"isFirstTime")
+            print("isFirstTime : 처음 시작입니다.")
             return true
         } else {
             return false

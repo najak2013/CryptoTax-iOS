@@ -15,9 +15,6 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(userRegist)
-        
-        print(UserInfo.init())
         if userRegist {
             guard let IntroVC = self.storyboard?.instantiateViewController(withIdentifier: "IntroViewController") as? UINavigationController else { return }
             IntroVC.modalPresentationStyle = .fullScreen

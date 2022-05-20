@@ -15,23 +15,31 @@ internal struct BalanceCoinResponseModel: Codable {
 }
 
 internal struct BalanceCoinMore: Codable {
-    internal let balance : BalanceCoin
-}
-
-internal struct BalanceCoin: Codable {
-    internal let exchange: [Coin]
+    internal let isCalcTaxDone: Bool
+    internal let coin: Coin
+    
 }
 
 internal struct Coin: Codable {
-    internal let ticker: String
-    internal let thumbnail: String
-    internal let name: CoinName
-    internal let amount: Double
-    internal let buyPriceExists: Bool
-    internal let yield: Double?
+    internal let running: [CoinInfo]?
+    internal let airDrop: [CoinInfo]?
+    internal let finished: [CoinInfo]?
+}
+
+
+internal struct CoinInfo: Codable {
+    internal let ticker: String?
+    internal let thumbnail: String?
+    internal let amount: String?
+    internal let valuationPrice: String?
+    internal let yield: String?
+    internal let name: CoinName?
+    internal let purchasePrice: String?
+    internal let buyPriceExists: Bool?
+    internal let ratio: String?
 }
 
 internal struct CoinName: Codable {
-    internal let ko: String
-    internal let en: String
+    internal let ko: String?
+    internal let en: String?
 }

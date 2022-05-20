@@ -11,7 +11,7 @@ import Foundation
 internal struct UserResponseModel: Codable {
     internal let reason: String
     internal let code: String
-    internal let more: UserJoinMore?
+    internal let more: UserJoinMore
 }
 
 

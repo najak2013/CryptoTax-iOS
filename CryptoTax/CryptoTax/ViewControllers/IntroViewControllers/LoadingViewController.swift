@@ -32,9 +32,15 @@ class LoadingViewController: UIViewController {
             self.percentageLabel.text = "\(i)% 완료"
         }
         
+        
+        if AppFirstTime().isFirstTime() {
+            print("여기?")
+            self.navigationController?.popToRootViewController(animated: true)
+            return
+        }
         guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WellcomeViewController") as? WellcomeViewController else { return }
-//        wellcomeVC.name = userName
         self.navigationController?.pushViewController(wellcomeVC, animated: true)
+        
     }
     
 }

@@ -16,19 +16,18 @@ class ExchangeConnectionViewController: UIViewController {
     @IBOutlet var sectionButtons: [UIButton]!
     @IBOutlet weak var bottomButtonView: UIView!
     
-    
     var userCIDIData: String = ""
     var userJoinData: String = ""
+
     
-    let exchangeData = ExchangeTestData.shared
-    
-    
+    var testExchangeData = ExchangeTestData.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ExchangeCollectionView.delegate = self
         ExchangeCollectionView.dataSource = self
+        
         
         for button in sectionButtons {
             button.addTarget(self, action: #selector(sectionAnimation), for: .touchUpInside)
@@ -43,9 +42,8 @@ class ExchangeConnectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getExchangeList()
         ExchangeCollectionView.reloadData()
-        
-        
     }
     
     @objc func sectionAnimation(sender: UIButton) {
@@ -57,7 +55,8 @@ class ExchangeConnectionViewController: UIViewController {
     }
     
     func bottomViewHide() {
-        let selectedExchangeCount = exchangeData.exchangeSelected[0].count + exchangeData.exchangeSelected[1].count + exchangeData.exchangeSelected[2].count
+        let selectedExchangeCount: Int = getClientSelectCount()
+        
         if selectedExchangeCount > 0 {
             bottomButtonView.isHidden = false
         } else {
@@ -66,6 +65,33 @@ class ExchangeConnectionViewController: UIViewController {
         connectButton.setTitle("\(selectedExchangeCount)개 연결하기", for: .normal)
     }
     
+    func getClientSelectCount() -> Int {
+        return testExchangeData.exchangeSelected[0].count + testExchangeData.exchangeSelected[1].count + testExchangeData.exchangeSelected[2].count
+    }
+    
+    func getExchangeList() {
+        BalanceConnections().exchange(session: UserInfo().getUserSession(), exchange: "", BalanceExchangeHandler: { (result) in
+            switch result {
+            case let .success(result):
+                if result.code == "0000" {
+                    
+                    guard let exchanges = result.more.exchange else { return }
+                    for exchange in exchanges {
+                        print(exchange)
+                    }
+                } else {
+                    let alert = UIAlertController(title: "초회 실패", message: "Error Code : \(result.code)", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: false, completion: nil)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        })
+    }
+    
+    
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -73,13 +99,9 @@ class ExchangeConnectionViewController: UIViewController {
     @IBAction func exchangeConnectButton(_ sender: Any) {
 //        self.navigationController?.popViewController(animated: true)
         
-        if FirstStart.shared.isFirst {
-            guard let loadingVC = self.storyboard?.instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController else { return }
-            self.navigationController?.pushViewController(loadingVC, animated: true)
-        } else {
-            self.navigationController?.popViewController(animated: true)
-        }
-        
+        guard let loadingVC = self.storyboard?.instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController else { return }
+        self.navigationController?.pushViewController(loadingVC, animated: true)
+    
     }
     
     
@@ -115,19 +137,19 @@ extension ExchangeConnectionViewController {
 extension ExchangeConnectionViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return exchangeData.exchangeList.count
+        return testExchangeData.exchangeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return exchangeData.exchangeList[section].count
+        return testExchangeData.exchangeList[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let exchangeName = exchangeData.exchangeList[indexPath.section][indexPath.row]
+        let exchangeName = testExchangeData.exchangeList[indexPath.section][indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExchangeCollectionViewCell", for: indexPath) as! ExchangeCollectionViewCell
         
         
-        if exchangeData.exchangeSelected[indexPath.section].contains(exchangeName) {
+        if testExchangeData.exchangeSelected[indexPath.section].contains(exchangeName) {
             cell.cellContentView.layer.borderColor = UIColor(red: 0.2549, green: 0.4078, blue: 0.9647, alpha: 1.0).cgColor
             cell.cellContentView.layer.borderWidth = 2
         } else {
@@ -157,17 +179,17 @@ extension ExchangeConnectionViewController: UICollectionViewDataSource {
 extension ExchangeConnectionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedExchange = exchangeData.exchangeList[indexPath.section][indexPath.row]
+        let selectedExchange = testExchangeData.exchangeList[indexPath.section][indexPath.row]
         
-        if exchangeData.exchangeState[indexPath.section][indexPath.row] {
-            if exchangeData.exchangeSelected[indexPath.section].contains(selectedExchange) {
+        if testExchangeData.exchangeState[indexPath.section][indexPath.row] {
+            if testExchangeData.exchangeSelected[indexPath.section].contains(selectedExchange) {
                 print("선택한 거래소를 제거합니다.")
-                if let index = exchangeData.exchangeSelected[indexPath.section].firstIndex(of: selectedExchange) {
-                    exchangeData.exchangeSelected[indexPath.section].remove(at: index)
+                if let index = testExchangeData.exchangeSelected[indexPath.section].firstIndex(of: selectedExchange) {
+                    testExchangeData.exchangeSelected[indexPath.section].remove(at: index)
                 }
             } else {
                 print("선택한 거래소를 추가합니다.")
-                exchangeData.exchangeSelected[indexPath.section].append(selectedExchange)
+                testExchangeData.exchangeSelected[indexPath.section].append(selectedExchange)
             }
         } else {
             print("선택한 거래소를 수동으로 입력해주세요.")
@@ -177,13 +199,8 @@ extension ExchangeConnectionViewController: UICollectionViewDelegate {
             selfRegistVC.exchange = selectedExchange
             self.navigationController?.pushViewController(selfRegistVC, animated: true)
         }
-
-        print(exchangeData.exchangeState)
-        print(exchangeData.exchangeSelected)
-        print(exchangeData.exchangeList)
         ExchangeCollectionView.reloadData()
     }
-    
 }
 
 class ExchangeCollectionViewCell: UICollectionViewCell {

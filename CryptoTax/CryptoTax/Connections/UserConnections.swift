@@ -34,24 +34,5 @@ class UserConnection {
                         print(error.localizedDescription)
                     }
                 }
-        
-//            AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json"])
-//                        .validate(statusCode: 200..<300)
-//                        //200~300사이 상태만 허용
-//                        .validate(contentType: ["application/json"])
-//                        .responseData { (response) in
-//                        switch response.result {
-//                        case .success(let value):
-//                            do {
-//                                let decoder = JSONDecoder()
-//                                let result = try decoder.decode(UserResponseResult.self, from: value)
-//                                userJoinHandler(.success(result))
-//                            } catch {
-//                                print(error)
-//                            }
-//                        case let .failure(error):
-//                            print(error.localizedDescription)
-//                        }
-//                    }
     }
 }

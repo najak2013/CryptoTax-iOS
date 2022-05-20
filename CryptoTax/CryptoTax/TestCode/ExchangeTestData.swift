@@ -16,15 +16,10 @@ class ExchangeTestData {
     var exchangeSelected: Array<[String]> = [[], [], []]
     var exchangeState: Array<[Bool]> = [[false, false, true, false], [false, false], [false]]
     
-    
-    
     private init() {}
-    
-    
 }
 
 class FirstStart {
     static let shared = FirstStart()
-    
     var isFirst: Bool = true
 }

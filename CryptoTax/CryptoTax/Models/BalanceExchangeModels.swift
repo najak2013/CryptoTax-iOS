@@ -15,19 +15,20 @@ internal struct BalanceExchangeResponseModel: Codable {
 
 internal struct BalanceExchange: Codable {
     internal let isCalcTaxDone: Bool
-    internal let exchange: Exchange?
-    internal let usdInfo: UsdInfo
+    internal let exchange: [Exchange]?
+    internal let usdInfo: UsdInfo?
 }
 
 internal struct Exchange: Codable {
+    internal let amount: String?
     internal let thumbnail: String?
-    internal let valuationPrice: Double?
-    internal let yield: Double?
+    internal let valuationPrice: String?
+    internal let yield: String?
     internal let name: ExchangeName?
-    internal let purchasePrice: Double?
+    internal let purchasePrice: String?
     internal let buyPriceExists: Bool?
     internal let coinCount: Int?
-    internal let ratio: Double?
+    internal let ratio: String?
 }
 
 internal struct ExchangeName: Codable {
@@ -36,8 +37,8 @@ internal struct ExchangeName: Codable {
 }
 
 internal struct UsdInfo: Codable {
-    internal let price: Double?
-    internal let rateOfChange: Double?
+    internal let price: String?
+    internal let rateOfChange: String?
     internal let updateTime: String?
-    internal let valueOfChange: Double?
+    internal let valueOfChange: String?
 }

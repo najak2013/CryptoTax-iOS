@@ -21,14 +21,14 @@ class BalanceConnections {
                     .responseDecodable(of: BalanceExchangeResponseModel.self) { (response) in
                     switch response.result {
                     case .success(let response):
-                        print(response)
+                        BalanceExchangeHandler(.success(response))
                     case let .failure(error):
                         print(error.localizedDescription)
                     }
                 }
     }
     
-    func coin(session: String, CoinBalanceHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
+    func coin(exchanges: String, session: String, CoinBalanceHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
         let url = MAIN_URL + "/user/balance/coin"
         
 
@@ -39,9 +39,9 @@ class BalanceConnections {
                     .responseDecodable(of: BalanceCoinResponseModel.self) { (response) in
                     switch response.result {
                     case .success(let response):
-                        print(response)
+                        CoinBalanceHandler(.success(response))
                     case let .failure(error):
-                        print(error.localizedDescription)
+                        CoinBalanceHandler(.failure(error))
                     }
                 }
     }

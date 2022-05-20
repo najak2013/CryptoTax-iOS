@@ -1699,9 +1699,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n18-CY-6eZ">
-                                                <rect key="frame" x="328.33333333333331" y="54.666666666666657" width="36" height="22"/>
+                                                <rect key="frame" x="333" y="54" width="24" height="24"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="8xm-Bg-xM3"/>
+                                                    <constraint firstAttribute="height" constant="24" id="8xm-Bg-xM3"/>
+                                                    <constraint firstAttribute="width" constant="24" id="sHq-Sh-bXC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -1709,10 +1710,10 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="n18-CY-6eZ" secondAttribute="trailing" constant="10.75" id="2bj-Xy-PhD"/>
                                             <constraint firstAttribute="height" constant="88" id="IHS-j3-op0"/>
-                                            <constraint firstItem="n18-CY-6eZ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QBJ-he-hBq" secondAttribute="leading" constant="328.32999999999998" id="Ndx-jm-I9h"/>
-                                            <constraint firstItem="n18-CY-6eZ" firstAttribute="top" secondItem="QBJ-he-hBq" secondAttribute="top" constant="54.75" id="itJ-Z8-IE9"/>
+                                            <constraint firstAttribute="trailing" secondItem="n18-CY-6eZ" secondAttribute="trailing" constant="18" id="NHi-1w-JfG"/>
+                                            <constraint firstItem="n18-CY-6eZ" firstAttribute="top" secondItem="QBJ-he-hBq" secondAttribute="top" constant="54" id="bkd-Me-y0Y"/>
+                                            <constraint firstItem="n18-CY-6eZ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QBJ-he-hBq" secondAttribute="leading" constant="333" id="wlu-4b-ORy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-IJ-q70">
@@ -2977,7 +2978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWj-G2-yg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-502" y="998"/>
+            <point key="canvasLocation" x="-503.19999999999999" y="997.90640394088678"/>
         </scene>
         <!--Home-->
         <scene sceneID="JxN-dc-tMa">
