@@ -7,19 +7,22 @@
 
 import UIKit
 import CryptoSwift
+import Locksmith
 
 class ExchangeConnectionViewController: UIViewController {
-
     @IBOutlet weak var ExchangeCollectionView: UICollectionView!
-    
     @IBOutlet weak var animationBarConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet var sectionButtons: [UIButton]!
-    
     @IBOutlet weak var bottomButtonView: UIView!
     
+    
+    var userCIDIData: String = ""
+    var userJoinData: String = ""
+    
     let exchangeData = ExchangeTestData.shared
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +43,12 @@ class ExchangeConnectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(exchangeData.exchangeState)
-        print(exchangeData.exchangeSelected)
-        print(exchangeData.exchangeList)
         ExchangeCollectionView.reloadData()
         
         
     }
     
     @objc func sectionAnimation(sender: UIButton) {
-        print(sender.tag)
-        
         animationBarConstraint.constant = sender.frame.width * CGFloat(sender.tag)
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {

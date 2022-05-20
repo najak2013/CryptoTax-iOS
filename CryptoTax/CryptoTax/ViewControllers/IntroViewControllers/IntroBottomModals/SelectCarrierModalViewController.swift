@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectCarrierModalViewController: BaseViewController {
+class SelectCarrierModalViewController: UIViewController {
     
     let carriers: [String] = ["SKT", "KT", "LG U+", "SKT 알뜰폰", "KT 알뜰폰", "LG U+ 알뜰폰"]
     var delegate: SelectCarrierProtocol?
@@ -21,7 +21,7 @@ class SelectCarrierModalViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewRadius(contentView)
+        ModalViewRadius().viewRadius(contentView)
         
         carrierTableView.dataSource = self
         carrierTableView.delegate = self
@@ -44,15 +44,11 @@ class SelectCarrierModalViewController: BaseViewController {
         }, completion: nil)
     }
     
-    private func viewRadius(_ view: UIView) {
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 10
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-    }
-    
     @IBAction func backgroundClick(_ sender: Any) {
         closeModal()
     }
+    
+    
     func closeModal() {
         UIView.animate(withDuration: 0.1, delay: 0, animations: {
             self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)

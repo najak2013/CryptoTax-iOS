@@ -15,6 +15,7 @@ target 'CryptoTax' do
 
   pod 'Charts', '3.5.0'
   pod 'TinyConstraints' 
+  pod 'AnyFormatKit'
 end
 
 

@@ -15,9 +15,7 @@ class HomeViewController: BaseViewController {
         
         
         
-        guard let IntroVC = self.storyboard?.instantiateViewController(withIdentifier: "IntroViewController") as? UINavigationController else { return }
-        IntroVC.modalPresentationStyle = .fullScreen
-        present(IntroVC, animated: false, completion: nil)
+
         
 //        let userInfo = [
 //            "userCI" : "김지태",

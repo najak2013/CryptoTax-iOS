@@ -15,7 +15,7 @@ import UIKit
  4. 3분 카운트 다운 기능하기
  */
 
-class SmsAuthViewController: BaseViewController {
+class SmsAuthViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     

@@ -19,6 +19,8 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var underLines: [UIView]!
     
     
+    @IBOutlet weak var topLabel: UILabel!
+    
     @IBOutlet var textfields: [UITextField]!
     var uiLabels: [UILabel] = []
     var placeholders: [String] = []
@@ -34,6 +36,8 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         textfieldInit()
+        
+        topLabel.text = "\(exchange)에서 생성한\nAPI Key를 입력해주세요"
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -59,13 +63,29 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
             if !exchangeData.exchangeSelected[section].contains(exchange) {
                 exchangeData.exchangeSelected[section].append(exchange)
             }
-            self.navigationController?.popViewController(animated: true)
+            
+            guard let accessKey = textfields[0].text else { return }
+            guard let secretKey = textfields[1].text else { return }
+                        
+            ExchangeConnections().keyJoin(session: UserInfo().getUserSession(), exchangeName: exchange, accessKey: AES256Util.encrypt(string: accessKey), secretKey: AES256Util.encrypt(string: secretKey), exchangeKeyJoinHandler: { result in
+                switch result {
+                case let .success(result):
+                    print("성공 결과 : ", result)
+                    self.navigationController?.popViewController(animated: true)
+                case let .failure(error):
+                    print("실패 결과 : ", error)
+                }
+            })
+            
+            
         }
     }
     
+    var fontSize: CGFloat = 0
     
     //MARK: - Textfield 초기 설정
     func textfieldInit() {
+        fontSize = textfields[0].font!.pointSize
         for textfield in textfields {
             // textfield 델리게이트 설정
             textfield.delegate = self
@@ -108,14 +128,14 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Textfield Edit 여부
     func textFieldDidBeginEditing(_ textfield: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textfield)!
-        TextFieldFloatLabelController().activeFloatLabel(textfield: textfield, userInputView: userInputViews[textfieldIndex], uiLabel: uiLabels[textfieldIndex])
+        TextFieldFloatLabelController().activeFloatLabel(textfield: textfield, userInputView: userInputViews[textfieldIndex], uiLabel: uiLabels[textfieldIndex], fontSize: fontSize)
         TextFieldUnderLineController().activeUnderLine(underLine: underLines[textfieldIndex])
     }
     
     func textFieldDidEndEditing(_ textfield: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textfield)!
         if textfield.text?.isEmpty ?? false {
-            TextFieldFloatLabelController().defaultFloatLabel(textfield: textfield, uiLabel: uiLabels[textfieldIndex], placeholder: placeholders[textfieldIndex])
+            TextFieldFloatLabelController().defaultFloatLabel(textfield: textfield, uiLabel: uiLabels[textfieldIndex], placeholder: placeholders[textfieldIndex], fontSize: fontSize)
         }
         TextFieldUnderLineController().defaultUnderLine(underLine: underLines[textfieldIndex])
     }

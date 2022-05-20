@@ -7,12 +7,12 @@
 
 import UIKit
 
-class IntroViewController: BaseViewController, NextViewProtocol {
+class IntroViewController: UIViewController, NextViewProtocol {
     @IBOutlet weak var mainLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          
+        print("제일 먼저 시작 페이지")
         mainLabel.text = "같은 수익, 다른 세금\n크립토택스"
         
 //        let targetString3 = "to"

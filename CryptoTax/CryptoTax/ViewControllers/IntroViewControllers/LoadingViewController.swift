@@ -13,7 +13,7 @@ import UIKit
  2. 끝나면 다음으로 넘어가기
  */
 
-class LoadingViewController: BaseViewController {
+class LoadingViewController: UIViewController {
 
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
@@ -32,7 +32,7 @@ class LoadingViewController: BaseViewController {
             self.percentageLabel.text = "\(i)% 완료"
         }
         
-        guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "UserRegistViewController") as? UserRegistViewController else { return }
+        guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WellcomeViewController") as? WellcomeViewController else { return }
 //        wellcomeVC.name = userName
         self.navigationController?.pushViewController(wellcomeVC, animated: true)
     }

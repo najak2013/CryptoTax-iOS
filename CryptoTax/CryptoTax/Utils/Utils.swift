@@ -7,8 +7,33 @@
 
 import Foundation
 import UIKit
+import Locksmith
 
-public class Storage {
+//MARK: - 앱 처음 시작 확인
+public class AppFirstTime {
+    // 유저 등록이 필요한 여부
+    func userNeedToRegist() -> Bool {
+        if AppFirstTime.isFirstTime() {
+            print("어플리케이션 처음 실행입니다.")
+            return true
+        } else {
+            if !AppFirstTime.userLogin() {
+                return false
+            }
+            return true
+        }
+    }
+    
+    
+    static func userLogin() -> Bool {
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "userSession") == nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     static func isFirstTime() -> Bool {
         let defaults = UserDefaults.standard
         if defaults.object(forKey: "isFirstTime") == nil {
@@ -20,7 +45,24 @@ public class Storage {
     }
 }
 
+internal class UserInfo {
+    
+    let defaults = UserDefaults.standard
+    
+    func getUserName() -> String {
+        if let userName = defaults.object(forKey: "userName") {
+            return userName as! String
+        }
+        return ""
+    }
 
+    func getUserSession() -> String {
+        if let userSession = defaults.object(forKey: "userSession") {
+            return userSession as! String
+        }
+        return ""
+    }
+}
 
 //MARK: - Textfield Under Lune Controller
 class TextFieldUnderLineController {
@@ -55,7 +97,7 @@ class TextFieldFloatLabelController {
     }
     
     // 평소 Float
-    func defaultFloatLabel(textfield: UITextField, uiLabel: UILabel, placeholder: String) {
+    func defaultFloatLabel(textfield: UITextField, uiLabel: UILabel, placeholder: String, fontSize: CGFloat) {
         uiLabel.font = uiLabel.font.withSize(textfield.font!.pointSize)
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             uiLabel.frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y + uiLabel.frame.height + 7, width: textfield.frame.width, height: 18)
@@ -67,13 +109,22 @@ class TextFieldFloatLabelController {
     }
     
     // 활성화 Float
-    func activeFloatLabel(textfield: UITextField, userInputView: UIView, uiLabel: UILabel) {
+    func activeFloatLabel(textfield: UITextField, userInputView: UIView, uiLabel: UILabel, fontSize: CGFloat) {
         userInputView.addSubview(uiLabel)
         textfield.placeholder = ""
-        uiLabel.font = uiLabel.font.withSize(textfield.font!.pointSize - 9)
+        uiLabel.font = uiLabel.font.withSize(fontSize - 9)
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
             uiLabel.frame = CGRect(x: textfield.frame.origin.x, y: textfield.frame.origin.y - uiLabel.frame.height - 7, width: textfield.frame.width, height: 18)
         }, completion: nil)
         
     }
 }
+
+class ModalViewRadius {
+    func viewRadius(_ view: UIView) {
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 10
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+}
+

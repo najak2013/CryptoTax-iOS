@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import Locksmith
 
 class BaseViewController: UIViewController {
 
+    let userRegist = AppFirstTime().userNeedToRegist()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        print(userRegist)
         
+        print(UserInfo.init())
+        if userRegist {
+            guard let IntroVC = self.storyboard?.instantiateViewController(withIdentifier: "IntroViewController") as? UINavigationController else { return }
+            IntroVC.modalPresentationStyle = .fullScreen
+            present(IntroVC, animated: false, completion: nil)
+        } else {
+            print(UserInfo().getUserName())
+            print(UserInfo().getUserSession())
+        }
     }
 }

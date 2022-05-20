@@ -1,16 +1,14 @@
 //
-//  carrierTableViewCell.swift
+//  CoinOptionTableViewCell.swift
 //  CryptoTax
 //
-//  Created by kimjitae on 2022/05/09.
+//  Created by 김지태 on 2022/05/19.
 //
 
 import UIKit
 
-class carrierTableViewCell: UITableViewCell {
+class CoinOptionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var carrierLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +19,5 @@ class carrierTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
     
 }

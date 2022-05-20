@@ -161,9 +161,55 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-Kn-iZG">
                                 <rect key="frame" x="0.0" y="300" width="375" height="80"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekg-lT-fex">
+                                        <rect key="frame" x="24" y="19" width="120" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평균 구매가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37Z-Gh-Jps">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                                <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023.01.01 ~ 06.24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dlB-Yp-y6H">
+                                                <rect key="frame" x="0.0" y="24" width="120" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="HGX-wn-8bM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                <color key="textColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="37Z-Gh-Jps" firstAttribute="top" secondItem="Ekg-lT-fex" secondAttribute="top" id="590-gb-KqQ"/>
+                                            <constraint firstAttribute="height" constant="42" id="ACh-bt-0To"/>
+                                            <constraint firstItem="37Z-Gh-Jps" firstAttribute="leading" secondItem="Ekg-lT-fex" secondAttribute="leading" id="Qma-j5-0pn"/>
+                                            <constraint firstAttribute="bottom" secondItem="dlB-Yp-y6H" secondAttribute="bottom" id="azi-gh-fuj"/>
+                                            <constraint firstItem="dlB-Yp-y6H" firstAttribute="leading" secondItem="Ekg-lT-fex" secondAttribute="leading" id="flt-pE-bj0"/>
+                                            <constraint firstAttribute="width" constant="120" id="nGN-qJ-S6I"/>
+                                            <constraint firstAttribute="trailing" secondItem="dlB-Yp-y6H" secondAttribute="trailing" id="vFA-Vh-dV4"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,453,321원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deu-ci-UHd">
+                                        <rect key="frame" x="263" y="30" width="88" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="QeM-St-kkd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                        <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="Ekg-lT-fex" firstAttribute="top" secondItem="9fX-Kn-iZG" secondAttribute="top" constant="19" id="4Ma-xG-WlU"/>
                                     <constraint firstAttribute="height" constant="80" id="PMb-PD-5i9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ekg-lT-fex" secondAttribute="bottom" constant="19" id="Tq2-bu-OLC"/>
+                                    <constraint firstItem="deu-ci-UHd" firstAttribute="top" secondItem="9fX-Kn-iZG" secondAttribute="top" constant="30" id="Z3a-aM-c6b"/>
+                                    <constraint firstAttribute="bottom" secondItem="deu-ci-UHd" secondAttribute="bottom" constant="30" id="aFn-pe-IuH"/>
+                                    <constraint firstAttribute="trailing" secondItem="deu-ci-UHd" secondAttribute="trailing" constant="24" id="p9s-Sy-HyH"/>
+                                    <constraint firstItem="Ekg-lT-fex" firstAttribute="leading" secondItem="9fX-Kn-iZG" secondAttribute="leading" constant="24" id="rku-04-cDj"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-KK-bVJ">
@@ -287,9 +333,6 @@
         <image name="downpoint" width="12" height="7.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

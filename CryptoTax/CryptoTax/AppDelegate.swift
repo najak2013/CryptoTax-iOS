@@ -19,19 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
-//        let commonConenctions = CommonConnections()
-//
-//        commonConenctions.initAPI(initCompletionHandler: { initResult in
-//            switch initResult {
-//            case let .success(initResult):
-//                print(initResult)
-//            case let .failure(error):
-//                print(error)
-//            }
-//        })
-        
         FirebaseApp.configure()
         
         Messaging.messaging().delegate = self

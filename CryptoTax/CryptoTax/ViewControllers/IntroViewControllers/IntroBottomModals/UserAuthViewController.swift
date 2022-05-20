@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserAuthViewController: BaseViewController {
+class UserAuthViewController: UIViewController {
 
     @IBOutlet weak var contentViewConst: NSLayoutConstraint!
     @IBOutlet var backgroundView: UIView!
@@ -17,7 +17,7 @@ class UserAuthViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ModalViewRadius().viewRadius(contentView)
         // Do any additional setup after loading the view.
     }
     
@@ -38,10 +38,13 @@ class UserAuthViewController: BaseViewController {
     }
     
     @IBAction func backgroundClick(_ sender: Any) {
-        closeModal()
+        closeModal(closeModalHandler: {})
     }
+                   
     @IBAction func okButton(_ sender: Any) {
-        closeModal()
+        closeModal(closeModalHandler: {
+            self.delegate?.nextView(self)
+        })
     }
     
     private func viewRadius(_ view: UIView) {
@@ -50,7 +53,7 @@ class UserAuthViewController: BaseViewController {
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
-    func closeModal() {
+    func closeModal(closeModalHandler: @escaping () -> Void) {
         UIView.animate(withDuration: 0.1, delay: 0, animations: {
             self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
         }, completion: nil)
@@ -61,7 +64,7 @@ class UserAuthViewController: BaseViewController {
             self.view.layoutIfNeeded()
         }, completion: {_ in
             self.dismiss(animated: false)
-            self.delegate?.nextView(self)
+            closeModalHandler()
         })
     }
 }

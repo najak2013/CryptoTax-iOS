@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IntroPermissionModalViewController: BaseViewController {
+class IntroPermissionModalViewController: UIViewController {
 
 
     var delegate: NextViewProtocol?
@@ -17,24 +17,11 @@ class IntroPermissionModalViewController: BaseViewController {
     
     @IBOutlet weak var contentViewConst: NSLayoutConstraint!
     
-    @IBOutlet var closeModalButton: [UIButton]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewRadius(contentView)
-        
-        for button in closeModalButton {
-            button.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
-
-        }
-        
-    }
-    
-    private func viewRadius(_ view: UIView) {
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 10
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        ModalViewRadius().viewRadius(contentView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,7 +40,20 @@ class IntroPermissionModalViewController: BaseViewController {
     }
 
     
-    @objc func closeModal() {
+    @IBAction func backgroundClick(_ sender: Any) {
+        closeModal(closeModalHandler: {
+        })
+    }
+    
+    
+    @IBAction func okButton(_ sender: Any) {
+        closeModal(closeModalHandler: {
+            self.delegate?.nextView(self)
+        })
+    }
+    
+    
+    func closeModal(closeModalHandler: @escaping () -> Void) {
         UIView.animate(withDuration: 0.1, delay: 0, animations: {
             self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
         }, completion: nil)
@@ -64,7 +64,7 @@ class IntroPermissionModalViewController: BaseViewController {
             self.view.layoutIfNeeded()
         }, completion: {_ in
             self.dismiss(animated: false)
-            self.delegate?.nextView(self)
+            closeModalHandler()
         })
     }
     
@@ -86,11 +86,11 @@ extension UILabel {
         }
     }
 }
-
-// UIDevice 익스텐션으로 만들어줍니다.
-extension UIDevice {
-    var hasNotch: Bool {
-        let bottom = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.safeAreaInsets.bottom ?? 0
-        return bottom > 0
-    }
-}
+//
+//// UIDevice 익스텐션으로 만들어줍니다.
+//extension UIDevice {
+//    var hasNotch: Bool {
+//        let bottom = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.safeAreaInsets.bottom ?? 0
+//        return bottom > 0
+//    }
+//}
