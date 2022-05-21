@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FinishedCoinTableViewCell: UITableViewCell {
+class BalanceCoinTableViewCell: UITableViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var coinNameLabel: UILabel!
@@ -15,6 +15,7 @@ class FinishedCoinTableViewCell: UITableViewCell {
     @IBOutlet weak var valuationPriceLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
         
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -173,6 +173,7 @@ extension ExchangeConnectionViewController: UICollectionViewDataSource {
             default:
                 assert(false, "응 아니야")
         }
+        return UICollectionReusableView()
     }
 }
 

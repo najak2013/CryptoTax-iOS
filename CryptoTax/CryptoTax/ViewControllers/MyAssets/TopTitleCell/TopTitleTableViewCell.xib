@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,7 +32,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="linkColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tml-bz-HQ8" secondAttribute="bottom" constant="30" id="5zc-Q8-3Bs"/>
                             <constraint firstItem="tml-bz-HQ8" firstAttribute="leading" secondItem="f1v-Nt-wAh" secondAttribute="leading" constant="24" id="XPO-lm-Zbt"/>
@@ -59,9 +57,4 @@
             <point key="canvasLocation" x="139" y="80"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

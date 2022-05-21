@@ -9,15 +9,11 @@ import UIKit
 import Charts
 import TinyConstraints
 
-class FirstTableViewCell: UITableViewCell, ChartViewDelegate {
+class GraphTableViewCell: UITableViewCell, ChartViewDelegate {
     
     @IBOutlet weak var toggleSwitchView: UIView!
-    
     @IBOutlet weak var toggleLeading: NSLayoutConstraint!
-    
-    
     @IBOutlet weak var toggleView: UIView!
-    
     
     @IBOutlet var toggleButtons: [UIButton]!
     

@@ -4564,7 +4564,7 @@
                                 <rect key="frame" x="0.0" y="544" width="375" height="127"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거래내역을 모두 모았어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-Ea-wHj">
-                                        <rect key="frame" x="92.333333333333329" y="0.0" width="190.33333333333337" height="23"/>
+                                        <rect key="frame" x="97.000000000000014" y="0.0" width="181.33333333333337" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="mjf-mA-M9c"/>
                                         </constraints>

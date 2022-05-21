@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LineTableViewCell" id="KGk-i7-Jjw" customClass="LineTableViewCell" customModule="CryptoTax" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrw-Sf-6Ep">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBE-0g-Swg">
+                                <rect key="frame" x="24" y="8" width="351" height="1"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.90980392156862744" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="DhQ-oC-QMC"/>
+                            <constraint firstAttribute="trailing" secondItem="iBE-0g-Swg" secondAttribute="trailing" id="FJB-BU-5OI"/>
+                            <constraint firstItem="iBE-0g-Swg" firstAttribute="leading" secondItem="rrw-Sf-6Ep" secondAttribute="leading" constant="24" id="Znl-FE-w5c"/>
+                            <constraint firstAttribute="bottom" secondItem="iBE-0g-Swg" secondAttribute="bottom" constant="8" id="kSO-82-2jX"/>
+                            <constraint firstItem="iBE-0g-Swg" firstAttribute="top" secondItem="rrw-Sf-6Ep" secondAttribute="top" constant="8" id="lnK-1I-3q0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="rrw-Sf-6Ep" secondAttribute="bottom" id="1Bn-cc-xBw"/>
+                    <constraint firstAttribute="trailing" secondItem="rrw-Sf-6Ep" secondAttribute="trailing" id="8fV-L9-QXM"/>
+                    <constraint firstItem="rrw-Sf-6Ep" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="D4C-cW-qzZ"/>
+                    <constraint firstItem="rrw-Sf-6Ep" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Og7-dv-Kc0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="139" y="84"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
