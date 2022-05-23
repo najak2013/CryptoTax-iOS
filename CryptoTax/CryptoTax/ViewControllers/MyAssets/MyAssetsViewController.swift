@@ -269,6 +269,8 @@ extension MyAssetsViewController: UITableViewDataSource {
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "RatioTableViewCell", for: indexPath) as! RatioTableViewCell
             let coinName = coinRatio[indexPath.row].key
             let coinRatio = coinRatio[indexPath.row].value
+            cell.coinColorView.layer.cornerRadius = cell.coinColorView.layer.frame.width / 2
+            cell.coinColorView.clipsToBounds = true
             cell.coinNameLabel.text = coinName
             cell.coinRatioLabel.text = "\(coinRatio * 100)%"
             return cell

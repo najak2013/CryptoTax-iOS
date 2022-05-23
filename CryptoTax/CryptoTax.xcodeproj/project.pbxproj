@@ -59,6 +59,14 @@
 		39D1D2E4283A113F0013F1D1 /* MyTaxModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2E3283A113F0013F1D1 /* MyTaxModels.swift */; };
 		39D1D2E6283A130F0013F1D1 /* MyTaxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2E5283A130F0013F1D1 /* MyTaxViewModel.swift */; };
 		39D1D2ED283B28760013F1D1 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2EC283B28760013F1D1 /* TransactionsViewController.swift */; };
+		39D1D2F7283B327E0013F1D1 /* TopMsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2F5283B327E0013F1D1 /* TopMsgTableViewCell.swift */; };
+		39D1D2F8283B327E0013F1D1 /* TopMsgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D2F6283B327E0013F1D1 /* TopMsgTableViewCell.xib */; };
+		39D1D2FA283B34C30013F1D1 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2F9283B34C30013F1D1 /* CommonExtensions.swift */; };
+		39D1D2FC283B40660013F1D1 /* TransactionsConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2FB283B40660013F1D1 /* TransactionsConnections.swift */; };
+		39D1D2FE283B41CF0013F1D1 /* TransactionsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2FD283B41CF0013F1D1 /* TransactionsModels.swift */; };
+		39D1D300283B4F820013F1D1 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2FF283B4F820013F1D1 /* TransactionsViewModel.swift */; };
+		39D1D305283B5A500013F1D1 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D303283B5A500013F1D1 /* TransactionsTableViewCell.swift */; };
+		39D1D306283B5A500013F1D1 /* TransactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D304283B5A500013F1D1 /* TransactionsTableViewCell.xib */; };
 		39D5A1862820D77400BDF54A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D5A1852820D77400BDF54A /* IntroViewController.swift */; };
 		39D6C8732828FAAE00B21C9E /* SelectCarrierModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */; };
 		39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */; };
@@ -138,6 +146,14 @@
 		39D1D2E3283A113F0013F1D1 /* MyTaxModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxModels.swift; sourceTree = "<group>"; };
 		39D1D2E5283A130F0013F1D1 /* MyTaxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxViewModel.swift; sourceTree = "<group>"; };
 		39D1D2EC283B28760013F1D1 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		39D1D2F5283B327E0013F1D1 /* TopMsgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMsgTableViewCell.swift; sourceTree = "<group>"; };
+		39D1D2F6283B327E0013F1D1 /* TopMsgTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopMsgTableViewCell.xib; sourceTree = "<group>"; };
+		39D1D2F9283B34C30013F1D1 /* CommonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
+		39D1D2FB283B40660013F1D1 /* TransactionsConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsConnections.swift; sourceTree = "<group>"; };
+		39D1D2FD283B41CF0013F1D1 /* TransactionsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsModels.swift; sourceTree = "<group>"; };
+		39D1D2FF283B4F820013F1D1 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		39D1D303283B5A500013F1D1 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewCell.swift; sourceTree = "<group>"; };
+		39D1D304283B5A500013F1D1 /* TransactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsTableViewCell.xib; sourceTree = "<group>"; };
 		39D5A1852820D77400BDF54A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCarrierModalViewController.swift; sourceTree = "<group>"; };
 		39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carrierTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +227,7 @@
 			children = (
 				39327343282BA3EF002EFFAF /* Utils.swift */,
 				39A7D2E9282E128E0075A73B /* AES256CBC.swift */,
+				39D1D2F9283B34C30013F1D1 /* CommonExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -293,6 +310,7 @@
 			children = (
 				39D1D2E5283A130F0013F1D1 /* MyTaxViewModel.swift */,
 				39B18C2F283797EF000FE0B6 /* MyAssetsViewModel.swift */,
+				39D1D2FF283B4F820013F1D1 /* TransactionsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -380,6 +398,8 @@
 			isa = PBXGroup;
 			children = (
 				39D1D2EC283B28760013F1D1 /* TransactionsViewController.swift */,
+				39D1D2F4283B32640013F1D1 /* TopMsgCell */,
+				39D1D302283B59900013F1D1 /* TransactionsCell */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -390,6 +410,24 @@
 				39B18C1828365F33000FE0B6 /* CoinOptionCell */,
 			);
 			path = CommonCells;
+			sourceTree = "<group>";
+		};
+		39D1D2F4283B32640013F1D1 /* TopMsgCell */ = {
+			isa = PBXGroup;
+			children = (
+				39D1D2F5283B327E0013F1D1 /* TopMsgTableViewCell.swift */,
+				39D1D2F6283B327E0013F1D1 /* TopMsgTableViewCell.xib */,
+			);
+			path = TopMsgCell;
+			sourceTree = "<group>";
+		};
+		39D1D302283B59900013F1D1 /* TransactionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				39D1D303283B5A500013F1D1 /* TransactionsTableViewCell.swift */,
+				39D1D304283B5A500013F1D1 /* TransactionsTableViewCell.xib */,
+			);
+			path = TransactionsCell;
 			sourceTree = "<group>";
 		};
 		39D5A1842820D76300BDF54A /* IntroViewControllers */ = {
@@ -542,6 +580,7 @@
 				3900F0F1283627F0000D9C30 /* MyTaxConnections.swift */,
 				3900F0F42836283F000D9C30 /* ExchangeConnections.swift */,
 				39B18C1F2836678C000FE0B6 /* BalanceConnections.swift */,
+				39D1D2FB283B40660013F1D1 /* TransactionsConnections.swift */,
 			);
 			path = Connections;
 			sourceTree = "<group>";
@@ -554,6 +593,7 @@
 				3900F0F628362D7A000D9C30 /* ExchangeJoinModels.swift */,
 				39B18C1D283664AF000FE0B6 /* BalanceCoinModels.swift */,
 				39B18C2528373E41000FE0B6 /* BalanceExchangeModels.swift */,
+				39D1D2FD283B41CF0013F1D1 /* TransactionsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -630,6 +670,7 @@
 				39B18C1C28365F6F000FE0B6 /* CoinOptionTableViewCell.xib in Resources */,
 				39D1D2E2283A08F40013F1D1 /* UsdInfoTableViewCell.xib in Resources */,
 				39E5E6542807DA7D0065544A /* tab_message_animate.json in Resources */,
+				39D1D306283B5A500013F1D1 /* TransactionsTableViewCell.xib in Resources */,
 				390A715B2809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				39B18C1728365CD9000FE0B6 /* TopTitleTableViewCell.xib in Resources */,
 				39D1D2D52839FB520013F1D1 /* WalletTableViewCell.xib in Resources */,
@@ -648,6 +689,7 @@
 				39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */,
 				39B18C372838BB75000FE0B6 /* LineTableViewCell.xib in Resources */,
 				390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */,
+				39D1D2F8283B327E0013F1D1 /* TopMsgTableViewCell.xib in Resources */,
 				39D1D2DB283A07340013F1D1 /* AddExchangeTableViewCell.xib in Resources */,
 				39E5E6322807D5DE0065544A /* Assets.xcassets in Resources */,
 				39E5E6302807D5DE0065544A /* Main.storyboard in Resources */,
@@ -705,8 +747,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D6C8732828FAAE00B21C9E /* SelectCarrierModalViewController.swift in Sources */,
+				39D1D300283B4F820013F1D1 /* TransactionsViewModel.swift in Sources */,
 				39D1D2C42838E2DB0013F1D1 /* RatioGraphTableViewCell.swift in Sources */,
 				39D5A1862820D77400BDF54A /* IntroViewController.swift in Sources */,
+				39D1D2F7283B327E0013F1D1 /* TopMsgTableViewCell.swift in Sources */,
 				39E5E64B2807D7100065544A /* MoreViewController.swift in Sources */,
 				39D1D2BE2838C5170013F1D1 /* BalanceCoinTableViewCell.swift in Sources */,
 				39B18C30283797EF000FE0B6 /* MyAssetsViewModel.swift in Sources */,
@@ -716,9 +760,11 @@
 				39D1D2DA283A07340013F1D1 /* AddExchangeTableViewCell.swift in Sources */,
 				39D1D2CA2838E36D0013F1D1 /* RatioTableViewCell.swift in Sources */,
 				3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */,
+				39D1D2FE283B41CF0013F1D1 /* TransactionsModels.swift in Sources */,
 				3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */,
 				39A700242821206A00DE5CE2 /* UserRegistViewController.swift in Sources */,
 				39E5E6492807D7080065544A /* MyTaxViewController.swift in Sources */,
+				39D1D2FC283B40660013F1D1 /* TransactionsConnections.swift in Sources */,
 				39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */,
 				39D1D2E4283A113F0013F1D1 /* MyTaxModels.swift in Sources */,
 				39EFF4E9282E028B003C9426 /* CommonConnections.swift in Sources */,
@@ -734,6 +780,7 @@
 				39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */,
 				3900F10328364FD4000D9C30 /* SpaceTableViewCell.swift in Sources */,
 				39B18C2628373E41000FE0B6 /* BalanceExchangeModels.swift in Sources */,
+				39D1D2FA283B34C30013F1D1 /* CommonExtensions.swift in Sources */,
 				39E5E6432807D67F0065544A /* BaseViewController.swift in Sources */,
 				39D1D2E6283A130F0013F1D1 /* MyTaxViewModel.swift in Sources */,
 				39A7D2EF282E4D760075A73B /* SelfRegistViewController.swift in Sources */,
@@ -751,6 +798,7 @@
 				39D1D2D42839FB520013F1D1 /* WalletTableViewCell.swift in Sources */,
 				39D1D2E1283A08F40013F1D1 /* UsdInfoTableViewCell.swift in Sources */,
 				39327344282BA3EF002EFFAF /* Utils.swift in Sources */,
+				39D1D305283B5A500013F1D1 /* TransactionsTableViewCell.swift in Sources */,
 				39870AF42833AF9B00995A83 /* BarChartTestViewController.swift in Sources */,
 				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,
 			);
