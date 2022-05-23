@@ -42,7 +42,6 @@ class ExchangeConnectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getExchangeList()
         ExchangeCollectionView.reloadData()
     }
     
@@ -68,29 +67,6 @@ class ExchangeConnectionViewController: UIViewController {
     func getClientSelectCount() -> Int {
         return testExchangeData.exchangeSelected[0].count + testExchangeData.exchangeSelected[1].count + testExchangeData.exchangeSelected[2].count
     }
-    
-    func getExchangeList() {
-        BalanceConnections().exchange(session: UserInfo().getUserSession(), exchange: "", BalanceExchangeHandler: { (result) in
-            switch result {
-            case let .success(result):
-                if result.code == "0000" {
-                    
-                    guard let exchanges = result.more.exchange else { return }
-                    for exchange in exchanges {
-                        print(exchange)
-                    }
-                } else {
-                    let alert = UIAlertController(title: "초회 실패", message: "Error Code : \(result.code)", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: false, completion: nil)
-                }
-            case let .failure(error):
-                print(error)
-            }
-        })
-    }
-    
     
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

@@ -81,7 +81,7 @@ class GraphTableViewCell: UITableViewCell, ChartViewDelegate {
         
         
 //        months = ["Jan", "Feb", "Mar", "Jan", "Feb", "Mar", "Jan", "Feb", "Mar", "Jan"]
-        unitsSold = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8, 9, -10, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 7, -8, 9, 10, 5, 6, 7, 8, 9, 10]
+        unitsSold = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 5, 6, 7, 10, 15, 10, 13, 13, 14, 19, 20, 22, 25, 20, 20, 23, 25, 25, 24, 23, 22, 20, 19, 20, 21, 20, 40, 41, 38, 40, 39, 41, 9, 10]
         testData(dataPoints: unitsSold, lineValues: unitsSold)
         
         setData()

@@ -21,7 +21,9 @@ class MyAssetsViewModel {
     
     var coinRatio: [Dictionary<String, Double>.Element]?
     
-    
+    var exchanges: [Exchange]?
+    var exchangesCount: Int = 0
+    var usdInfo: UsdInfo?
     
 //    func getCoinCount(CoinCountHandler: @escaping () -> ()) {
 //        getCoinBalance(exchanges: "", GetCoinHandler: { result in
@@ -73,6 +75,25 @@ class MyAssetsViewModel {
         })
     }
     
+    func getExchangeBalanceData(GetFinishedHandler: @escaping () -> ()) {
+        getExchangeBalance(exchanges: "", symbol: "", GetExchangeHandler: { result in
+            switch result {
+            case let .success(result):
+                guard let exchanges = result.more.exchange else { return }
+                guard let usdInfo = result.more.usdInfo else { return }
+                
+                self.exchanges = exchanges
+                self.exchangesCount = exchanges.count
+                self.usdInfo = usdInfo
+                
+                GetFinishedHandler()
+            case let .failure(error):
+                print(error)
+            }
+        })
+    }
+    
+    
     func getHighestRatioCoin(airDrop: [CoinInfo], running: [CoinInfo], finished: [CoinInfo]) {
         
         var ratioList = [String: Double]()
@@ -82,20 +103,16 @@ class MyAssetsViewModel {
             
             ratioList[(coin.name?.ko ?? coin.name?.en) ?? "error"] = coinRatio
         }
-        
         for coin in running {
             guard let coinRatio = Double(coin.ratio ?? "0.00") else { return }
             
             ratioList[(coin.name?.ko ?? coin.name?.en) ?? "error"] = coinRatio
         }
-
         for coin in finished {
             guard let coinRatio = Double(coin.ratio ?? "0.00") else { return }
             
             ratioList[(coin.name?.ko ?? coin.name?.en) ?? "error"] = coinRatio
         }
-
-        print(ratioList)
         coinRatio = ratioList.sorted { $0.1 > $1.1 }
         
 //        for i in 0..<sortedDitionary.count {
@@ -106,12 +123,26 @@ class MyAssetsViewModel {
     func getCoinBalance(exchanges: String, GetCoinHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
         // n1hwShMDXUrY1jLitXf/0g==
         // UserInfo().getUserSession()
-        BalanceConnections().coin(exchanges: exchanges, session: "n1hwShMDXUrY1jLitXf/0g==", CoinBalanceHandler: { result in
+        BalanceConnections().coin(exchanges: exchanges, session: UserInfo().getUserSession(), CoinBalanceHandler: { result in
             switch result {
             case let .success(result):
                 GetCoinHandler(.success(result))
             case let .failure(error):
                 GetCoinHandler(.failure(error))
+            }
+        })
+    }
+    
+    
+    func getExchangeBalance(exchanges: String, symbol: String, GetExchangeHandler: @escaping (Result<BalanceExchangeResponseModel, Error>) -> Void) {
+        // n1hwShMDXUrY1jLitXf/0g==
+        // UserInfo().getUserSession()x
+        BalanceConnections().exchange(exchanges: exchanges, symbol: symbol, session: UserInfo().getUserSession(), ExchangeBalanceHandler: { result in
+            switch result {
+            case let .success(result):
+                GetExchangeHandler(.success(result))
+            case let .failure(error):
+                GetExchangeHandler(.failure(error))
             }
         })
     }

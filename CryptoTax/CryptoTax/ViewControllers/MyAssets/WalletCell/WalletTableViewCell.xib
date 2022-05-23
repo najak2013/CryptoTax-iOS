@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletTableViewCell" id="KGk-i7-Jjw" customClass="WalletTableViewCell" customModule="CryptoTax" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsG-lS-5zz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_wallet" translatesAutoresizingMaskIntoConstraints="NO" id="Dza-Te-TMQ">
+                                <rect key="frame" x="24" y="20.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WVG-QY-1eE"/>
+                                    <constraint firstAttribute="width" constant="40" id="c91-Dh-raL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지갑 · 1개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBH-IC-NVL">
+                                <rect key="frame" x="80" y="18" width="61" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="Oo0-lI-WZO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="345,346,329 원 +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oV-a0-tqZ">
+                                <rect key="frame" x="80" y="40" width="141" height="23"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
+                                <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUd-OZ-b05">
+                                <rect key="frame" x="327" y="28.5" width="24" height="24"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_modal_rightpoint" translatesAutoresizingMaskIntoConstraints="NO" id="DxT-AO-JaW">
+                                        <rect key="frame" x="9" y="6.5" width="6.5" height="11"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="DxT-AO-JaW" firstAttribute="leading" secondItem="ZUd-OZ-b05" secondAttribute="leading" constant="9" id="0DS-E1-9Z3"/>
+                                    <constraint firstAttribute="trailing" secondItem="DxT-AO-JaW" secondAttribute="trailing" constant="8.4199999999999999" id="Hra-ab-LhL"/>
+                                    <constraint firstItem="DxT-AO-JaW" firstAttribute="top" secondItem="ZUd-OZ-b05" secondAttribute="top" constant="6.4199999999999999" id="uz1-AL-sYD"/>
+                                    <constraint firstAttribute="width" constant="24" id="vhS-YF-7jY"/>
+                                    <constraint firstAttribute="bottom" secondItem="DxT-AO-JaW" secondAttribute="bottom" constant="6.4100000000000001" id="zcP-Kg-mn4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Dza-Te-TMQ" secondAttribute="bottom" constant="20.5" id="3Lk-pl-Y2I"/>
+                            <constraint firstAttribute="trailing" secondItem="ZUd-OZ-b05" secondAttribute="trailing" constant="24" id="3YO-NP-oYi"/>
+                            <constraint firstItem="MBH-IC-NVL" firstAttribute="leading" secondItem="Dza-Te-TMQ" secondAttribute="trailing" constant="16" id="4kF-PK-RDx"/>
+                            <constraint firstItem="7oV-a0-tqZ" firstAttribute="leading" secondItem="Dza-Te-TMQ" secondAttribute="trailing" constant="16" id="5p7-Rf-S72"/>
+                            <constraint firstItem="Dza-Te-TMQ" firstAttribute="leading" secondItem="UsG-lS-5zz" secondAttribute="leading" constant="24" id="CTq-ZS-CCK"/>
+                            <constraint firstItem="MBH-IC-NVL" firstAttribute="top" secondItem="UsG-lS-5zz" secondAttribute="top" constant="18" id="YmD-7e-ipr"/>
+                            <constraint firstItem="7oV-a0-tqZ" firstAttribute="top" secondItem="UsG-lS-5zz" secondAttribute="top" constant="40" id="YuP-qM-pYp"/>
+                            <constraint firstItem="7oV-a0-tqZ" firstAttribute="top" secondItem="MBH-IC-NVL" secondAttribute="bottom" constant="4" id="a8D-Do-rf1"/>
+                            <constraint firstAttribute="height" constant="81" id="ajz-B9-Kok"/>
+                            <constraint firstAttribute="bottom" secondItem="MBH-IC-NVL" secondAttribute="bottom" constant="45" id="t1f-0P-mBe"/>
+                            <constraint firstAttribute="bottom" secondItem="7oV-a0-tqZ" secondAttribute="bottom" constant="18" id="t5E-3I-DBu"/>
+                            <constraint firstItem="Dza-Te-TMQ" firstAttribute="top" secondItem="UsG-lS-5zz" secondAttribute="top" constant="20.5" id="tYp-JI-KiC"/>
+                            <constraint firstItem="ZUd-OZ-b05" firstAttribute="top" secondItem="UsG-lS-5zz" secondAttribute="top" constant="28.5" id="ucv-XU-iua"/>
+                            <constraint firstAttribute="bottom" secondItem="ZUd-OZ-b05" secondAttribute="bottom" constant="28.5" id="yY6-vY-rmP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="UsG-lS-5zz" secondAttribute="trailing" id="GTa-LH-W8i"/>
+                    <constraint firstItem="UsG-lS-5zz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MIa-gR-Imc"/>
+                    <constraint firstItem="UsG-lS-5zz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ReN-DK-Gbt"/>
+                    <constraint firstAttribute="bottom" secondItem="UsG-lS-5zz" secondAttribute="bottom" id="t25-HP-L1v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameLabel" destination="MBH-IC-NVL" id="SLj-CR-Bzi"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="154"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ico_wallet" width="40" height="41"/>
+        <image name="intro_modal_rightpoint" width="8" height="12"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

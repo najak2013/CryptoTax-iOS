@@ -10,12 +10,14 @@ import Locksmith
 
 class BaseViewController: UIViewController {
 
-    let userRegist = AppFirstTime().userNeedToRegist()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userRegist = AppFirstTime().userNeedToRegist()
         if userRegist {
+            print("여기 실행")
             guard let IntroVC = self.storyboard?.instantiateViewController(withIdentifier: "IntroViewController") as? UINavigationController else { return }
             IntroVC.modalPresentationStyle = .fullScreen
             present(IntroVC, animated: false, completion: nil)

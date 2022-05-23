@@ -29,6 +29,7 @@ public class AppFirstTime {
             print("userLogin : 세션키가 없습니다.")
             return true
         } else {
+            print("userLogin : 세션키가 있습니다.")
             return false
         }
     }
@@ -40,6 +41,7 @@ public class AppFirstTime {
             print("isFirstTime : 처음 시작입니다.")
             return true
         } else {
+            print("isFirstTime : 처음 시작이 아닙니다.")
             return false
         }
     }
