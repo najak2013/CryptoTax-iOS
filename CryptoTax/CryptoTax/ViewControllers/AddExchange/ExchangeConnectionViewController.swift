@@ -42,6 +42,7 @@ class ExchangeConnectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("whawha")
         ExchangeCollectionView.reloadData()
     }
     
@@ -170,11 +171,13 @@ extension ExchangeConnectionViewController: UICollectionViewDelegate {
             }
         } else {
             print("선택한 거래소를 수동으로 입력해주세요.")
+            
             guard let selfRegistVC = self.storyboard?.instantiateViewController(withIdentifier: "SelfRegistViewController") as? SelfRegistViewController else { return }
             selfRegistVC.section = indexPath.section
             selfRegistVC.row = indexPath.row
             selfRegistVC.exchange = selectedExchange
-            self.navigationController?.pushViewController(selfRegistVC, animated: true)
+            self.present(selfRegistVC, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(selfRegistVC, animated: true)
         }
         ExchangeCollectionView.reloadData()
     }

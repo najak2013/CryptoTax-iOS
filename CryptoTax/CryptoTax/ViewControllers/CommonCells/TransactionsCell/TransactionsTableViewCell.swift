@@ -9,16 +9,16 @@ import UIKit
 
 class TransactionsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tradeIcon: UIImageView!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var orderName: UILabel!
-    @IBOutlet weak var sideStringAndExchangeLabel: UILabel!
+    @IBOutlet weak var sideStringAndOthersLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var feeLabel: UILabel!
     @IBOutlet weak var feeView: UIView!
     @IBOutlet weak var amountLabeTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var cellHeightConstraint: NSLayoutConstraint!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

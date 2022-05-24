@@ -16,8 +16,8 @@ class TransactionsViewController: UIViewController {
     
     var transactionsViewModel = TransactionsViewModel()
     var transactions: [Transactions]?
-    var yearLabels: [String] = []
-    var dateLabels: [String] = []
+    var yearLabels: [String : Int] = [:]
+    var dateLabels: [String : Int ] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,35 +102,69 @@ extension TransactionsViewController: UITableViewDataSource {
             let year = yearDateFormatter.string(from: convertDate!)
             let date = dateDateFormatter.string(from: convertDate!)
             
-            
-            
-            
-            if yearLabels.contains(year) {
-                cell.cellHeightConstraint.constant = 197 - 60
+            if yearLabels.keys.contains(year) {
+                if indexPath.row == yearLabels[year] {
+                    cell.cellHeightConstraint.constant = 197
+                } else {
+                    cell.cellHeightConstraint.constant = 137
+                    
+                    
+                    if dateLabels.keys.contains(date) {
+                        if indexPath.row == dateLabels[date] {
+                            cell.cellHeightConstraint.constant = 137
+                        } else {
+                            cell.cellHeightConstraint.constant = 80
+                        }
+                    } else {
+                        dateLabels[date] = indexPath.row
+                    }
+                }
             } else {
-                yearLabels.append(year)
-                cell.cellHeightConstraint.constant = 197
+                yearLabels[year] = indexPath.row
+                if dateLabels.keys.contains(date) {
+                    if indexPath.row == dateLabels[date] {
+                        cell.cellHeightConstraint.constant = 137
+                    } else {
+                        cell.cellHeightConstraint.constant = 80
+                    }
+                } else {
+                    dateLabels[date] = indexPath.row
+                }
             }
-                
-            print(yearLabels)
-                
-                
+            
+            
+            
+            
             cell.yearLabel.text = year
             cell.dateLabel.text = date
             cell.orderName.text = orderName
             
             if let fee = transactions?[indexPath.row].fees {
-                cell.feeLabel.text = fee
+                cell.feeView.isHidden = false
+                cell.amountLabeTopConstraint.constant = 20
+                if sideString == "출금" {
+                    cell.feeLabel.text = fee.insertComma + orderCurrency
+                } else {
+                    cell.feeLabel.text = fee.insertComma + "원"
+                }
             } else {
                 cell.feeView.isHidden = true
                 cell.amountLabeTopConstraint.constant = 30
             }
-            cell.sideStringAndExchangeLabel.text = "\(sideString) | \(exchangeName)"
+            cell.sideStringAndOthersLabel.text = "\(sideString) | \(exchangeName)"
+            
+            let icoBuySeq: [String] = ["출금(스테이킹)", "출금", "판매"]
+            
+            if icoBuySeq.contains(sideString) {
+                cell.tradeIcon.image = UIImage(named: "ico_buy")
+            } else {
+                cell.tradeIcon.image = UIImage(named: "ico_sell")
+            }
             
             if orderCurrency == "KRW" {
-                amount = amount.insertComma + "원"
+                amount = amount.insertComma + " 원"
             } else {
-                amount = amount + orderCurrency
+                amount = amount + " " + orderCurrency
             }
             cell.amountLabel.text = amount
             

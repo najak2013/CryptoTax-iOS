@@ -19,6 +19,8 @@
 		390A715B2809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */; };
 		390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */; };
 		3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3913A0BC28093708008E8FC1 /* PasswordViewController.swift */; };
+		392ED6C7283BBBF600A38187 /* CoinDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392ED6C6283BBBF600A38187 /* CoinDetailsViewModel.swift */; };
+		392ED6C9283BC00400A38187 /* BalanceGraphModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392ED6C8283BC00400A38187 /* BalanceGraphModels.swift */; };
 		39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39327340282B9F21002EFFAF /* WellcomeViewController.swift */; };
 		39327344282BA3EF002EFFAF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39327343282BA3EF002EFFAF /* Utils.swift */; };
 		39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAC282B933B008DB62B /* SmsAuthViewController.swift */; };
@@ -67,6 +69,9 @@
 		39D1D300283B4F820013F1D1 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2FF283B4F820013F1D1 /* TransactionsViewModel.swift */; };
 		39D1D305283B5A500013F1D1 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D303283B5A500013F1D1 /* TransactionsTableViewCell.swift */; };
 		39D1D306283B5A500013F1D1 /* TransactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D304283B5A500013F1D1 /* TransactionsTableViewCell.xib */; };
+		39D1D309283B93BC0013F1D1 /* CoinDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D308283B93BC0013F1D1 /* CoinDetailsViewController.swift */; };
+		39D1D30D283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D30B283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.swift */; };
+		39D1D30E283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D30C283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.xib */; };
 		39D5A1862820D77400BDF54A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D5A1852820D77400BDF54A /* IntroViewController.swift */; };
 		39D6C8732828FAAE00B21C9E /* SelectCarrierModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */; };
 		39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */; };
@@ -106,6 +111,8 @@
 		390A71562809148F00D6EDC5 /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
 		390A71572809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
 		3913A0BC28093708008E8FC1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		392ED6C6283BBBF600A38187 /* CoinDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsViewModel.swift; sourceTree = "<group>"; };
+		392ED6C8283BC00400A38187 /* BalanceGraphModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceGraphModels.swift; sourceTree = "<group>"; };
 		39327340282B9F21002EFFAF /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
 		39327343282BA3EF002EFFAF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		39441CAC282B933B008DB62B /* SmsAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsAuthViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +161,9 @@
 		39D1D2FF283B4F820013F1D1 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		39D1D303283B5A500013F1D1 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewCell.swift; sourceTree = "<group>"; };
 		39D1D304283B5A500013F1D1 /* TransactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsTableViewCell.xib; sourceTree = "<group>"; };
+		39D1D308283B93BC0013F1D1 /* CoinDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsViewController.swift; sourceTree = "<group>"; };
+		39D1D30B283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailGraphTableViewCell.swift; sourceTree = "<group>"; };
+		39D1D30C283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinDetailGraphTableViewCell.xib; sourceTree = "<group>"; };
 		39D5A1852820D77400BDF54A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		39D6C8722828FAAE00B21C9E /* SelectCarrierModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCarrierModalViewController.swift; sourceTree = "<group>"; };
 		39D6C8762828FB2D00B21C9E /* carrierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carrierTableViewCell.swift; sourceTree = "<group>"; };
@@ -311,6 +321,7 @@
 				39D1D2E5283A130F0013F1D1 /* MyTaxViewModel.swift */,
 				39B18C2F283797EF000FE0B6 /* MyAssetsViewModel.swift */,
 				39D1D2FF283B4F820013F1D1 /* TransactionsViewModel.swift */,
+				392ED6C6283BBBF600A38187 /* CoinDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -399,7 +410,6 @@
 			children = (
 				39D1D2EC283B28760013F1D1 /* TransactionsViewController.swift */,
 				39D1D2F4283B32640013F1D1 /* TopMsgCell */,
-				39D1D302283B59900013F1D1 /* TransactionsCell */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -407,7 +417,11 @@
 		39D1D2F3283B2F990013F1D1 /* CommonCells */ = {
 			isa = PBXGroup;
 			children = (
+				39870AC4283281EE00995A83 /* SpaceCell */,
 				39B18C1828365F33000FE0B6 /* CoinOptionCell */,
+				39B18C1328365CC8000FE0B6 /* TopTitleCell */,
+				39D1D2CC28393E130013F1D1 /* ExchangeCell */,
+				39D1D302283B59900013F1D1 /* TransactionsCell */,
 			);
 			path = CommonCells;
 			sourceTree = "<group>";
@@ -428,6 +442,24 @@
 				39D1D304283B5A500013F1D1 /* TransactionsTableViewCell.xib */,
 			);
 			path = TransactionsCell;
+			sourceTree = "<group>";
+		};
+		39D1D307283B93760013F1D1 /* CoinDetails */ = {
+			isa = PBXGroup;
+			children = (
+				39D1D308283B93BC0013F1D1 /* CoinDetailsViewController.swift */,
+				39D1D30A283B9E960013F1D1 /* CoinDetailsGraph */,
+			);
+			path = CoinDetails;
+			sourceTree = "<group>";
+		};
+		39D1D30A283B9E960013F1D1 /* CoinDetailsGraph */ = {
+			isa = PBXGroup;
+			children = (
+				39D1D30B283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.swift */,
+				39D1D30C283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.xib */,
+			);
+			path = CoinDetailsGraph;
 			sourceTree = "<group>";
 		};
 		39D5A1842820D76300BDF54A /* IntroViewControllers */ = {
@@ -496,6 +528,7 @@
 				39A7D2ED282E4D440075A73B /* AddExchange */,
 				3913A0BB280936F7008E8FC1 /* Password */,
 				39D1D2E7283B28220013F1D1 /* Transactions */,
+				39D1D307283B93760013F1D1 /* CoinDetails */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -529,13 +562,10 @@
 			children = (
 				39E5E64C2807D72C0065544A /* MyAssetsViewController.swift */,
 				39870AC0283281BD00995A83 /* GraphCell */,
-				39870AC4283281EE00995A83 /* SpaceCell */,
-				39B18C1328365CC8000FE0B6 /* TopTitleCell */,
 				39D1D2BB2838C4D00013F1D1 /* BalanceCoinCell */,
 				39B18C312838BB48000FE0B6 /* LineCell */,
 				39D1D2C12838E2760013F1D1 /* RatioGraphCell */,
 				39D1D2C02838D5A90013F1D1 /* RatioCell */,
-				39D1D2CC28393E130013F1D1 /* ExchangeCell */,
 				39D1D2D12839FB310013F1D1 /* WalletCell */,
 				39D1D2D6283A07160013F1D1 /* AddExchangeCell */,
 				39D1D2D7283A07220013F1D1 /* UsdInfoCell */,
@@ -594,6 +624,7 @@
 				39B18C1D283664AF000FE0B6 /* BalanceCoinModels.swift */,
 				39B18C2528373E41000FE0B6 /* BalanceExchangeModels.swift */,
 				39D1D2FD283B41CF0013F1D1 /* TransactionsModels.swift */,
+				392ED6C8283BC00400A38187 /* BalanceGraphModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -691,6 +722,7 @@
 				390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */,
 				39D1D2F8283B327E0013F1D1 /* TopMsgTableViewCell.xib in Resources */,
 				39D1D2DB283A07340013F1D1 /* AddExchangeTableViewCell.xib in Resources */,
+				39D1D30E283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.xib in Resources */,
 				39E5E6322807D5DE0065544A /* Assets.xcassets in Resources */,
 				39E5E6302807D5DE0065544A /* Main.storyboard in Resources */,
 				390A715A2809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf in Resources */,
@@ -758,15 +790,18 @@
 				39B18C362838BB75000FE0B6 /* LineTableViewCell.swift in Sources */,
 				3900F0F52836283F000D9C30 /* ExchangeConnections.swift in Sources */,
 				39D1D2DA283A07340013F1D1 /* AddExchangeTableViewCell.swift in Sources */,
+				392ED6C7283BBBF600A38187 /* CoinDetailsViewModel.swift in Sources */,
 				39D1D2CA2838E36D0013F1D1 /* RatioTableViewCell.swift in Sources */,
 				3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */,
 				39D1D2FE283B41CF0013F1D1 /* TransactionsModels.swift in Sources */,
 				3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */,
+				39D1D309283B93BC0013F1D1 /* CoinDetailsViewController.swift in Sources */,
 				39A700242821206A00DE5CE2 /* UserRegistViewController.swift in Sources */,
 				39E5E6492807D7080065544A /* MyTaxViewController.swift in Sources */,
 				39D1D2FC283B40660013F1D1 /* TransactionsConnections.swift in Sources */,
 				39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */,
 				39D1D2E4283A113F0013F1D1 /* MyTaxModels.swift in Sources */,
+				392ED6C9283BC00400A38187 /* BalanceGraphModels.swift in Sources */,
 				39EFF4E9282E028B003C9426 /* CommonConnections.swift in Sources */,
 				39B18C1628365CD9000FE0B6 /* TopTitleTableViewCell.swift in Sources */,
 				3900F0F728362D7A000D9C30 /* ExchangeJoinModels.swift in Sources */,
@@ -798,6 +833,7 @@
 				39D1D2D42839FB520013F1D1 /* WalletTableViewCell.swift in Sources */,
 				39D1D2E1283A08F40013F1D1 /* UsdInfoTableViewCell.swift in Sources */,
 				39327344282BA3EF002EFFAF /* Utils.swift in Sources */,
+				39D1D30D283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.swift in Sources */,
 				39D1D305283B5A500013F1D1 /* TransactionsTableViewCell.swift in Sources */,
 				39870AF42833AF9B00995A83 /* BarChartTestViewController.swift in Sources */,
 				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,

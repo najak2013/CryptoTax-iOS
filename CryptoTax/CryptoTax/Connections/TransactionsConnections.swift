@@ -15,7 +15,11 @@ class TransactionsConnections {
     func transactions(exchanges: String, symbol: String, start_date:String, sort_order:String, skip:String, limit:String, session: String, TransactionsHandler: @escaping (Result<TransactionsResponseModel, Error>) -> Void) {
         let url = MAIN_URL + "/user/coin/transactions"
         
-        AF.request(url, method: .get, encoding: URLEncoding.queryString, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
+        
+        let parameters = ["symbol": symbol]
+        
+        
+        AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
                     .validate(statusCode: 200..<300)
                     //200~300사이 상태만 허용
                     .validate(contentType: ["application/json"])

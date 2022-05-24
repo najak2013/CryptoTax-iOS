@@ -319,9 +319,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="graphView" destination="0Dt-nL-Odx" id="Co0-di-5l3"/>
+                <outlet property="revenueAmountLabel" destination="4CM-4P-zsy" id="311-GV-dw1"/>
                 <outlet property="toggleLeading" destination="OmG-qN-hQC" id="lhU-tX-DSj"/>
                 <outlet property="toggleSwitchView" destination="1aq-pe-2jw" id="kyl-Jv-EE0"/>
                 <outlet property="toggleView" destination="WyX-OJ-ZDl" id="1ci-UJ-dYi"/>
+                <outlet property="totalAssetLabel" destination="8NF-5v-muZ" id="QJP-2y-Ws5"/>
                 <outletCollection property="toggleButtons" destination="esw-bF-40S" collectionClass="NSMutableArray" id="0lu-LL-eoa"/>
                 <outletCollection property="toggleButtons" destination="ykw-iY-wCk" collectionClass="NSMutableArray" id="DI6-Lz-O9D"/>
                 <outletCollection property="toggleButtons" destination="pOl-YP-Q6P" collectionClass="NSMutableArray" id="bRr-Ik-9HF"/>

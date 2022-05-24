@@ -11,6 +11,9 @@ import TinyConstraints
 
 class GraphTableViewCell: UITableViewCell, ChartViewDelegate {
     
+    @IBOutlet weak var totalAssetLabel: UILabel!
+    @IBOutlet weak var revenueAmountLabel: UILabel!
+    
     @IBOutlet weak var toggleSwitchView: UIView!
     @IBOutlet weak var toggleLeading: NSLayoutConstraint!
     @IBOutlet weak var toggleView: UIView!

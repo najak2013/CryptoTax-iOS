@@ -21,15 +21,19 @@ class MyAssetsViewController: BaseViewController {
     
     var totalCoinCount: Int = 0
     
-    var finishedCoin: [CoinInfo]?
-    var airDropCoin: [CoinInfo]?
-    var runningCoin: [CoinInfo]?
+    var finishedCoins: [CoinInfo]?
+    var airDropCoins: [CoinInfo]?
+    var runningCoins: [CoinInfo]?
     
     var coinRatio: [Dictionary<String, Double>.Element] = []
     
     var exchanges: [Exchange]?
     var exchangesCount: Int = 0
     var usdInfo: UsdInfo?
+    
+    var totalAsset: Int = 0
+    var yield: Double = 0.0
+    var revenueAmount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,16 @@ class MyAssetsViewController: BaseViewController {
         assetsContentTableView.delegate = self
         cellRegister()
         
+        myAssetsViewModel.getGraphData { [weak self] in
+            self?.totalAsset = self?.myAssetsViewModel.totalAsset ?? 0
+            self?.yield = self?.myAssetsViewModel.yield ?? 0.0
+            self?.revenueAmount = self?.myAssetsViewModel.revenueAmount ?? 0
+            
+            DispatchQueue.main.async {
+                self?.assetsContentTableView.reloadData()
+            }
+        }
+        
         myAssetsViewModel.getCoinBalanceData { [weak self] in
             self?.airDropCount = self?.myAssetsViewModel.airDropCount ?? 0
             self?.runningCount = self?.myAssetsViewModel.runningCount ?? 0
@@ -45,9 +59,9 @@ class MyAssetsViewController: BaseViewController {
             
             self?.totalCoinCount = self?.myAssetsViewModel.totalCoinCount ?? 0
             
-            self?.finishedCoin = self?.myAssetsViewModel.finishedCoin
-            self?.airDropCoin = self?.myAssetsViewModel.airDropCoin
-            self?.runningCoin = self?.myAssetsViewModel.runningCoin
+            self?.finishedCoins = self?.myAssetsViewModel.finishedCoin
+            self?.airDropCoins = self?.myAssetsViewModel.airDropCoin
+            self?.runningCoins = self?.myAssetsViewModel.runningCoin
             
             self?.coinRatio = self?.myAssetsViewModel.coinRatio ?? []
             
@@ -163,6 +177,17 @@ extension MyAssetsViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             //MARK: - 그래프 그려지는 Cell
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "GraphTableViewCell", for: indexPath) as! GraphTableViewCell
+            
+            let totalAssetString = String(totalAsset)
+            let revenueAmountString = String(revenueAmount)
+            
+            cell.totalAssetLabel.text = totalAssetString.insertComma + "원"
+            if revenueAmount < 0 {
+                cell.revenueAmountLabel.textColor = UIColor(red: 0.2824, green: 0.502, blue: 0.9333, alpha: 1.0)
+            } else {
+                cell.revenueAmountLabel.textColor = UIColor(red: 0.8667, green: 0.3216, blue: 0.3412, alpha: 1.0)
+            }
+            cell.revenueAmountLabel.text = revenueAmountString.insertComma + "원(\(yield)%)"
             return cell
         } else if indexPath.section == 1 {
             //MARK: - Cell 사이 간격
@@ -181,12 +206,12 @@ extension MyAssetsViewController: UITableViewDataSource {
         } else if indexPath.section == 4 {
             //MARK: - Finished Coin
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "BalanceCoinTableViewCell", for: indexPath) as! BalanceCoinTableViewCell
-            guard let thumbnail = finishedCoin?[indexPath.row].thumbnail else { return UITableViewCell() }
-            guard let coinName = finishedCoin?[indexPath.row].name else { return UITableViewCell() }
-            guard let amount = finishedCoin?[indexPath.row].amount else { return UITableViewCell() }
-            guard let ticker = finishedCoin?[indexPath.row].ticker else { return UITableViewCell() }
-            guard let valuationPrice = finishedCoin?[indexPath.row].valuationPrice else { return UITableViewCell() }
-            guard let yield = finishedCoin?[indexPath.row].yield else { return UITableViewCell() }
+            guard let thumbnail = finishedCoins?[indexPath.row].thumbnail else { return UITableViewCell() }
+            guard let coinName = finishedCoins?[indexPath.row].name else { return UITableViewCell() }
+            guard let amount = finishedCoins?[indexPath.row].amount else { return UITableViewCell() }
+            guard let ticker = finishedCoins?[indexPath.row].ticker else { return UITableViewCell() }
+            guard let valuationPrice = finishedCoins?[indexPath.row].valuationPrice else { return UITableViewCell() }
+            guard let yield = finishedCoins?[indexPath.row].yield else { return UITableViewCell() }
             
             let url = URL(string: thumbnail)
             guard let data = try? Data(contentsOf: url!) else { return UITableViewCell() }
@@ -212,11 +237,11 @@ extension MyAssetsViewController: UITableViewDataSource {
         } else if indexPath.section == 6 {
             //MARK: - AirDrop Coin
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "BalanceCoinTableViewCell", for: indexPath) as! BalanceCoinTableViewCell
-            guard let thumbnail = airDropCoin?[indexPath.row].thumbnail else { return UITableViewCell() }
-            guard let coinName = airDropCoin?[indexPath.row].name else { return UITableViewCell() }
-            guard let amount = airDropCoin?[indexPath.row].amount else { return UITableViewCell() }
-            guard let ticker = airDropCoin?[indexPath.row].ticker else { return UITableViewCell() }
-            guard let valuationPrice = airDropCoin?[indexPath.row].valuationPrice else { return UITableViewCell() }
+            guard let thumbnail = airDropCoins?[indexPath.row].thumbnail else { return UITableViewCell() }
+            guard let coinName = airDropCoins?[indexPath.row].name else { return UITableViewCell() }
+            guard let amount = airDropCoins?[indexPath.row].amount else { return UITableViewCell() }
+            guard let ticker = airDropCoins?[indexPath.row].ticker else { return UITableViewCell() }
+            guard let valuationPrice = airDropCoins?[indexPath.row].valuationPrice else { return UITableViewCell() }
             
             let url = URL(string: thumbnail)
             guard let data = try? Data(contentsOf: url!) else { return UITableViewCell() }
@@ -231,11 +256,11 @@ extension MyAssetsViewController: UITableViewDataSource {
         } else if indexPath.section == 7 {
             //MARK: - Running Coin
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "BalanceCoinTableViewCell", for: indexPath) as! BalanceCoinTableViewCell
-            guard let thumbnail = runningCoin?[indexPath.row].thumbnail else { return UITableViewCell() }
-            guard let coinName = runningCoin?[indexPath.row].name else { return UITableViewCell() }
-            guard let amount = runningCoin?[indexPath.row].amount else { return UITableViewCell() }
-            guard let ticker = runningCoin?[indexPath.row].ticker else { return UITableViewCell() }
-            guard let valuationPrice = runningCoin?[indexPath.row].valuationPrice else { return UITableViewCell() }
+            guard let thumbnail = runningCoins?[indexPath.row].thumbnail else { return UITableViewCell() }
+            guard let coinName = runningCoins?[indexPath.row].name else { return UITableViewCell() }
+            guard let amount = runningCoins?[indexPath.row].amount else { return UITableViewCell() }
+            guard let ticker = runningCoins?[indexPath.row].ticker else { return UITableViewCell() }
+            guard let valuationPrice = runningCoins?[indexPath.row].valuationPrice else { return UITableViewCell() }
             
             let url = URL(string: thumbnail)
             guard let data = try? Data(contentsOf: url!) else { return UITableViewCell() }
@@ -355,6 +380,18 @@ extension MyAssetsViewController: UITableViewDataSource {
 }
 
 extension MyAssetsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 4 {
+            guard let coinDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "CoinDetailsViewController") as? CoinDetailsViewController else { return }
+            guard let selectCoin = finishedCoins?[indexPath.row] else { return }
+            
+            coinDetailsVC.selectCoin = selectCoin
+            
+            self.navigationController?.pushViewController(coinDetailsVC, animated: true)
+            
+        }
+    }
+    
 }
 
 

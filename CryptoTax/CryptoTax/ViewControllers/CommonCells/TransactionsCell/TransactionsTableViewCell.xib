@@ -217,7 +217,8 @@
                 <outlet property="feeLabel" destination="J70-1d-lVF" id="clN-Dr-xp9"/>
                 <outlet property="feeView" destination="OV7-4T-xlq" id="07W-6W-l0s"/>
                 <outlet property="orderName" destination="KV2-le-iQ4" id="DNG-bu-8MC"/>
-                <outlet property="sideStringAndExchangeLabel" destination="ftZ-3Z-oQS" id="wmV-az-nOA"/>
+                <outlet property="sideStringAndOthersLabel" destination="ftZ-3Z-oQS" id="Y6f-7S-JX5"/>
+                <outlet property="tradeIcon" destination="E3N-0p-S5X" id="NQt-lv-x8b"/>
                 <outlet property="yearLabel" destination="3Kp-ZV-cDK" id="7ch-Ep-byZ"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="109.48660714285714"/>

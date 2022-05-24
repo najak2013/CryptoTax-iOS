@@ -75,7 +75,8 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
                             exchangeData.exchangeSelected[self.section].append(self.exchange)
                         }
                         print("성공")
-                        self.navigationController?.popViewController(animated: true)
+                        self.dismiss(animated: true)
+//                        self.navigationController?.popViewController(animated: true)
                     } else {
                         let alert = UIAlertController(title: "서버등록 실패", message: "Error Code : \(result.code)", preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: .default)
