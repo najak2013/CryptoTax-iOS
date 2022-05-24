@@ -2,16 +2,19 @@
 //  ExchangeTableViewCell.swift
 //  CryptoTax
 //
-//  Created by 김지태 on 2022/05/22.
+//  Created by 김지태 on 2022/05/24.
 //
 
 import UIKit
 
 class ExchangeTableViewCell: UITableViewCell {
+
     @IBOutlet weak var yieldLabel: UILabel!
+    @IBOutlet weak var valuationPriceLabelBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var valuationPriceLabel: UILabel!
     @IBOutlet weak var exchangeNameLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

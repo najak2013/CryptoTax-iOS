@@ -11,8 +11,6 @@
 		3900F0F2283627F0000D9C30 /* MyTaxConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900F0F1283627F0000D9C30 /* MyTaxConnections.swift */; };
 		3900F0F52836283F000D9C30 /* ExchangeConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900F0F42836283F000D9C30 /* ExchangeConnections.swift */; };
 		3900F0F728362D7A000D9C30 /* ExchangeJoinModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900F0F628362D7A000D9C30 /* ExchangeJoinModels.swift */; };
-		3900F10328364FD4000D9C30 /* SpaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900F10128364FD4000D9C30 /* SpaceTableViewCell.swift */; };
-		3900F10428364FD4000D9C30 /* SpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3900F10228364FD4000D9C30 /* SpaceTableViewCell.xib */; };
 		390A71582809148F00D6EDC5 /* SpoqaHanSansNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */; };
 		390A71592809148F00D6EDC5 /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */; };
 		390A715A2809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */; };
@@ -21,11 +19,17 @@
 		3913A0BD28093708008E8FC1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3913A0BC28093708008E8FC1 /* PasswordViewController.swift */; };
 		392ED6C7283BBBF600A38187 /* CoinDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392ED6C6283BBBF600A38187 /* CoinDetailsViewModel.swift */; };
 		392ED6C9283BC00400A38187 /* BalanceGraphModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392ED6C8283BC00400A38187 /* BalanceGraphModels.swift */; };
+		392ED6CC283C9C7B00A38187 /* ExchangeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392ED6CB283C9C7B00A38187 /* ExchangeDetailsViewController.swift */; };
+		392ED6D0283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392ED6CE283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.swift */; };
+		392ED6D1283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392ED6CF283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.xib */; };
 		39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39327340282B9F21002EFFAF /* WellcomeViewController.swift */; };
 		39327344282BA3EF002EFFAF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39327343282BA3EF002EFFAF /* Utils.swift */; };
 		39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAC282B933B008DB62B /* SmsAuthViewController.swift */; };
 		39441CB0282B9509008DB62B /* AllProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39441CAF282B9509008DB62B /* AllProtocol.swift */; };
 		3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */; };
+		3952BCB6283CC8EB004DEFFA /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952BCB4283CC8EB004DEFFA /* ExchangeTableViewCell.swift */; };
+		3952BCB7283CC8EB004DEFFA /* ExchangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3952BCB5283CC8EB004DEFFA /* ExchangeTableViewCell.xib */; };
+		3952BCB9283CCBDB004DEFFA /* ExchangeDetailConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952BCB8283CCBDB004DEFFA /* ExchangeDetailConnections.swift */; };
 		39870AC72832833200995A83 /* GraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39870AC52832833200995A83 /* GraphTableViewCell.swift */; };
 		39870AC82832833200995A83 /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39870AC62832833200995A83 /* GraphTableViewCell.xib */; };
 		39870AF42833AF9B00995A83 /* BarChartTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39870AF32833AF9B00995A83 /* BarChartTestViewController.swift */; };
@@ -50,8 +54,6 @@
 		39D1D2C52838E2DB0013F1D1 /* RatioGraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D2C32838E2DB0013F1D1 /* RatioGraphTableViewCell.xib */; };
 		39D1D2CA2838E36D0013F1D1 /* RatioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2C82838E36D0013F1D1 /* RatioTableViewCell.swift */; };
 		39D1D2CB2838E36D0013F1D1 /* RatioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D2C92838E36D0013F1D1 /* RatioTableViewCell.xib */; };
-		39D1D2CF28393E820013F1D1 /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2CD28393E820013F1D1 /* ExchangeTableViewCell.swift */; };
-		39D1D2D028393E820013F1D1 /* ExchangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D2CE28393E820013F1D1 /* ExchangeTableViewCell.xib */; };
 		39D1D2D42839FB520013F1D1 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2D22839FB520013F1D1 /* WalletTableViewCell.swift */; };
 		39D1D2D52839FB520013F1D1 /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D1D2D32839FB520013F1D1 /* WalletTableViewCell.xib */; };
 		39D1D2DA283A07340013F1D1 /* AddExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1D2D8283A07340013F1D1 /* AddExchangeTableViewCell.swift */; };
@@ -103,8 +105,6 @@
 		3900F0F1283627F0000D9C30 /* MyTaxConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxConnections.swift; sourceTree = "<group>"; };
 		3900F0F42836283F000D9C30 /* ExchangeConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeConnections.swift; sourceTree = "<group>"; };
 		3900F0F628362D7A000D9C30 /* ExchangeJoinModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeJoinModels.swift; sourceTree = "<group>"; };
-		3900F10128364FD4000D9C30 /* SpaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTableViewCell.swift; sourceTree = "<group>"; };
-		3900F10228364FD4000D9C30 /* SpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceTableViewCell.xib; sourceTree = "<group>"; };
 		390A71532809148E00D6EDC5 /* SpoqaHanSansNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.otf"; sourceTree = "<group>"; };
 		390A71542809148E00D6EDC5 /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
 		390A71552809148F00D6EDC5 /* SpoqaHanSansNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Thin.otf"; sourceTree = "<group>"; };
@@ -113,11 +113,17 @@
 		3913A0BC28093708008E8FC1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		392ED6C6283BBBF600A38187 /* CoinDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsViewModel.swift; sourceTree = "<group>"; };
 		392ED6C8283BC00400A38187 /* BalanceGraphModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceGraphModels.swift; sourceTree = "<group>"; };
+		392ED6CB283C9C7B00A38187 /* ExchangeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailsViewController.swift; sourceTree = "<group>"; };
+		392ED6CE283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailsGraphTableViewCell.swift; sourceTree = "<group>"; };
+		392ED6CF283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeDetailsGraphTableViewCell.xib; sourceTree = "<group>"; };
 		39327340282B9F21002EFFAF /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
 		39327343282BA3EF002EFFAF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		39441CAC282B933B008DB62B /* SmsAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsAuthViewController.swift; sourceTree = "<group>"; };
 		39441CAF282B9509008DB62B /* AllProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProtocol.swift; sourceTree = "<group>"; };
 		3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPermissionModalViewController.swift; sourceTree = "<group>"; };
+		3952BCB4283CC8EB004DEFFA /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewCell.swift; sourceTree = "<group>"; };
+		3952BCB5283CC8EB004DEFFA /* ExchangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeTableViewCell.xib; sourceTree = "<group>"; };
+		3952BCB8283CCBDB004DEFFA /* ExchangeDetailConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailConnections.swift; sourceTree = "<group>"; };
 		39870AC52832833200995A83 /* GraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewCell.swift; sourceTree = "<group>"; };
 		39870AC62832833200995A83 /* GraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
 		39870AF32833AF9B00995A83 /* BarChartTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTestViewController.swift; sourceTree = "<group>"; };
@@ -142,8 +148,6 @@
 		39D1D2C32838E2DB0013F1D1 /* RatioGraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatioGraphTableViewCell.xib; sourceTree = "<group>"; };
 		39D1D2C82838E36D0013F1D1 /* RatioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioTableViewCell.swift; sourceTree = "<group>"; };
 		39D1D2C92838E36D0013F1D1 /* RatioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatioTableViewCell.xib; sourceTree = "<group>"; };
-		39D1D2CD28393E820013F1D1 /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewCell.swift; sourceTree = "<group>"; };
-		39D1D2CE28393E820013F1D1 /* ExchangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeTableViewCell.xib; sourceTree = "<group>"; };
 		39D1D2D22839FB520013F1D1 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
 		39D1D2D32839FB520013F1D1 /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
 		39D1D2D8283A07340013F1D1 /* AddExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExchangeTableViewCell.swift; sourceTree = "<group>"; };
@@ -232,6 +236,24 @@
 			path = Password;
 			sourceTree = "<group>";
 		};
+		392ED6CA283C9C5C00A38187 /* ExchangeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				392ED6CB283C9C7B00A38187 /* ExchangeDetailsViewController.swift */,
+				392ED6CD283C9CA100A38187 /* ExchangeDetailsGraph */,
+			);
+			path = ExchangeDetails;
+			sourceTree = "<group>";
+		};
+		392ED6CD283C9CA100A38187 /* ExchangeDetailsGraph */ = {
+			isa = PBXGroup;
+			children = (
+				392ED6CE283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.swift */,
+				392ED6CF283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.xib */,
+			);
+			path = ExchangeDetailsGraph;
+			sourceTree = "<group>";
+		};
 		39327342282BA3E1002EFFAF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,15 +299,6 @@
 				39870AC62832833200995A83 /* GraphTableViewCell.xib */,
 			);
 			path = GraphCell;
-			sourceTree = "<group>";
-		};
-		39870AC4283281EE00995A83 /* SpaceCell */ = {
-			isa = PBXGroup;
-			children = (
-				3900F10128364FD4000D9C30 /* SpaceTableViewCell.swift */,
-				3900F10228364FD4000D9C30 /* SpaceTableViewCell.xib */,
-			);
-			path = SpaceCell;
 			sourceTree = "<group>";
 		};
 		39A7D2ED282E4D440075A73B /* AddExchange */ = {
@@ -372,8 +385,8 @@
 		39D1D2CC28393E130013F1D1 /* ExchangeCell */ = {
 			isa = PBXGroup;
 			children = (
-				39D1D2CD28393E820013F1D1 /* ExchangeTableViewCell.swift */,
-				39D1D2CE28393E820013F1D1 /* ExchangeTableViewCell.xib */,
+				3952BCB4283CC8EB004DEFFA /* ExchangeTableViewCell.swift */,
+				3952BCB5283CC8EB004DEFFA /* ExchangeTableViewCell.xib */,
 			);
 			path = ExchangeCell;
 			sourceTree = "<group>";
@@ -417,10 +430,10 @@
 		39D1D2F3283B2F990013F1D1 /* CommonCells */ = {
 			isa = PBXGroup;
 			children = (
-				39870AC4283281EE00995A83 /* SpaceCell */,
 				39B18C1828365F33000FE0B6 /* CoinOptionCell */,
 				39B18C1328365CC8000FE0B6 /* TopTitleCell */,
 				39D1D2CC28393E130013F1D1 /* ExchangeCell */,
+				39D1D2D6283A07160013F1D1 /* AddExchangeCell */,
 				39D1D302283B59900013F1D1 /* TransactionsCell */,
 			);
 			path = CommonCells;
@@ -529,6 +542,7 @@
 				3913A0BB280936F7008E8FC1 /* Password */,
 				39D1D2E7283B28220013F1D1 /* Transactions */,
 				39D1D307283B93760013F1D1 /* CoinDetails */,
+				392ED6CA283C9C5C00A38187 /* ExchangeDetails */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -567,7 +581,6 @@
 				39D1D2C12838E2760013F1D1 /* RatioGraphCell */,
 				39D1D2C02838D5A90013F1D1 /* RatioCell */,
 				39D1D2D12839FB310013F1D1 /* WalletCell */,
-				39D1D2D6283A07160013F1D1 /* AddExchangeCell */,
 				39D1D2D7283A07220013F1D1 /* UsdInfoCell */,
 			);
 			path = MyAssets;
@@ -611,6 +624,7 @@
 				3900F0F42836283F000D9C30 /* ExchangeConnections.swift */,
 				39B18C1F2836678C000FE0B6 /* BalanceConnections.swift */,
 				39D1D2FB283B40660013F1D1 /* TransactionsConnections.swift */,
+				3952BCB8283CCBDB004DEFFA /* ExchangeDetailConnections.swift */,
 			);
 			path = Connections;
 			sourceTree = "<group>";
@@ -708,17 +722,17 @@
 				390A71592809148F00D6EDC5 /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				39E5E6552807DA7D0065544A /* tab_search_animate.json in Resources */,
 				39D6C8792828FB2D00B21C9E /* carrierTableViewCell.xib in Resources */,
-				3900F10428364FD4000D9C30 /* SpaceTableViewCell.xib in Resources */,
 				39E5E6352807D5DE0065544A /* LaunchScreen.storyboard in Resources */,
 				39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */,
+				3952BCB7283CC8EB004DEFFA /* ExchangeTableViewCell.xib in Resources */,
 				390A71582809148F00D6EDC5 /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				39870AC82832833200995A83 /* GraphTableViewCell.xib in Resources */,
-				39D1D2D028393E820013F1D1 /* ExchangeTableViewCell.xib in Resources */,
 				39D1D2C52838E2DB0013F1D1 /* RatioGraphTableViewCell.xib in Resources */,
 				39D1D2CB2838E36D0013F1D1 /* RatioTableViewCell.xib in Resources */,
 				39D1D2BF2838C5170013F1D1 /* BalanceCoinTableViewCell.xib in Resources */,
 				39E5E6532807DA7D0065544A /* tab_me_animate.json in Resources */,
 				39B18C372838BB75000FE0B6 /* LineTableViewCell.xib in Resources */,
+				392ED6D1283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.xib in Resources */,
 				390A715C2809148F00D6EDC5 /* SpoqaHanSansNeo-Light.otf in Resources */,
 				39D1D2F8283B327E0013F1D1 /* TopMsgTableViewCell.xib in Resources */,
 				39D1D2DB283A07340013F1D1 /* AddExchangeTableViewCell.xib in Resources */,
@@ -786,6 +800,7 @@
 				39E5E64B2807D7100065544A /* MoreViewController.swift in Sources */,
 				39D1D2BE2838C5170013F1D1 /* BalanceCoinTableViewCell.swift in Sources */,
 				39B18C30283797EF000FE0B6 /* MyAssetsViewModel.swift in Sources */,
+				3952BCB9283CCBDB004DEFFA /* ExchangeDetailConnections.swift in Sources */,
 				39B18C202836678C000FE0B6 /* BalanceConnections.swift in Sources */,
 				39B18C362838BB75000FE0B6 /* LineTableViewCell.swift in Sources */,
 				3900F0F52836283F000D9C30 /* ExchangeConnections.swift in Sources */,
@@ -813,7 +828,6 @@
 				39E5E6452807D68D0065544A /* HomeViewController.swift in Sources */,
 				39D6C87F282A03BA00B21C9E /* UserAuthViewController.swift in Sources */,
 				39441CAD282B933B008DB62B /* SmsAuthViewController.swift in Sources */,
-				3900F10328364FD4000D9C30 /* SpaceTableViewCell.swift in Sources */,
 				39B18C2628373E41000FE0B6 /* BalanceExchangeModels.swift in Sources */,
 				39D1D2FA283B34C30013F1D1 /* CommonExtensions.swift in Sources */,
 				39E5E6432807D67F0065544A /* BaseViewController.swift in Sources */,
@@ -822,11 +836,12 @@
 				39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */,
 				39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */,
 				39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */,
-				39D1D2CF28393E820013F1D1 /* ExchangeTableViewCell.swift in Sources */,
+				392ED6D0283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.swift in Sources */,
 				39EFF4EB282E02C6003C9426 /* UserConnections.swift in Sources */,
 				39A7D2EC282E27DF0075A73B /* ExchangeTestData.swift in Sources */,
 				39D6C8782828FB2D00B21C9E /* carrierTableViewCell.swift in Sources */,
 				3900F0EE2835E976000D9C30 /* UserJoinModels.swift in Sources */,
+				3952BCB6283CC8EB004DEFFA /* ExchangeTableViewCell.swift in Sources */,
 				39B18C1B28365F6F000FE0B6 /* CoinOptionTableViewCell.swift in Sources */,
 				39327341282B9F21002EFFAF /* WellcomeViewController.swift in Sources */,
 				39EFF4E6282CF5C3003C9426 /* ExchangeConnectionViewController.swift in Sources */,
@@ -835,6 +850,7 @@
 				39327344282BA3EF002EFFAF /* Utils.swift in Sources */,
 				39D1D30D283B9ECB0013F1D1 /* CoinDetailGraphTableViewCell.swift in Sources */,
 				39D1D305283B5A500013F1D1 /* TransactionsTableViewCell.swift in Sources */,
+				392ED6CC283C9C7B00A38187 /* ExchangeDetailsViewController.swift in Sources */,
 				39870AF42833AF9B00995A83 /* BarChartTestViewController.swift in Sources */,
 				39E5E64D2807D72C0065544A /* MyAssetsViewController.swift in Sources */,
 			);

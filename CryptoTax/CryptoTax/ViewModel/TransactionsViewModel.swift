@@ -12,8 +12,9 @@ class TransactionsViewModel {
     
     var transactions: [Transactions]?
     
-    func getTransactionsData(GetFinishedHandler: @escaping () -> ()) {
-        getTransactions(exchanges: "", symbol: "", start_date: "", sort_order: "", skip: "", limit: "", GetTransactionsHandler: { result in
+    func getTransactionsData(exchanges: String, symbol: String, start_date: String, sort_order: String, skip: String, limit: String, GetFinishedHandler: @escaping () -> ()) {
+        
+        getTransactions(exchanges: exchanges, symbol: symbol, start_date: start_date, sort_order: sort_order, skip: sort_order, limit: limit, GetTransactionsHandler: { result in
             switch result {
             case let .success(result):
                 print(result)
@@ -23,6 +24,7 @@ class TransactionsViewModel {
                 print(error.localizedDescription)
                 GetFinishedHandler()
             }
+            
         })
     }
     

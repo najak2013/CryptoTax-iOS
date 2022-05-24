@@ -16,8 +16,13 @@ class TransactionsConnections {
         let url = MAIN_URL + "/user/coin/transactions"
         
         
-        let parameters = ["symbol": symbol]
+        var parameters: [String:String] = [:]
         
+        if exchanges != "" {
+            parameters["exchanges"] = exchanges
+        } else {
+            parameters["symbol"] = symbol
+        }
         
         AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
                     .validate(statusCode: 200..<300)

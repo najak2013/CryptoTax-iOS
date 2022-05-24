@@ -20,14 +20,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UsdInfoTableViewCell" id="KGk-i7-Jjw" customClass="UsdInfoTableViewCell" customModule="CryptoTax" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kee-mL-fs4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="16"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="4NU-FM-bpA"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYD-v8-zPR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <rect key="frame" x="0.0" y="16" width="375" height="200"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cl9-Pz-ATP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -99,10 +106,13 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="tYD-v8-zPR" secondAttribute="bottom" id="2NX-q1-AWo"/>
+                    <constraint firstItem="Kee-mL-fs4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ECj-wB-Y4F"/>
+                    <constraint firstItem="Kee-mL-fs4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ha8-mJ-k7o"/>
                     <constraint firstAttribute="trailing" secondItem="tYD-v8-zPR" secondAttribute="trailing" id="NkO-m8-g5C"/>
                     <constraint firstItem="tYD-v8-zPR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Nxe-Er-5GX"/>
-                    <constraint firstItem="tYD-v8-zPR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zqi-7f-ajh"/>
+                    <constraint firstItem="tYD-v8-zPR" firstAttribute="top" secondItem="Kee-mL-fs4" secondAttribute="bottom" id="aFF-3n-mjn"/>
+                    <constraint firstAttribute="bottom" secondItem="tYD-v8-zPR" secondAttribute="bottom" id="dEo-YV-VNJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Kee-mL-fs4" secondAttribute="trailing" id="oxw-G6-AA9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

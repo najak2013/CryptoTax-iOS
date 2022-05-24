@@ -19,6 +19,10 @@ class TransactionsViewController: UIViewController {
     var yearLabels: [String : Int] = [:]
     var dateLabels: [String : Int ] = [:]
     
+    
+    var exchanges: String = ""
+    var symbol: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,14 +31,14 @@ class TransactionsViewController: UIViewController {
         
         cellRegister()
         
-        transactionsViewModel.getTransactionsData { [weak self] in
+        
+        transactionsViewModel.getTransactionsData(exchanges: exchanges, symbol: symbol, start_date: "", sort_order: "", skip: "", limit: "") { [weak self] in
             self?.transactions = self?.transactionsViewModel.transactions
             DispatchQueue.main.async {
-                self?.yearLabels.removeAll()
                 self?.transactionsContentTableView.reloadData()
             }
+            
         }
-        
     }
     
     func cellRegister() {
@@ -70,6 +74,7 @@ extension TransactionsViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             //MARK: - 그래프 그려지는 Cell
             let cell = transactionsContentTableView.dequeueReusableCell(withIdentifier: "CoinOptionTableViewCell", for: indexPath) as! CoinOptionTableViewCell
+            cell.cellHeightConstraint.constant = 60
             return cell
         } else if indexPath.section == 1 {
             let cell = transactionsContentTableView.dequeueReusableCell(withIdentifier: "TopMsgTableViewCell", for: indexPath) as! TopMsgTableViewCell
@@ -106,9 +111,6 @@ extension TransactionsViewController: UITableViewDataSource {
                 if indexPath.row == yearLabels[year] {
                     cell.cellHeightConstraint.constant = 197
                 } else {
-                    cell.cellHeightConstraint.constant = 137
-                    
-                    
                     if dateLabels.keys.contains(date) {
                         if indexPath.row == dateLabels[date] {
                             cell.cellHeightConstraint.constant = 137
@@ -116,6 +118,7 @@ extension TransactionsViewController: UITableViewDataSource {
                             cell.cellHeightConstraint.constant = 80
                         }
                     } else {
+                        cell.cellHeightConstraint.constant = 137
                         dateLabels[date] = indexPath.row
                     }
                 }
@@ -151,14 +154,19 @@ extension TransactionsViewController: UITableViewDataSource {
                 cell.feeView.isHidden = true
                 cell.amountLabeTopConstraint.constant = 30
             }
-            cell.sideStringAndOthersLabel.text = "\(sideString) | \(exchangeName)"
+            if exchanges != "" {
+                cell.sideStringAndOthersLabel.text = "\(sideString)"
+            } else {
+                cell.sideStringAndOthersLabel.text = "\(sideString) | \(exchangeName)"
+            }
+            
             
             let icoBuySeq: [String] = ["출금(스테이킹)", "출금", "판매"]
             
             if icoBuySeq.contains(sideString) {
-                cell.tradeIcon.image = UIImage(named: "ico_buy")
-            } else {
                 cell.tradeIcon.image = UIImage(named: "ico_sell")
+            } else {
+                cell.tradeIcon.image = UIImage(named: "ico_buy")
             }
             
             if orderCurrency == "KRW" {

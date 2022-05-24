@@ -1675,7 +1675,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYR-qs-eVh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2484" y="571"/>
+            <point key="canvasLocation" x="-2484" y="570.44334975369463"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="AA4-Db-IlW">
@@ -1685,8 +1685,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-cf-T9Q">
-                                <rect key="frame" x="127.33333333333334" y="380.33333333333331" width="120.33333333333334" height="51.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="준비중" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-cf-T9Q">
+                                <rect key="frame" x="131" y="380" width="113.33333333333331" height="52"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1739,21 +1739,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-IJ-q70">
                                         <rect key="frame" x="0.0" y="88" width="375" height="94"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95I-NJ-fiH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김택스님의 예상 세금이에요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95I-NJ-fiH">
                                                 <rect key="frame" x="24" y="15" width="164" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="SDc-h1-tOY"/>
                                                     <constraint firstAttribute="width" constant="164" id="wKt-jb-fMr"/>
                                                 </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="김택스님의 예상 세금이에요">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="25" name="SpoqaHanSansNeo-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="25"/>
+                                                <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -3201,7 +3194,7 @@
                                     <constraint firstItem="mOM-Ne-vWE" firstAttribute="top" secondItem="LMa-he-FAs" secondAttribute="top" id="hJc-hy-c5H"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-7V-gTQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-7V-gTQ">
                                 <rect key="frame" x="0.0" y="148" width="375" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -3225,7 +3218,129 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMD-EX-Cgx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="1620"/>
+            <point key="canvasLocation" x="521" y="2358"/>
+        </scene>
+        <!--Exchange Details View Controller-->
+        <scene sceneID="Dcr-Qv-fhw">
+            <objects>
+                <viewController storyboardIdentifier="ExchangeDetailsViewController" hidesBottomBarWhenPushed="YES" id="FAr-nh-svB" customClass="ExchangeDetailsViewController" customModule="CryptoTax" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Zr-fF-4OU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7O-1P-jBv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTz-nw-55V">
+                                        <rect key="frame" x="12" y="54" width="24" height="24"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N68-Hn-VMC">
+                                                <rect key="frame" x="7.3333333333333321" y="2.3333333333333357" width="10" height="18.666666666666668"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10.07" id="c26-VG-tX9"/>
+                                                    <constraint firstAttribute="height" constant="18.739999999999998" id="x6Y-OL-0gF"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="ico_leftpoint"/>
+                                                <connections>
+                                                    <action selector="backButton:" destination="liv-X3-Wxi" eventType="touchUpInside" id="9zc-YQ-CUf"/>
+                                                    <action selector="backButton:" destination="FAr-nh-svB" eventType="touchUpInside" id="grD-Mm-beg"/>
+                                                    <action selector="backButton:" destination="6Um-Ua-vcG" eventType="touchUpInside" id="iVq-Qv-HgM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="EwF-dB-K9g"/>
+                                            <constraint firstItem="N68-Hn-VMC" firstAttribute="leading" secondItem="VTz-nw-55V" secondAttribute="leading" constant="7.1799999999999997" id="ZNc-17-Zoy"/>
+                                            <constraint firstAttribute="bottom" secondItem="N68-Hn-VMC" secondAttribute="bottom" constant="2.9100000000000001" id="a5S-Uq-hsz"/>
+                                            <constraint firstAttribute="height" constant="24" id="iWh-6K-QGp"/>
+                                            <constraint firstItem="N68-Hn-VMC" firstAttribute="top" secondItem="VTz-nw-55V" secondAttribute="top" constant="2.3500000000000001" id="n0C-og-okG"/>
+                                            <constraint firstAttribute="trailing" secondItem="N68-Hn-VMC" secondAttribute="trailing" constant="6.75" id="x92-Q5-fvW"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDD-Gu-ewE">
+                                        <rect key="frame" x="299" y="56" width="58" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="58" id="9hJ-xq-Wa7"/>
+                                            <constraint firstAttribute="height" constant="20" id="IU3-u6-wCK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="-10" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="거래명세">
+                                            <color key="titleColor" red="0.31372549020000001" green="0.34509803919999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="transactionsListButton:" destination="FAr-nh-svB" eventType="touchUpInside" id="VwH-fQ-YX7"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynb-KH-sUE">
+                                        <rect key="frame" x="162.66666666666666" y="54" width="50" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-va-9Dd">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="26" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="kez-bS-2lT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_downpoint" translatesAutoresizingMaskIntoConstraints="NO" id="VrY-HV-gVb">
+                                                <rect key="frame" x="32.333333333333343" y="9" width="11" height="6.6666666666666679"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="6.5899999999999999" id="C9a-W5-7lJ"/>
+                                                    <constraint firstAttribute="width" constant="11.18" id="FTJ-OU-O4O"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="MVG-va-9Dd" firstAttribute="leading" secondItem="Ynb-KH-sUE" secondAttribute="leading" id="0EQ-zQ-byH"/>
+                                            <constraint firstItem="VrY-HV-gVb" firstAttribute="top" secondItem="Ynb-KH-sUE" secondAttribute="top" constant="9" id="BZw-TE-8C1"/>
+                                            <constraint firstAttribute="trailing" secondItem="VrY-HV-gVb" secondAttribute="trailing" constant="6.4199999999999999" id="bZd-Xf-2Tp"/>
+                                            <constraint firstAttribute="height" constant="24" id="cZS-dj-FsG"/>
+                                            <constraint firstAttribute="width" constant="50" id="qN0-Qs-J2e"/>
+                                            <constraint firstItem="MVG-va-9Dd" firstAttribute="centerY" secondItem="Ynb-KH-sUE" secondAttribute="centerY" id="vmK-JM-k0x"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VTz-nw-55V" secondAttribute="bottom" constant="10" id="0jb-OS-TgR"/>
+                                    <constraint firstAttribute="height" constant="88" id="0q5-PF-sI2"/>
+                                    <constraint firstAttribute="bottom" secondItem="KDD-Gu-ewE" secondAttribute="bottom" constant="12" id="9Mz-OP-PBj"/>
+                                    <constraint firstItem="VTz-nw-55V" firstAttribute="leading" secondItem="D7O-1P-jBv" secondAttribute="leading" constant="12" id="VBS-ry-2sO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ynb-KH-sUE" secondAttribute="bottom" constant="10" id="hsa-KI-GrA"/>
+                                    <constraint firstAttribute="trailing" secondItem="KDD-Gu-ewE" secondAttribute="trailing" constant="18" id="qMm-3D-WuA"/>
+                                    <constraint firstItem="Ynb-KH-sUE" firstAttribute="centerX" secondItem="D7O-1P-jBv" secondAttribute="centerX" id="uW8-Ou-2iY"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-ey-pna">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dO9-e3-sqd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dO9-e3-sqd" firstAttribute="trailing" secondItem="Veg-ey-pna" secondAttribute="trailing" id="1cn-4b-jJ0"/>
+                            <constraint firstItem="Veg-ey-pna" firstAttribute="top" secondItem="D7O-1P-jBv" secondAttribute="bottom" id="1fN-vG-RjZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Veg-ey-pna" secondAttribute="bottom" id="1rD-eU-P4L"/>
+                            <constraint firstItem="D7O-1P-jBv" firstAttribute="leading" secondItem="dO9-e3-sqd" secondAttribute="leading" id="8Pu-ue-tq1"/>
+                            <constraint firstItem="Veg-ey-pna" firstAttribute="leading" secondItem="dO9-e3-sqd" secondAttribute="leading" id="eRI-nN-MGP"/>
+                            <constraint firstItem="D7O-1P-jBv" firstAttribute="top" secondItem="3Zr-fF-4OU" secondAttribute="top" id="mZa-m3-wsb"/>
+                            <constraint firstItem="dO9-e3-sqd" firstAttribute="trailing" secondItem="D7O-1P-jBv" secondAttribute="trailing" id="tQp-YH-Asp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exchangeDetailsTableView" destination="Veg-ey-pna" id="Fwn-bp-uhT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L49-qi-FCA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="2358"/>
         </scene>
         <!--Home-->
         <scene sceneID="JxN-dc-tMa">

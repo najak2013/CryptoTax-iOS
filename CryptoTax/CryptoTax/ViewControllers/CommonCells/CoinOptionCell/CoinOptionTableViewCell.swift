@@ -9,6 +9,8 @@ import UIKit
 
 class CoinOptionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cellHeightConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

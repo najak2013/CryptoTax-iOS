@@ -322,10 +322,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="amountLabel" destination="hzX-xL-1lI" id="hDm-Fq-QMV"/>
                 <outlet property="barChartView" destination="lOL-JU-Fqs" id="Ylu-Gu-R9u"/>
+                <outlet property="coinNameLabel" destination="lVI-Fi-1dY" id="OnQ-97-h9y"/>
+                <outlet property="purchasePriceLabel" destination="fpJ-ij-2jw" id="hjb-EC-5RU"/>
+                <outlet property="thumbnailImageView" destination="eT4-Ta-Jbc" id="hh8-4M-jAU"/>
                 <outlet property="toggleLeading" destination="OMA-h1-AYh" id="HCI-7v-p6S"/>
                 <outlet property="toggleSwitchView" destination="O0b-9F-zdc" id="laZ-UI-VI7"/>
                 <outlet property="toggleView" destination="pJd-QD-kTJ" id="t9H-9E-e32"/>
+                <outlet property="valuationPriceLabel" destination="NHL-LI-ySV" id="IwS-WC-U4H"/>
+                <outlet property="yieldLabel" destination="0Dz-x3-tYr" id="aSG-3v-lrf"/>
                 <outletCollection property="toggleButtons" destination="Pq0-kc-mMJ" collectionClass="NSMutableArray" id="Z0V-59-dBR"/>
                 <outletCollection property="toggleButtons" destination="pwE-R9-U4v" collectionClass="NSMutableArray" id="4sV-ce-m6K"/>
                 <outletCollection property="toggleButtons" destination="NEn-Io-4Xg" collectionClass="NSMutableArray" id="CHV-CV-iBo"/>

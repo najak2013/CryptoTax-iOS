@@ -1,51 +1,33 @@
 //
-//  CoinDetailGraphTableViewCell.swift
+//  ExchangeDetailsGraphTableViewCell.swift
 //  CryptoTax
 //
-//  Created by 김지태 on 2022/05/23.
+//  Created by 김지태 on 2022/05/24.
 //
 
 import UIKit
 import Charts
-class CoinDetailGraphTableViewCell: UITableViewCell, ChartViewDelegate {
+
+class ExchangeDetailsGraphTableViewCell: UITableViewCell, ChartViewDelegate {
 
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var coinNameLabel: UILabel!
-    @IBOutlet weak var valuationPriceLabel: UILabel!
-    @IBOutlet weak var yieldLabel: UILabel!
-    
-    @IBOutlet weak var purchasePriceLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
     
     
-    @IBOutlet weak var toggleLeading: NSLayoutConstraint!
-    @IBOutlet var toggleButtons: [UIButton]!
-    @IBOutlet weak var toggleView: UIView!
-    @IBOutlet weak var toggleSwitchView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    
+    
     @IBOutlet weak var barChartView: BarChartView!
+    
+    
     var months: [String]!
     var unitsSold: [Double]!
-    
-    
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
-        toggleSwitchView.layer.cornerRadius = toggleSwitchView.layer.frame.height / 2
-        toggleSwitchView.clipsToBounds = true
-        
-        
-        toggleView.layer.cornerRadius = toggleView.layer.frame.height / 2
-//        toggleView.clipsToBounds = true
-        toggleView.layer.masksToBounds = false
-        toggleView.layer.shadowOpacity = 0.2
-        toggleView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        toggleView.layer.shadowRadius = 2
         
         
         barChartView.noDataText = "데이터가 없습니다."
@@ -97,22 +79,6 @@ class CoinDetailGraphTableViewCell: UITableViewCell, ChartViewDelegate {
         unitsSold = [34, 100, -30, 0, 400, -100]
         testData(dataPoints: unitsSold, barValues: unitsSold)
         setData()
-        for button in toggleButtons {
-            button.addTarget(self, action: #selector(toggleButtonAction), for: .touchUpInside)
-            print(button.frame.width)
-        }
-    }
-
-    @objc func toggleButtonAction(_ sender: UIButton) {
-        print(sender.tag)
-        
-        
-        toggleLeading.constant = sender.frame.width * CGFloat(sender.tag)
-        
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
-            self.layoutIfNeeded()
-        }, completion: nil)
-        
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
@@ -141,9 +107,7 @@ class CoinDetailGraphTableViewCell: UITableViewCell, ChartViewDelegate {
             barDataEntries.append(barDataEntry)
         }
     }
-    
-    
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

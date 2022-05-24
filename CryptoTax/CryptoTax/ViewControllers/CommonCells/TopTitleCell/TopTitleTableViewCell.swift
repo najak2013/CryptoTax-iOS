@@ -9,6 +9,7 @@ import UIKit
 
 class TopTitleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cellHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleLabel: UILabel!

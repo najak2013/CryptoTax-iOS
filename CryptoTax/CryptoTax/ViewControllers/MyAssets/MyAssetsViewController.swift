@@ -89,7 +89,6 @@ class MyAssetsViewController: BaseViewController {
     func cellRegister() {
         assetsContentTableView.register(UINib(nibName: "GraphTableViewCell", bundle: nil), forCellReuseIdentifier: "GraphTableViewCell")
         assetsContentTableView.register(UINib(nibName: "TopTitleTableViewCell", bundle: nil), forCellReuseIdentifier: "TopTitleTableViewCell")
-        assetsContentTableView.register(UINib(nibName: "SpaceTableViewCell", bundle: nil), forCellReuseIdentifier: "SpaceTableViewCell")
         assetsContentTableView.register(UINib(nibName: "CoinOptionTableViewCell", bundle: nil), forCellReuseIdentifier: "CoinOptionTableViewCell")
         assetsContentTableView.register(UINib(nibName: "BalanceCoinTableViewCell", bundle: nil), forCellReuseIdentifier: "BalanceCoinTableViewCell")
         assetsContentTableView.register(UINib(nibName: "LineTableViewCell", bundle: nil), forCellReuseIdentifier: "LineTableViewCell")
@@ -104,7 +103,7 @@ class MyAssetsViewController: BaseViewController {
 
 extension MyAssetsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 19
+        return 16
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,61 +111,52 @@ extension MyAssetsViewController: UITableViewDataSource {
             //MARK: - 그래프 그려지는 Cell
             return 1
         } else if section == 1 {
-            //MARK: - Cell 사이 간격
-            return 1
-        } else if section == 2 {
             //MARK: - 코인별 Title
             return 1
-        } else if section == 3 {
+        } else if section == 2 {
             //MARK: - 코인별 리스트 컨트롤러
             return 1
-        } else if section == 4 {
+        } else if section == 3 {
             //MARK: - Finished Coin
             return finishedCount
-        } else if section == 5 {
+        } else if section == 4 {
             //MARK: - 구분선
             if airDropCount > 0 {
                 return 1
             } else {
                 return 0
             }
-        } else if section == 6 {
+        } else if section == 5 {
             //MARK: - 에어드랍 리스트
             return airDropCount
-        } else if section == 7 {
+        } else if section == 6 {
             //MARK: - 준비중 리스트
             return runningCount
-        } else if section == 8 {
-            //MARK: - Cell 사이 간격
-            return 1
-        } else if section == 9 {
+        } else if section == 7 {
             //MARK: - 코인별 Title
             return 1
-        } else if section == 10 {
+        } else if section == 8 {
             //MARK: - 코인 비중 그래프
             return 1
-        } else if section == 11 {
+        } else if section == 9 {
             //MARK: - 코인 비중 리스트
             return totalCoinCount
-        } else if section == 12 {
+        } else if section == 10 {
             //MARK: - 거래소 Title
             return 1
-        } else if section == 13 {
+        } else if section == 11 {
             //MARK: - 거래소 리스트
             return exchangesCount
-        } else if section == 14 {
+        } else if section == 12 {
             //MARK: - 구분선
             return 1
-        } else if section == 15 {
+        } else if section == 13 {
             //MARK: - 지갑
             return 1
-        } else if section == 16 {
+        } else if section == 14 {
             //MARK: - 추가 연결 버튼
             return 1
-        } else if section == 17 {
-            //MARK: - Cell 사이 간격
-            return 1
-        } else if section == 18 {
+        } else if section == 15 {
             //MARK: - 원 달러 환율
             return 1
         }
@@ -190,20 +180,17 @@ extension MyAssetsViewController: UITableViewDataSource {
             cell.revenueAmountLabel.text = revenueAmountString.insertComma + "원(\(yield)%)"
             return cell
         } else if indexPath.section == 1 {
-            //MARK: - Cell 사이 간격
-            let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "SpaceTableViewCell", for: indexPath) as! SpaceTableViewCell
-            return cell
-        } else if indexPath.section == 2 {
             //MARK: - 코인별 Title
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "TopTitleTableViewCell", for: indexPath) as! TopTitleTableViewCell
             cell.heightConstraint.constant = 124
             cell.titleLabel.text = "총 \(totalCoinCount)개의 자산을\n가지고 있어요"
             return cell
-        } else if indexPath.section == 3 {
+        } else if indexPath.section == 2 {
             //MARK: - 코인별 리스트 컨트롤러
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "CoinOptionTableViewCell", for: indexPath) as! CoinOptionTableViewCell
+            cell.cellHeightConstraint.constant = 60
             return cell
-        } else if indexPath.section == 4 {
+        } else if indexPath.section == 3 {
             //MARK: - Finished Coin
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "BalanceCoinTableViewCell", for: indexPath) as! BalanceCoinTableViewCell
             guard let thumbnail = finishedCoins?[indexPath.row].thumbnail else { return UITableViewCell() }
@@ -230,11 +217,11 @@ extension MyAssetsViewController: UITableViewDataSource {
             }
             cell.yieldLabel.text = "\(printYield * 100)%"
             return cell
-        } else if indexPath.section == 5 {
+        } else if indexPath.section == 4 {
             //MARK: - 구분선
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "LineTableViewCell", for: indexPath) as! LineTableViewCell
             return cell
-        } else if indexPath.section == 6 {
+        } else if indexPath.section == 5 {
             //MARK: - AirDrop Coin
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "BalanceCoinTableViewCell", for: indexPath) as! BalanceCoinTableViewCell
             guard let thumbnail = airDropCoins?[indexPath.row].thumbnail else { return UITableViewCell() }
@@ -253,7 +240,7 @@ extension MyAssetsViewController: UITableViewDataSource {
             cell.yieldLabel.textColor = UIColor(red: 0.6941, green: 0.7216, blue: 0.7529, alpha: 1.0)
             cell.yieldLabel.text = "에어드랍"
             return cell
-        } else if indexPath.section == 7 {
+        } else if indexPath.section == 6 {
             //MARK: - Running Coin
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "BalanceCoinTableViewCell", for: indexPath) as! BalanceCoinTableViewCell
             guard let thumbnail = runningCoins?[indexPath.row].thumbnail else { return UITableViewCell() }
@@ -272,11 +259,7 @@ extension MyAssetsViewController: UITableViewDataSource {
             cell.yieldLabel.textColor = UIColor(red: 0.6941, green: 0.7216, blue: 0.7529, alpha: 1.0)
             cell.yieldLabel.text = "수집중..."
             return cell
-        } else if indexPath.section == 8 {
-            //MARK: - Cell 사이 간격
-            let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "SpaceTableViewCell", for: indexPath) as! SpaceTableViewCell
-            return cell
-        } else if indexPath.section == 9 {
+        } else if indexPath.section == 7 {
             //MARK: - 코인별 Title
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "TopTitleTableViewCell", for: indexPath) as! TopTitleTableViewCell
             // index error 키 에러
@@ -285,11 +268,11 @@ extension MyAssetsViewController: UITableViewDataSource {
             cell.heightConstraint.constant = 124
             cell.titleLabel.text = "\(coin)에\n관심이 많으시네요"
             return cell
-        } else if indexPath.section == 10 {
+        } else if indexPath.section == 8 {
             //MARK: - 코인 비중 그래프
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "RatioGraphTableViewCell", for: indexPath) as! RatioGraphTableViewCell
             return cell
-        } else if indexPath.section == 11 {
+        } else if indexPath.section == 9 {
             //MARK: - 코인 비중 리스트
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "RatioTableViewCell", for: indexPath) as! RatioTableViewCell
             let coinName = coinRatio[indexPath.row].key
@@ -299,32 +282,30 @@ extension MyAssetsViewController: UITableViewDataSource {
             cell.coinNameLabel.text = coinName
             cell.coinRatioLabel.text = "\(coinRatio * 100)%"
             return cell
-        } else if indexPath.section == 12 {
+        } else if indexPath.section == 10 {
             //MARK: - 거래소 Title
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "TopTitleTableViewCell", for: indexPath) as! TopTitleTableViewCell
             cell.heightConstraint.constant = 92
             cell.titleLabel.text = "내 거래소"
             return cell
-        } else if indexPath.section == 13 {
+        } else if indexPath.section == 11 {
             //MARK: - 거래소 리스트
+            print("여기서 에러?")
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "ExchangeTableViewCell", for: indexPath) as! ExchangeTableViewCell
-            
+            print("아니면 여기")
             guard let thumbnail = exchanges?[indexPath.row].thumbnail else { return UITableViewCell() }
             guard let exchangeName = exchanges?[indexPath.row].name else { return UITableViewCell() }
             guard let valuationPrice = exchanges?[indexPath.row].valuationPrice else { return UITableViewCell() }
             guard let yield = exchanges?[indexPath.row].yield else { return UITableViewCell() }
             guard let coinCount = exchanges?[indexPath.row].coinCount else { return UITableViewCell() }
-            
-            
+
             let url = URL(string: thumbnail)
             guard let data = try? Data(contentsOf: url!) else { return UITableViewCell() }
             
             cell.thumbnailImageView.image = UIImage(data: data)
-            
             let name = exchangeName.ko ?? exchangeName.en ?? "error"
             cell.exchangeNameLabel.text = "\(String(describing: name))·자산 \(coinCount)개"
             cell.valuationPriceLabel.text = "\(valuationPrice.insertComma)원"
-            
             var printYield: Double = Double(yield) ?? 0
             if printYield >= 0 {
                 cell.yieldLabel.textColor = UIColor(red: 0.8667, green: 0.3216, blue: 0.3412, alpha: 1.0)
@@ -334,23 +315,19 @@ extension MyAssetsViewController: UITableViewDataSource {
             }
             cell.yieldLabel.text = "\(printYield * 100)%"
             return cell
-        } else if indexPath.section == 14 {
+        } else if indexPath.section == 12 {
             //MARK: - 구분선
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "LineTableViewCell", for: indexPath) as! LineTableViewCell
             return cell
-        } else if indexPath.section == 15 {
+        } else if indexPath.section == 13 {
             //MARK: - 지갑
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "WalletTableViewCell", for: indexPath) as! WalletTableViewCell
             return cell
-        } else if indexPath.section == 16 {
+        } else if indexPath.section == 14 {
             //MARK: - 추가 연결 버튼
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "AddExchangeTableViewCell", for: indexPath) as! AddExchangeTableViewCell
             return cell
-        } else if indexPath.section == 17 {
-            //MARK: - Cell 사이 간격
-            let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "SpaceTableViewCell", for: indexPath) as! SpaceTableViewCell
-            return cell
-        } else if indexPath.section == 18 {
+        }  else if indexPath.section == 15 {
             //MARK: - 원 달러 환율
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "UsdInfoTableViewCell", for: indexPath) as! UsdInfoTableViewCell
             
@@ -381,14 +358,28 @@ extension MyAssetsViewController: UITableViewDataSource {
 
 extension MyAssetsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 4 {
+        if indexPath.section == 3 {
             guard let coinDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "CoinDetailsViewController") as? CoinDetailsViewController else { return }
-            guard let selectCoin = finishedCoins?[indexPath.row] else { return }
+            guard let finishedCoins = finishedCoins else { return }
+            coinDetailsVC.selectedCoin = finishedCoins[indexPath.row]
             
-            coinDetailsVC.selectCoin = selectCoin
+            var symbolList: [[String]] = []
+            
+            for coin in finishedCoins {
+                if let ticker = coin.ticker {
+                    symbolList.append([ticker, coin.name?.ko ?? coin.name?.en ?? "error"])
+                }
+            }
+            coinDetailsVC.symbolList = symbolList
             
             self.navigationController?.pushViewController(coinDetailsVC, animated: true)
+        } else if indexPath.section == 11 {
+            guard let exchangeDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeDetailsViewController") as? ExchangeDetailsViewController else { return }
             
+            guard let exchange = exchanges else { return }
+            
+            exchangeDetailsVC.exchange = exchange[indexPath.row]
+            self.navigationController?.pushViewController(exchangeDetailsVC, animated: true)
         }
     }
     

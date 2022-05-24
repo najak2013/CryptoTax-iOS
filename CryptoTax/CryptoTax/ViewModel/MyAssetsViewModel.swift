@@ -51,7 +51,7 @@ class MyAssetsViewModel {
     }
     
     func getCoinBalanceData(GetFinishedHandler: @escaping () -> ()) {
-        getCoinBalance(exchanges: "", GetCoinHandler: { result in
+        getCoinBalance(exchanges: "", symbol: "", GetCoinHandler: { result in
             switch result {
             case let .success(result):
                 guard let airDrop = result.more.coin.airDrop else { return }
@@ -132,10 +132,10 @@ class MyAssetsViewModel {
         })
     }
     
-    func getCoinBalance(exchanges: String, GetCoinHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
+    func getCoinBalance(exchanges: String, symbol: String, GetCoinHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
         // n1hwShMDXUrY1jLitXf/0g==
         // UserInfo().getUserSession()
-        BalanceConnections().coin(exchanges: exchanges, session: UserInfo().getUserSession(), CoinBalanceHandler: { result in
+        BalanceConnections().coin(exchanges: exchanges, symbol: symbol, session: UserInfo().getUserSession(), CoinBalanceHandler: { result in
             switch result {
             case let .success(result):
                 GetCoinHandler(.success(result))

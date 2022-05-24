@@ -48,10 +48,12 @@ class BalanceConnections {
                 }
     }
     
-    func coin(exchanges: String, session: String, CoinBalanceHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
+    func coin(exchanges: String, symbol: String, session: String, CoinBalanceHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
         let url = MAIN_URL + "/user/balance/coin"
         
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
+        let parameters = ["symbol": symbol]
+        
+        AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
                     .validate(statusCode: 200..<300)
                     //200~300사이 상태만 허용
                     .validate(contentType: ["application/json"])
