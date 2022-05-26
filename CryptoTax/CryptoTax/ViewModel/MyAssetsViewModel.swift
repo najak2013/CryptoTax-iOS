@@ -27,20 +27,43 @@ class MyAssetsViewModel {
     
     
     var totalAsset: Int = 0
+    var collectionStartEnd: String = ""
     var yield: Double = 0.0
     var revenueAmount: Int = 0
+    var avgBuyPrice: Double = 0.0
+    
     
     func getGraphData(GetFinishedHandler: @escaping () -> ()) {
-        getGraph(section: "", to_date: "", duration: "", exchanges: "", symbol: "", price_type: "", GetGraphHandler: { result in
+        getGraph(parameters: [:], GetGraphHandler: { result in
             switch result {
             case let .success(result):
                 guard let totalAsset = result.more.summary?.totalAsset else { return }
                 guard let yield = result.more.summary?.yield else { return }
                 guard let revenueAmount = result.more.summary?.revenueAmount else { return }
-                
+
+                guard let collectionStart = result.more.summary?.collectionStart else { return }
+                guard let collectionEnd = result.more.summary?.collectionEnd else { return }
+                guard let avgBuyPrice = result.more.summary?.avgBuyPrice else { return }
+
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd" // 2020-08-13 16:30
+
+                let startDate = dateFormatter.date(from: collectionStart) // Date 타입으로 변환
+                let endDate = dateFormatter.date(from: collectionEnd)
+
+
+                let convertStartDate = DateFormatter()
+                let convertEndDate = DateFormatter()
+                convertStartDate.dateFormat = "yyyy.MM.dd"
+                convertEndDate.dateFormat = "MM.dd"
+
+                self.collectionStartEnd = convertStartDate.string(from: startDate!) + "~" + convertEndDate.string(from: endDate!)
+                self.avgBuyPrice = avgBuyPrice
                 self.totalAsset = totalAsset
                 self.yield = yield
                 self.revenueAmount = revenueAmount
+
+//                print(result.more.)
 
                 GetFinishedHandler()
             case let .failure(error):
@@ -121,10 +144,11 @@ class MyAssetsViewModel {
 //        }
     }
     
-    func getGraph(section: String, to_date: String, duration: String, exchanges: String, symbol: String, price_type: String, GetGraphHandler: @escaping (Result<BalanceGraphResponseModel, Error>) -> Void) {
-        BalanceConnections().graph(section: section, to_date: to_date, duration: duration, exchanges: exchanges, symbol: symbol, price_type: price_type, session: UserInfo().getUserSession(), GraphHandler: { result in
+    func getGraph(parameters: [String:String], GetGraphHandler: @escaping (Result<BalanceGraphResponseModel, Error>) -> Void) {
+        BalanceConnections().graph(parameters: parameters, session: UserInfo().getUserSession(), GraphHandler: { result in
             switch result {
             case let .success(result):
+                print(result)
                 GetGraphHandler(.success(result))
             case let .failure(error):
                 GetGraphHandler(.failure(error))

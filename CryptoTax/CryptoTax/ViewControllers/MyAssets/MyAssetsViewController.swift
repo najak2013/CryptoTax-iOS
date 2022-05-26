@@ -14,6 +14,7 @@ class MyAssetsViewController: BaseViewController {
     
     
     var myAssetsViewModel = MyAssetsViewModel()
+    var addExchangeViewModel = AddExchangeViewModel()
     
     var airDropCount: Int = 0
     var runningCount: Int = 0
@@ -34,6 +35,8 @@ class MyAssetsViewController: BaseViewController {
     var totalAsset: Int = 0
     var yield: Double = 0.0
     var revenueAmount: Int = 0
+    var avgBuyPrice: Double = 0.0
+    var collectionStartEnd: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +44,16 @@ class MyAssetsViewController: BaseViewController {
         assetsContentTableView.dataSource = self
         assetsContentTableView.delegate = self
         cellRegister()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         myAssetsViewModel.getGraphData { [weak self] in
             self?.totalAsset = self?.myAssetsViewModel.totalAsset ?? 0
             self?.yield = self?.myAssetsViewModel.yield ?? 0.0
             self?.revenueAmount = self?.myAssetsViewModel.revenueAmount ?? 0
-            
+            self?.avgBuyPrice = self?.myAssetsViewModel.avgBuyPrice ?? 0.0
+            self?.collectionStartEnd = self?.myAssetsViewModel.collectionStartEnd ?? "준비중..."
             DispatchQueue.main.async {
                 self?.assetsContentTableView.reloadData()
             }
@@ -79,7 +86,6 @@ class MyAssetsViewController: BaseViewController {
             }
         }
     }
-    
     
     @IBAction func transactionsButton(_ sender: Any) {
     }
@@ -177,7 +183,12 @@ extension MyAssetsViewController: UITableViewDataSource {
             } else {
                 cell.revenueAmountLabel.textColor = UIColor(red: 0.8667, green: 0.3216, blue: 0.3412, alpha: 1.0)
             }
-            cell.revenueAmountLabel.text = revenueAmountString.insertComma + "원(\(yield)%)"
+            
+            cell.revenueAmountLabel.text = revenueAmountString.insertComma + "원(\(yield * 100)%)"
+            
+            cell.startEndLabel.text = collectionStartEnd
+            cell.avgBuyPriceLabel.text = String(avgBuyPrice).insertComma + "원"
+            
             return cell
         } else if indexPath.section == 1 {
             //MARK: - 코인별 Title
@@ -208,14 +219,14 @@ extension MyAssetsViewController: UITableViewDataSource {
             cell.amountLabel.text = "\(amount) \(ticker)"
             cell.valuationPriceLabel.text = "\(valuationPrice.insertComma)원"
             
-            var printYield: Double = Double(yield) ?? 0
-            if printYield >= 0 {
+            var doubleYield: Double = Double(yield) ?? 0
+            if doubleYield >= 0 {
                 cell.yieldLabel.textColor = UIColor(red: 0.8667, green: 0.3216, blue: 0.3412, alpha: 1.0)
             } else {
-                printYield = (printYield * -1)
+                doubleYield = (doubleYield * -1)
                 cell.yieldLabel.textColor = UIColor(red: 0.2824, green: 0.502, blue: 0.9333, alpha: 1.0)
             }
-            cell.yieldLabel.text = "\(printYield * 100)%"
+            cell.yieldLabel.text = "\(doubleYield * 100)%"
             return cell
         } else if indexPath.section == 4 {
             //MARK: - 구분선
@@ -326,6 +337,7 @@ extension MyAssetsViewController: UITableViewDataSource {
         } else if indexPath.section == 14 {
             //MARK: - 추가 연결 버튼
             let cell = assetsContentTableView.dequeueReusableCell(withIdentifier: "AddExchangeTableViewCell", for: indexPath) as! AddExchangeTableViewCell
+            cell.addExchangeButton.addTarget(self, action: #selector(addExchange), for: .touchUpInside)
             return cell
         }  else if indexPath.section == 15 {
             //MARK: - 원 달러 환율
@@ -354,6 +366,42 @@ extension MyAssetsViewController: UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    @objc func addExchange() {
+        guard let addExchangeVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? ExchangeConnectionViewController else { return }
+        
+        addExchangeViewModel.getCoinBalanceData { [weak self] in
+            guard let exchanges = self?.addExchangeViewModel.exchangeList else { return }
+            
+            var localList: [Keys] = []
+            var foreignList: [Keys] = []
+            var othersList: [Keys] = []
+            var isRegisteredList: [[Bool]] = [[],[],[]]
+            for exchange in exchanges {
+                guard let type = exchange.type else { return }
+                if type == "L" {
+                    localList.append(exchange)
+                    let isRegistered = exchange.isRegistered
+                    isRegisteredList[0].append(isRegistered ?? false)
+                } else if type == "F" {
+                    foreignList.append(exchange)
+                    let isRegistered = exchange.isRegistered
+                    isRegisteredList[1].append(isRegistered ?? false)
+                } else {
+                    othersList.append(exchange)
+                    let isRegistered = exchange.isRegistered
+                    isRegisteredList[2].append(isRegistered ?? false)
+                }
+            }
+            
+            addExchangeVC.isRegisteredList = isRegisteredList
+            addExchangeVC.localList = localList
+            addExchangeVC.foreignList = foreignList
+            addExchangeVC.othersList = othersList
+            
+            self?.navigationController?.pushViewController(addExchangeVC, animated: true)
+        }
+    }
 }
 
 extension MyAssetsViewController: UITableViewDelegate {
@@ -371,13 +419,10 @@ extension MyAssetsViewController: UITableViewDelegate {
                 }
             }
             coinDetailsVC.symbolList = symbolList
-            
             self.navigationController?.pushViewController(coinDetailsVC, animated: true)
         } else if indexPath.section == 11 {
             guard let exchangeDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeDetailsViewController") as? ExchangeDetailsViewController else { return }
-            
             guard let exchange = exchanges else { return }
-            
             exchangeDetailsVC.exchange = exchange[indexPath.row]
             self.navigationController?.pushViewController(exchangeDetailsVC, animated: true)
         }

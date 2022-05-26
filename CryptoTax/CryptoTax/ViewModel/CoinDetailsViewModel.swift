@@ -12,16 +12,45 @@ class CoinDetailsViewModel {
     // 초기화 필요
     var selectedCoin: CoinInfo?
     var transactions: [Transactions]?
+    var exchanges: [Exchange]?
     
-    func getCoinBalanceData(symbol: String, GetFinishedHandler: @escaping () -> ()) {
+    func getCoinBalanceData(symbol: String, parameters: [String : String], GetFinishedHandler: @escaping () -> ()) {
+        
+        
+        BalanceConnections().graph(parameters: parameters, session: UserInfo().getUserSession(), GraphHandler: { result in
+            switch result {
+            case let .failure(error):
+                print(error)
+                GetFinishedHandler()
+            case let .success(result):
+                
+                
+                
+                GetFinishedHandler()
+            }
+        })
+        
+        
         getCoinBalance(exchanges: "", symbol: symbol, GetCoinHandler: { result in
             switch result {
+            case let .failure(error):
+                print(error)
             case let .success(result):
                 guard let finished = result.more.coin.finished else { return }
                 self.selectedCoin = finished.first
-                GetFinishedHandler()
-            case let .failure(error):
-                print(error)
+                
+                BalanceConnections().exchange(exchanges: "", symbol: symbol, session: UserInfo().getUserSession(), ExchangeBalanceHandler: { result in
+                    switch result {
+                    case let .success(result):
+                        
+                        guard let exchanges = result.more.exchange else { return }
+                        self.exchanges = exchanges
+                        GetFinishedHandler()
+                    case let .failure(error):
+                        print(error)
+                        GetFinishedHandler()
+                    }
+                })
             }
         })
     }

@@ -8,7 +8,7 @@ target 'CryptoTax' do
   # Pods for CryptoTax
   pod 'Firebase/Messaging'
   pod 'Firebase/Analytics'
-  pod 'lottie-ios','~> 2.5.0'
+  pod 'lottie-ios','~> 3.3.0'
   pod 'Alamofire', '~> 5.4'
   pod 'Locksmith'
   pod 'CryptoSwift', '~> 1.4.1'

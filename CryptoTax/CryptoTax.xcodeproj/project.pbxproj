@@ -29,10 +29,12 @@
 		3944DCD82828D7660084C475 /* IntroPermissionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */; };
 		3952BCB6283CC8EB004DEFFA /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952BCB4283CC8EB004DEFFA /* ExchangeTableViewCell.swift */; };
 		3952BCB7283CC8EB004DEFFA /* ExchangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3952BCB5283CC8EB004DEFFA /* ExchangeTableViewCell.xib */; };
-		3952BCB9283CCBDB004DEFFA /* ExchangeDetailConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952BCB8283CCBDB004DEFFA /* ExchangeDetailConnections.swift */; };
 		39870AC72832833200995A83 /* GraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39870AC52832833200995A83 /* GraphTableViewCell.swift */; };
 		39870AC82832833200995A83 /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39870AC62832833200995A83 /* GraphTableViewCell.xib */; };
 		39870AF42833AF9B00995A83 /* BarChartTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39870AF32833AF9B00995A83 /* BarChartTestViewController.swift */; };
+		39879AE9283E4F55008280D8 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39879AE8283E4F55008280D8 /* BaseTabBarController.swift */; };
+		39879AEB283E5075008280D8 /* GetExchangeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39879AEA283E5075008280D8 /* GetExchangeModels.swift */; };
+		39879AED283E5325008280D8 /* AddExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39879AEC283E5325008280D8 /* AddExchangeViewModel.swift */; };
 		39A70022282118DA00DE5CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */; };
 		39A700242821206A00DE5CE2 /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A700232821206A00DE5CE2 /* UserRegistViewController.swift */; };
 		39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A7D2E9282E128E0075A73B /* AES256CBC.swift */; };
@@ -123,10 +125,12 @@
 		3944DCD72828D7660084C475 /* IntroPermissionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPermissionModalViewController.swift; sourceTree = "<group>"; };
 		3952BCB4283CC8EB004DEFFA /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewCell.swift; sourceTree = "<group>"; };
 		3952BCB5283CC8EB004DEFFA /* ExchangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeTableViewCell.xib; sourceTree = "<group>"; };
-		3952BCB8283CCBDB004DEFFA /* ExchangeDetailConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailConnections.swift; sourceTree = "<group>"; };
 		39870AC52832833200995A83 /* GraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewCell.swift; sourceTree = "<group>"; };
 		39870AC62832833200995A83 /* GraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
 		39870AF32833AF9B00995A83 /* BarChartTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTestViewController.swift; sourceTree = "<group>"; };
+		39879AE8283E4F55008280D8 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		39879AEA283E5075008280D8 /* GetExchangeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExchangeModels.swift; sourceTree = "<group>"; };
+		39879AEC283E5325008280D8 /* AddExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExchangeViewModel.swift; sourceTree = "<group>"; };
 		39A70021282118DA00DE5CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39A700232821206A00DE5CE2 /* UserRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
 		39A7D2E9282E128E0075A73B /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 				39B18C2F283797EF000FE0B6 /* MyAssetsViewModel.swift */,
 				39D1D2FF283B4F820013F1D1 /* TransactionsViewModel.swift */,
 				392ED6C6283BBBF600A38187 /* CoinDetailsViewModel.swift */,
+				39879AEC283E5325008280D8 /* AddExchangeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 			children = (
 				39D1D2F3283B2F990013F1D1 /* CommonCells */,
 				39E5E6422807D67F0065544A /* BaseViewController.swift */,
+				39879AE8283E4F55008280D8 /* BaseTabBarController.swift */,
 				39D5A1842820D76300BDF54A /* IntroViewControllers */,
 				39E5E63E2807D6230065544A /* MyTax */,
 				39E5E6402807D6500065544A /* MyAssets */,
@@ -624,7 +630,6 @@
 				3900F0F42836283F000D9C30 /* ExchangeConnections.swift */,
 				39B18C1F2836678C000FE0B6 /* BalanceConnections.swift */,
 				39D1D2FB283B40660013F1D1 /* TransactionsConnections.swift */,
-				3952BCB8283CCBDB004DEFFA /* ExchangeDetailConnections.swift */,
 			);
 			path = Connections;
 			sourceTree = "<group>";
@@ -639,6 +644,7 @@
 				39B18C2528373E41000FE0B6 /* BalanceExchangeModels.swift */,
 				39D1D2FD283B41CF0013F1D1 /* TransactionsModels.swift */,
 				392ED6C8283BC00400A38187 /* BalanceGraphModels.swift */,
+				39879AEA283E5075008280D8 /* GetExchangeModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -800,10 +806,10 @@
 				39E5E64B2807D7100065544A /* MoreViewController.swift in Sources */,
 				39D1D2BE2838C5170013F1D1 /* BalanceCoinTableViewCell.swift in Sources */,
 				39B18C30283797EF000FE0B6 /* MyAssetsViewModel.swift in Sources */,
-				3952BCB9283CCBDB004DEFFA /* ExchangeDetailConnections.swift in Sources */,
 				39B18C202836678C000FE0B6 /* BalanceConnections.swift in Sources */,
 				39B18C362838BB75000FE0B6 /* LineTableViewCell.swift in Sources */,
 				3900F0F52836283F000D9C30 /* ExchangeConnections.swift in Sources */,
+				39879AE9283E4F55008280D8 /* BaseTabBarController.swift in Sources */,
 				39D1D2DA283A07340013F1D1 /* AddExchangeTableViewCell.swift in Sources */,
 				392ED6C7283BBBF600A38187 /* CoinDetailsViewModel.swift in Sources */,
 				39D1D2CA2838E36D0013F1D1 /* RatioTableViewCell.swift in Sources */,
@@ -824,6 +830,7 @@
 				39D1D2ED283B28760013F1D1 /* TransactionsViewController.swift in Sources */,
 				39870AC72832833200995A83 /* GraphTableViewCell.swift in Sources */,
 				39D6C87D282A016E00B21C9E /* LoadingViewController.swift in Sources */,
+				39879AEB283E5075008280D8 /* GetExchangeModels.swift in Sources */,
 				39B18C1E283664AF000FE0B6 /* BalanceCoinModels.swift in Sources */,
 				39E5E6452807D68D0065544A /* HomeViewController.swift in Sources */,
 				39D6C87F282A03BA00B21C9E /* UserAuthViewController.swift in Sources */,
@@ -835,6 +842,7 @@
 				39A7D2EF282E4D760075A73B /* SelfRegistViewController.swift in Sources */,
 				39E5E6292807D5DE0065544A /* AppDelegate.swift in Sources */,
 				39A7D2EA282E128E0075A73B /* AES256CBC.swift in Sources */,
+				39879AED283E5325008280D8 /* AddExchangeViewModel.swift in Sources */,
 				39E5E62B2807D5DE0065544A /* SceneDelegate.swift in Sources */,
 				392ED6D0283C9CBB00A38187 /* ExchangeDetailsGraphTableViewCell.swift in Sources */,
 				39EFF4EB282E02C6003C9426 /* UserConnections.swift in Sources */,
@@ -1009,7 +1017,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptoTax/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CryptoTax;
+				INFOPLIST_KEY_CFBundleDisplayName = "크립토택스";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1048,7 +1056,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptoTax/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CryptoTax;
+				INFOPLIST_KEY_CFBundleDisplayName = "크립토택스";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -84,8 +84,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9re-1A-oQj">
                                                 <rect key="frame" x="0.0" y="28" width="327" height="36"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,262,456,345원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-5v-muZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="36"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-5v-muZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="syQ-Zn-wpI"/>
                                                         </constraints>
@@ -116,7 +116,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEY-pC-10s">
                                         <rect key="frame" x="24" y="84" width="327" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="328,423,234원 (213.93%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CM-4P-zsy">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="준비중.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CM-4P-zsy">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="k8U-jT-kDT"/>
@@ -171,7 +171,7 @@
                                                 <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023.01.01 ~ 06.24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dlB-Yp-y6H">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000.00.00 ~ 00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dlB-Yp-y6H">
                                                 <rect key="frame" x="0.0" y="24" width="120" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="HGX-wn-8bM"/>
@@ -192,8 +192,8 @@
                                             <constraint firstAttribute="trailing" secondItem="dlB-Yp-y6H" secondAttribute="trailing" id="vFA-Vh-dV4"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,453,321원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deu-ci-UHd">
-                                        <rect key="frame" x="263" y="30" width="88" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deu-ci-UHd">
+                                        <rect key="frame" x="326.5" y="30" width="24.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="QeM-St-kkd"/>
                                         </constraints>
@@ -318,8 +318,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="avgBuyPriceLabel" destination="deu-ci-UHd" id="0k9-yN-OgB"/>
                 <outlet property="graphView" destination="0Dt-nL-Odx" id="Co0-di-5l3"/>
                 <outlet property="revenueAmountLabel" destination="4CM-4P-zsy" id="311-GV-dw1"/>
+                <outlet property="startEndLabel" destination="dlB-Yp-y6H" id="1OA-ro-LeC"/>
                 <outlet property="toggleLeading" destination="OmG-qN-hQC" id="lhU-tX-DSj"/>
                 <outlet property="toggleSwitchView" destination="1aq-pe-2jw" id="kyl-Jv-EE0"/>
                 <outlet property="toggleView" destination="WyX-OJ-ZDl" id="1ci-UJ-dYi"/>

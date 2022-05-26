@@ -24,6 +24,9 @@ import Locksmith
 //bottomButtonBottom
 
 class UserRegistViewController: UIViewController, SelectCarrierProtocol {
+    
+    var addExchangeViewModel = AddExchangeViewModel()
+    
     @IBOutlet weak var bottomButtonLeading: NSLayoutConstraint!
     @IBOutlet weak var bottomButtonTrailing: NSLayoutConstraint!
     @IBOutlet weak var bottomButtonBottom: NSLayoutConstraint!
@@ -125,6 +128,9 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
     
     func nextInputField() {
         if inputfieldCheck() && inputField < 3 {
+            if inputField == 0 {
+                textfields[1].becomeFirstResponder()
+            }
             inputField += 1
             if inputField != 4 {
                 inputfieldAnimation()
@@ -241,10 +247,15 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
 }
 
 extension UserRegistViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nextInputField()
+        return true
+    }
     
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textField)!
+        
         if textfieldIndex == 1 {
             guard let text = textField.text else { return }
             if text.count == 6 {
@@ -302,13 +313,57 @@ extension UserRegistViewController: NextViewProtocol {
                     
                     let alert = UIAlertController(title: "회원가입 성공", message: "userName: \(userName), userSession: \(userSession)", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                        
+                        
+                        
                         guard let smsAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? ExchangeConnectionViewController else { return }
-                        self.navigationController?.pushViewController(smsAuthVC, animated: true)
+                        smsAuthVC.firstTimeView = true
+                        
+                        self.addExchangeViewModel.getCoinBalanceData { [weak self] in
+                            guard let exchanges = self?.addExchangeViewModel.exchangeList else { return }
+                            
+                            var localList: [Keys] = []
+                            var foreignList: [Keys] = []
+                            var othersList: [Keys] = []
+                            var isRegisteredList: [[Bool]] = [[],[],[]]
+                            for exchange in exchanges {
+                                guard let type = exchange.type else { return }
+                                if type == "L" {
+                                    localList.append(exchange)
+                                    let isRegistered = exchange.isRegistered
+                                    isRegisteredList[0].append(isRegistered ?? false)
+                                } else if type == "F" {
+                                    foreignList.append(exchange)
+                                    let isRegistered = exchange.isRegistered
+                                    isRegisteredList[1].append(isRegistered ?? false)
+                                } else {
+                                    othersList.append(exchange)
+                                    let isRegistered = exchange.isRegistered
+                                    isRegisteredList[2].append(isRegistered ?? false)
+                                }
+                            }
+                            
+                            smsAuthVC.isRegisteredList = isRegisteredList
+                            smsAuthVC.localList = localList
+                            smsAuthVC.foreignList = foreignList
+                            smsAuthVC.othersList = othersList
+                            
+                            self?.navigationController?.pushViewController(smsAuthVC, animated: true)
+                        }
                     }
                     alert.addAction(okAction)
                     self.present(alert, animated: false, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: "회원가입 실패", message: "Error Code : \(result.code)", preferredStyle: .alert)
+                    var message: String
+                    let errorcode = result.code
+                    switch errorcode {
+                    case "1011":
+                        message = "회원가입 실패했습니다.\(errorcode)"
+                    default:
+                        message = "ErrorCode : " + errorcode
+                    }
+                    
+                    let alert = UIAlertController(title: "회원가입 실패", message: message, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default)
                     alert.addAction(okAction)
                     self.present(alert, animated: false, completion: nil)

@@ -92,12 +92,20 @@ extension ExchangeDetailsViewController: UITableViewDataSource {
             return cell
         } else if indexPath.section == 3 {
             let cell = exchangeDetailsTableView.dequeueReusableCell(withIdentifier: "AddExchangeTableViewCell", for: indexPath) as! AddExchangeTableViewCell
+            cell.addExchangeButton.addTarget(self, action: #selector(addExchange), for: .touchUpInside)
             return cell
         }
         return UITableViewCell()
     }
+    
+    @objc func addExchange() {
+        guard let addExchangeVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? ExchangeConnectionViewController else { return }
+//        addExchangeVC.modalPresentationStyle = .fullScreen
+        
+        self.navigationController?.pushViewController(addExchangeVC, animated: true)
+    }
 }
 
 extension ExchangeDetailsViewController: UITableViewDelegate {
-    
+
 }

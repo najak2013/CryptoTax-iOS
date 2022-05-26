@@ -9,6 +9,8 @@ import UIKit
 
 class AddExchangeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addExchangeButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

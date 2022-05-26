@@ -11,10 +11,18 @@ import Alamofire
 class BalanceConnections {
     private let MAIN_URL = "http://3.34.156.50:3000/api"
     
-    func graph(section: String, to_date: String, duration: String, exchanges: String, symbol: String, price_type: String, session: String, GraphHandler: @escaping (Result<BalanceGraphResponseModel, Error>) -> Void) {
+    func graph(parameters: [String:String], session: String, GraphHandler: @escaping (Result<BalanceGraphResponseModel, Error>) -> Void) {
+        
         let url = MAIN_URL + "/user/balance/graph"
-        print("세션 : ", session)
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
+        
+    
+        var parameter: [String:String]? = nil
+        
+        if parameters != [:] {
+            parameter = parameters
+        }
+        
+        AF.request(url, method: .get, parameters: parameter, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
                     .validate(statusCode: 200..<300)
                     //200~300사이 상태만 허용
                     .validate(contentType: ["application/json"])
@@ -34,7 +42,9 @@ class BalanceConnections {
     func exchange(exchanges: String, symbol:String, session: String, ExchangeBalanceHandler: @escaping (Result<BalanceExchangeResponseModel, Error>) -> Void) {
         let url = MAIN_URL + "/user/balance/exchange"
         
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
+        let parameters = ["symbol": symbol]
+        
+        AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
                     .validate(statusCode: 200..<300)
                     //200~300사이 상태만 허용
                     .validate(contentType: ["application/json"])
@@ -51,7 +61,14 @@ class BalanceConnections {
     func coin(exchanges: String, symbol: String, session: String, CoinBalanceHandler: @escaping (Result<BalanceCoinResponseModel, Error>) -> Void) {
         let url = MAIN_URL + "/user/balance/coin"
         
-        let parameters = ["symbol": symbol]
+        
+        var parameters: [String:String] = [:]
+        
+        if exchanges != "" {
+            parameters["exchanges"] = exchanges
+        } else {
+            parameters["symbol"] = symbol
+        }
         
         AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
                     .validate(statusCode: 200..<300)

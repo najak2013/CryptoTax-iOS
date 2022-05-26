@@ -216,7 +216,7 @@
                                         <rect key="frame" x="0.0" y="60" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유 수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co2-Et-Ceg">
-                                                <rect key="frame" x="20" y="20" width="62.5" height="20"/>
+                                                <rect key="frame" x="24" y="20" width="62.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="xrr-tE-T0b"/>
                                                 </constraints>
@@ -240,7 +240,7 @@
                                             <constraint firstAttribute="trailing" secondItem="hzX-xL-1lI" secondAttribute="trailing" constant="24" id="ayS-k6-iPR"/>
                                             <constraint firstItem="co2-Et-Ceg" firstAttribute="top" secondItem="APB-sI-95v" secondAttribute="top" constant="20" id="cqW-AP-EF8"/>
                                             <constraint firstAttribute="height" constant="60" id="fgD-P7-96i"/>
-                                            <constraint firstItem="co2-Et-Ceg" firstAttribute="leading" secondItem="APB-sI-95v" secondAttribute="leading" constant="20" id="kOc-zc-IrX"/>
+                                            <constraint firstItem="co2-Et-Ceg" firstAttribute="leading" secondItem="APB-sI-95v" secondAttribute="leading" constant="24" id="kOc-zc-IrX"/>
                                             <constraint firstAttribute="bottom" secondItem="hzX-xL-1lI" secondAttribute="bottom" constant="20" id="xPv-Fe-xe6"/>
                                             <constraint firstItem="hzX-xL-1lI" firstAttribute="top" secondItem="APB-sI-95v" secondAttribute="top" constant="20" id="z20-Od-Xvh"/>
                                         </constraints>

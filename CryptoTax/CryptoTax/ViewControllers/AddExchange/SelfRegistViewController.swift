@@ -18,6 +18,7 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var userInputViews: [UIView]!
     @IBOutlet var underLines: [UIView]!
     
+    var delegate: AddExchangeToServer?
     
     @IBOutlet weak var topLabel: UILabel!
     
@@ -26,7 +27,7 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
     var placeholders: [String] = []
     
     var section: Int = 0
-    var exchange: String = ""
+    var exchange: ExchangeName?
     var row: Int = 0
     
     override func viewDidLoad() {
@@ -37,11 +38,12 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
         
         textfieldInit()
         
-        topLabel.text = "\(exchange)에서 생성한\nAPI Key를 입력해주세요"
+        guard let exchangeName = exchange?.ko ?? exchange?.en else { return }
+        topLabel.text = "\(exchangeName)에서 생성한\nAPI Key를 입력해주세요"
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @IBAction func okButton(_ sender: Any) {
@@ -55,30 +57,27 @@ class SelfRegistViewController: UIViewController, UITextFieldDelegate {
         }
         
         if textfieldCheck {
-            let exchangeData = ExchangeTestData.shared
-            
             guard let accessKey = textfields[0].text else { return }
             guard let secretKey = textfields[1].text else { return }
-                        
-            ExchangeConnections().key(session: UserInfo().getUserSession(), exchangeName: exchange, accessKey: AES256Util.encrypt(string: accessKey), secretKey: AES256Util.encrypt(string: secretKey), exchangeKeyJoinHandler: { result in
+            guard let exchangeName = exchange?.en else { return }
+            ExchangeConnections().key(session: UserInfo().getUserSession(), exchangeName: exchangeName, accessKey: AES256Util.encrypt(string: accessKey), secretKey: AES256Util.encrypt(string: secretKey), exchangeKeyJoinHandler: { result in
                 switch result {
                 case let .success(result):
-                    print("성공 결과 : ", result)
-                    print("여기입니다.")
                     if result.code == "0000" {
-                        
-                        if !exchangeData.exchangeState[self.section][self.row] {
-                            exchangeData.exchangeState[self.section][self.row] = true
-                        }
-                        
-                        if !exchangeData.exchangeSelected[self.section].contains(self.exchange) {
-                            exchangeData.exchangeSelected[self.section].append(self.exchange)
-                        }
-                        print("성공")
+                        print("델리게이트 실행")
+                        self.delegate?.exchange(self, section: self.section, row: self.row)
                         self.dismiss(animated: true)
-//                        self.navigationController?.popViewController(animated: true)
                     } else {
-                        let alert = UIAlertController(title: "서버등록 실패", message: "Error Code : \(result.code)", preferredStyle: .alert)
+                        var message: String
+                        let errorcode = result.code
+                        switch errorcode {
+                        case "0500":
+                            message = "입력값을 확인해주세요."
+                        default:
+                            message = "ErrorCode : " + errorcode
+                        }
+                        
+                        let alert = UIAlertController(title: "서버등록 실패", message: "\(message)", preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: .default)
                         alert.addAction(okAction)
                         self.present(alert, animated: false, completion: nil)

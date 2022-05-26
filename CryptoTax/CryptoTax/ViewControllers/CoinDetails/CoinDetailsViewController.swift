@@ -23,6 +23,8 @@ class CoinDetailsViewController: UIViewController {
     var yearLabels: [String : Int] = [:]
     // 초기화 필요
     var dateLabels: [String : Int] = [:]
+    // 초기화 필요
+    var exchanges: [Exchange]?
     
     
     var coinDetailsViewModel = CoinDetailsViewModel()
@@ -44,9 +46,10 @@ class CoinDetailsViewController: UIViewController {
     func getConnections() {
 //        yearLabels.removeAll()
 //        dateLabels.removeAll()
-        
+            
         coinDetailsViewModel.getCoinBalanceData(symbol: symbol ?? "") { [weak self] in
             self?.selectedCoin = self?.coinDetailsViewModel.selectedCoin
+            self?.exchanges = self?.coinDetailsViewModel.exchanges
             DispatchQueue.main.async {
                 self?.coinDetailsTableView.reloadData()
                 self?.coinListCollectionView.reloadData()
@@ -56,6 +59,7 @@ class CoinDetailsViewController: UIViewController {
         coinDetailsViewModel.getTransactionsData(symbol: symbol ?? "") { [weak self] in
             self?.transactions = self?.coinDetailsViewModel.transactions
             DispatchQueue.main.async {
+                print("이거 안됌?")
                 self?.coinDetailsTableView.reloadData()
                 self?.coinListCollectionView.reloadData()
             }
@@ -92,7 +96,8 @@ extension CoinDetailsViewController: UITableViewDataSource {
         } else if section == 1 {
             return 1
         } else if section == 2 {
-            return 4
+            let count: Int = exchanges?.count ?? 0
+            return count
         } else if section == 3 {
             return 1
         } else if section == 4 {
@@ -125,10 +130,36 @@ extension CoinDetailsViewController: UITableViewDataSource {
         } else if indexPath.section == 1 {
             let cell = coinDetailsTableView.dequeueReusableCell(withIdentifier: "TopTitleTableViewCell", for: indexPath) as! TopTitleTableViewCell
             cell.heightConstraint.constant = 120
-            cell.titleLabel.text = "이더리움을\n거래소 3곳에서 거래하셨어요"
+            
+            guard let coinName = selectedCoin?.name else { return UITableViewCell() }
+            let name: String = coinName.ko ?? coinName.en ?? "error"
+            let count: Int = exchanges?.count ?? 0
+            cell.titleLabel.text = "\(name)을\n거래소 \(count)곳에서 거래하셨어요"
             return cell
         } else if indexPath.section == 2 {
             let cell = coinDetailsTableView.dequeueReusableCell(withIdentifier: "ExchangeTableViewCell", for: indexPath) as! ExchangeTableViewCell
+            guard let exchange = exchanges?[indexPath.row] else { return UITableViewCell() }
+            guard let exchangethumbnail = exchange.thumbnail else { return UITableViewCell() }
+            guard let exchangeName = exchange.name else { return UITableViewCell() }
+            guard let exchangeAmount = exchange.amount else { return UITableViewCell() }
+            guard let exchangeYield = exchange.yield else { return UITableViewCell() }
+            
+            let url = URL(string: exchangethumbnail)
+            guard let data = try? Data(contentsOf: url!) else { return UITableViewCell() }
+            
+            cell.thumbnailImageView.image = UIImage(data: data)
+            cell.valuationPriceLabel.text = exchangeAmount + " "
+            cell.exchangeNameLabel.text = exchangeName.ko ?? exchangeName.en ?? "Error"
+            
+            var doubleYield = Double(exchangeYield) ?? 0
+            if doubleYield >= 0 {
+                cell.yieldLabel.textColor = UIColor(red: 0.8667, green: 0.3216, blue: 0.3412, alpha: 1.0)
+            } else {
+                doubleYield = (doubleYield * -1)
+                cell.yieldLabel.textColor = UIColor(red: 0.2824, green: 0.502, blue: 0.9333, alpha: 1.0)
+            }
+            cell.yieldLabel.text = "\(doubleYield * 100)"
+            
             return cell
         } else if indexPath.section == 3 {
             let cell = coinDetailsTableView.dequeueReusableCell(withIdentifier: "CoinOptionTableViewCell", for: indexPath) as! CoinOptionTableViewCell

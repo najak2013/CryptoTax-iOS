@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "navi_asset_off.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "mytax.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

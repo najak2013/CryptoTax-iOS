@@ -16,3 +16,8 @@ protocol SelectCarrierProtocol {
 protocol NextViewProtocol {
     func nextView(_ vc: UIViewController)
 }
+
+protocol AddExchangeToServer {
+    func exchange(_ vc: UIViewController, section: Int, row: Int)
+}
+

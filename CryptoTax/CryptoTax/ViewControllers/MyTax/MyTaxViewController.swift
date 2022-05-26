@@ -9,6 +9,10 @@ import UIKit
 
 class MyTaxViewController: BaseViewController {
     
+    
+    var myTaxViewModel = MyTaxViewModel()
+    var addExchangeViewModel = AddExchangeViewModel()
+    
     // 맨 위 테이블
     @IBOutlet weak var topLabel: UILabel!
     // 안내 문구
@@ -41,8 +45,7 @@ class MyTaxViewController: BaseViewController {
     // 거래 횟수
     @IBOutlet weak var transactionCountLabel: UILabel!
     
-    var myTaxViewModel = MyTaxViewModel()
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,27 +60,37 @@ class MyTaxViewController: BaseViewController {
         topLabel.text = "\(UserInfo().getUserName())님의 \n예상 세금이에요"
         
         myTaxViewModel.getMyTaxData { [weak self] in
+            guard let taxRemainingDays = self?.myTaxViewModel.taxRemainingDays else { return }
+            guard let expectedTax = self?.myTaxViewModel.expectedTax?.expectedTax else { return }
+            guard let incomeTax = self?.myTaxViewModel.expectedTax?.incomeTax else { return }
+            guard let localTax = self?.myTaxViewModel.expectedTax?.localTax else { return }
+            guard let taxBaseAmount = self?.myTaxViewModel.expectedTax?.taxBaseAmount else { return }
+            guard let totalRevenueAmount = self?.myTaxViewModel.expectedTax?.totalRevenueAmount else { return }
+            guard let purchaseAmount = self?.myTaxViewModel.expectedTax?.purchaseAmount else { return }
+            guard let exchangeFee = self?.myTaxViewModel.expectedTax?.exchangeFee else { return }
+            guard let otherCost = self?.myTaxViewModel.expectedTax?.otherCost else { return }
+            guard let basicDeduction = self?.myTaxViewModel.expectedTax?.basicDeduction else { return }
+            
             // 안내 문구
-            self?.remainLabel.text = self?.myTaxViewModel.taxRemainingDays
+            self?.remainLabel.text = taxRemainingDays
             // 예상 세금
-            self?.expectedTaxLabel.text = self?.myTaxViewModel.expectedTax?.expectedTax
+            self?.expectedTaxLabel.text = expectedTax.insertComma + "원"
             // 소득세
-            self?.incomeTaxLabel.text = self?.myTaxViewModel.expectedTax?.incomeTax
+            self?.incomeTaxLabel.text = incomeTax.insertComma + "원"
             // 지방세
-            self?.localTaxLabel.text = self?.myTaxViewModel.expectedTax?.localTax
+            self?.localTaxLabel.text = localTax.insertComma + "원"
             // 과세표준 금액
-            let taxBase = self?.myTaxViewModel.expectedTax?.taxBaseAmount?.insertComma ?? "0"
-            self?.taxBaseAmountLabel.text = "과세표준 금액은\n\(taxBase)원이에요"
+            self?.taxBaseAmountLabel.text = "과세표준 금액은\n\(taxBaseAmount.insertComma)원이에요"
             // 전체 수익금액
-            self?.totalRevenueAmountLabel.text = self?.myTaxViewModel.expectedTax?.totalRevenueAmount
+            self?.totalRevenueAmountLabel.text = totalRevenueAmount.insertComma + "원"
             // 구매한 금액
-            self?.purchaseAmountLabel.text = self?.myTaxViewModel.expectedTax?.purchaseAmount
+            self?.purchaseAmountLabel.text = purchaseAmount.insertComma + "원"
             // 거래소 수수료
-            self?.exchangeFeeLabel.text = self?.myTaxViewModel.expectedTax?.exchangeFee
+            self?.exchangeFeeLabel.text = exchangeFee.insertComma + "원"
             // 기타 비용
-            self?.otherCostLabel.text = self?.myTaxViewModel.expectedTax?.otherCost
+            self?.otherCostLabel.text = otherCost.insertComma + "원"
             // 기본 공제
-            self?.basicDeductionLabel.text = self?.myTaxViewModel.expectedTax?.basicDeduction
+            self?.basicDeductionLabel.text = basicDeduction.insertComma + "원"
             
             
             // 연결 서비스
@@ -97,14 +110,47 @@ class MyTaxViewController: BaseViewController {
     }
     
     @IBAction func addExchange(_ sender: Any) {
+        pushExchangeConnectionView()
+    }
+    
+    @IBAction func topRightButton(_ sender: Any) {
+        pushExchangeConnectionView()
+    }
+    
+    func pushExchangeConnectionView() {
         guard let addExchangeVC = self.storyboard?.instantiateViewController(withIdentifier: "ExchangeConnectionViewController") as? ExchangeConnectionViewController else { return }
-//        addExchangeVC.modalPresentationStyle = .fullScreen
         
-        self.navigationController?.pushViewController(addExchangeVC, animated: true)
-        
-        
-//        guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
-//        self.navigationController?.pushViewController(loginVC, animated: true)
+        addExchangeViewModel.getCoinBalanceData { [weak self] in
+            guard let exchanges = self?.addExchangeViewModel.exchangeList else { return }
+            
+            var localList: [Keys] = []
+            var foreignList: [Keys] = []
+            var othersList: [Keys] = []
+            var isRegisteredList: [[Bool]] = [[],[],[]]
+            for exchange in exchanges {
+                guard let type = exchange.type else { return }
+                if type == "L" {
+                    localList.append(exchange)
+                    let isRegistered = exchange.isRegistered
+                    isRegisteredList[0].append(isRegistered ?? false)
+                } else if type == "F" {
+                    foreignList.append(exchange)
+                    let isRegistered = exchange.isRegistered
+                    isRegisteredList[1].append(isRegistered ?? false)
+                } else {
+                    othersList.append(exchange)
+                    let isRegistered = exchange.isRegistered
+                    isRegisteredList[2].append(isRegistered ?? false)
+                }
+            }
+            
+            addExchangeVC.isRegisteredList = isRegisteredList
+            addExchangeVC.localList = localList
+            addExchangeVC.foreignList = foreignList
+            addExchangeVC.othersList = othersList
+            
+            self?.navigationController?.pushViewController(addExchangeVC, animated: true)
+        }
     }
     
 }

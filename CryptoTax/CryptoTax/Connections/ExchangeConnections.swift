@@ -10,8 +10,25 @@ import Alamofire
 
 
 class ExchangeConnections {
-    
     private let MAIN_URL = "http://3.34.156.50:3000/api"
+    
+    
+    func getExchangeList(session: String, getExchangeListBalanceHandler: @escaping (Result<GetExchangeResponseModel, Error>) -> Void) {
+        let url = MAIN_URL + "/user/keys"
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8", "Accept":"application/json", "session":session])
+                    .validate(statusCode: 200..<300)
+                    //200~300사이 상태만 허용
+                    .validate(contentType: ["application/json"])
+                    .responseDecodable(of: GetExchangeResponseModel.self) { (response) in
+                    switch response.result {
+                    case .success(let response):
+                        getExchangeListBalanceHandler(.success(response))
+                    case let .failure(error):
+                        getExchangeListBalanceHandler(.failure(error))
+                    }
+                }
+    }
     
     func key(session: String, exchangeName: String, accessKey: String, secretKey: String, exchangeKeyJoinHandler: @escaping (Result<ExchangeJoinResponseModel, Error>) -> Void) {
         let url = MAIN_URL + "/user/exchange/key"
@@ -59,10 +76,6 @@ class ExchangeConnections {
                         print(error.localizedDescription)
                     }
                 }
-    }
-    
-    func crawling() {
-        print("crawling")
     }
 }
 

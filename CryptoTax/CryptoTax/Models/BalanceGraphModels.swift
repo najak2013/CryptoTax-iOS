@@ -20,6 +20,9 @@ internal struct BalanceGraphMore: Codable {
 
 internal struct Summary: Codable {
     internal let totalAsset: Int?
+    internal let collectionEnd: String?
     internal let yield: Double?
+    internal let collectionStart: String?
     internal let revenueAmount: Int?
+    internal let avgBuyPrice: Double?
 }

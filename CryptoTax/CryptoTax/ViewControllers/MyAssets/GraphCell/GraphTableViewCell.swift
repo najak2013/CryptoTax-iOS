@@ -13,6 +13,10 @@ class GraphTableViewCell: UITableViewCell, ChartViewDelegate {
     
     @IBOutlet weak var totalAssetLabel: UILabel!
     @IBOutlet weak var revenueAmountLabel: UILabel!
+    @IBOutlet weak var startEndLabel: UILabel!
+    @IBOutlet weak var avgBuyPriceLabel: UILabel!
+    
+    
     
     @IBOutlet weak var toggleSwitchView: UIView!
     @IBOutlet weak var toggleLeading: NSLayoutConstraint!
