@@ -1758,13 +1758,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-he-hBq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n18-CY-6eZ">
                                                 <rect key="frame" x="333" y="54" width="24" height="24"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="8xm-Bg-xM3"/>
-                                                    <constraint firstAttribute="width" constant="24" id="sHq-Sh-bXC"/>
+                                                    <constraint firstAttribute="width" constant="24" id="Q17-Fi-XnK"/>
+                                                    <constraint firstAttribute="height" constant="24" id="aXp-SG-pdO"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="ico_connection">
@@ -1774,41 +1774,28 @@
                                                     <action selector="topRightButton:" destination="ILM-XW-Eaa" eventType="touchUpInside" id="Ws7-nJ-U6z"/>
                                                 </connections>
                                             </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="88" id="IHS-j3-op0"/>
-                                            <constraint firstAttribute="trailing" secondItem="n18-CY-6eZ" secondAttribute="trailing" constant="18" id="NHi-1w-JfG"/>
-                                            <constraint firstItem="n18-CY-6eZ" firstAttribute="top" secondItem="QBJ-he-hBq" secondAttribute="top" constant="54" id="bkd-Me-y0Y"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-IJ-q70">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="94"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="김택스님의 예상 세금이에요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95I-NJ-fiH">
-                                                <rect key="frame" x="24" y="-2" width="202" height="98"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김택스님의 예상 세금이에요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95I-NJ-fiH">
+                                                <rect key="frame" x="24" y="149.33333333333334" width="299" height="32.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="26"/>
                                                 <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="95I-NJ-fiH" firstAttribute="centerY" secondItem="ULa-IJ-q70" secondAttribute="centerY" id="Khv-lb-8wE"/>
-                                            <constraint firstAttribute="height" constant="94" id="N6O-vi-wA7"/>
-                                            <constraint firstItem="95I-NJ-fiH" firstAttribute="leading" secondItem="ULa-IJ-q70" secondAttribute="leading" constant="24" id="X1g-VJ-ucS"/>
-                                            <constraint firstAttribute="trailing" secondItem="95I-NJ-fiH" secondAttribute="trailing" constant="187" id="sI7-VC-mD9"/>
+                                            <constraint firstItem="95I-NJ-fiH" firstAttribute="leading" secondItem="QBJ-he-hBq" secondAttribute="leading" constant="24" id="Avs-dI-vhA"/>
+                                            <constraint firstAttribute="trailing" secondItem="n18-CY-6eZ" secondAttribute="trailing" constant="18" id="C7e-sH-330"/>
+                                            <constraint firstAttribute="bottom" secondItem="95I-NJ-fiH" secondAttribute="bottom" id="Pz6-tf-OGw"/>
+                                            <constraint firstItem="n18-CY-6eZ" firstAttribute="top" secondItem="QBJ-he-hBq" secondAttribute="top" constant="54" id="h2e-H1-qyU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QBJ-he-hBq" secondAttribute="trailing" id="7D9-FN-glS"/>
-                                    <constraint firstItem="ULa-IJ-q70" firstAttribute="leading" secondItem="IHE-wb-RHE" secondAttribute="leading" id="7sQ-Bd-OEd"/>
-                                    <constraint firstAttribute="bottom" secondItem="ULa-IJ-q70" secondAttribute="bottom" id="E9V-Ys-vRk"/>
-                                    <constraint firstItem="QBJ-he-hBq" firstAttribute="leading" secondItem="IHE-wb-RHE" secondAttribute="leading" id="amo-NM-HUF"/>
-                                    <constraint firstItem="QBJ-he-hBq" firstAttribute="top" secondItem="IHE-wb-RHE" secondAttribute="top" id="fIe-ER-w3S"/>
-                                    <constraint firstItem="ULa-IJ-q70" firstAttribute="top" secondItem="QBJ-he-hBq" secondAttribute="bottom" id="nZL-on-S9R"/>
+                                    <constraint firstItem="QBJ-he-hBq" firstAttribute="top" secondItem="IHE-wb-RHE" secondAttribute="top" id="3cB-ay-hVL"/>
+                                    <constraint firstAttribute="trailing" secondItem="QBJ-he-hBq" secondAttribute="trailing" id="GaV-P3-Eh5"/>
+                                    <constraint firstAttribute="bottom" secondItem="QBJ-he-hBq" secondAttribute="bottom" id="Hfm-QX-Em2"/>
+                                    <constraint firstItem="QBJ-he-hBq" firstAttribute="leading" secondItem="IHE-wb-RHE" secondAttribute="leading" id="j3h-9z-p65"/>
                                     <constraint firstAttribute="height" constant="182" id="spp-Rn-uUb"/>
-                                    <constraint firstAttribute="trailing" secondItem="ULa-IJ-q70" secondAttribute="trailing" id="v0z-Ec-1Dy"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHB-Dx-fbF">
@@ -3104,7 +3091,6 @@
                         <outlet property="purchaseAmountLabel" destination="g0m-LL-t4F" id="oDh-oB-B30"/>
                         <outlet property="remainLabel" destination="BGx-sg-DDi" id="Ci2-W0-GpM"/>
                         <outlet property="taxBaseAmountLabel" destination="7Gi-I4-B5m" id="ge4-b4-Jua"/>
-                        <outlet property="titleViewHeight" destination="N6O-vi-wA7" id="M4W-1T-QME"/>
                         <outlet property="topLabel" destination="95I-NJ-fiH" id="PnS-1B-5Rr"/>
                         <outlet property="totalRevenueAmountLabel" destination="bbT-1p-Qiv" id="yyP-Uh-EZa"/>
                         <outlet property="transactionCountLabel" destination="Ngs-HT-00i" id="dCX-fj-ttb"/>
