@@ -13,23 +13,11 @@ class CoinDetailsViewModel {
     var selectedCoin: CoinInfo?
     var transactions: [Transactions]?
     var exchanges: [Exchange]?
+    var summary: Summary?
+    
+    
     
     func getCoinBalanceData(symbol: String, parameters: [String : String], GetFinishedHandler: @escaping () -> ()) {
-        
-        
-        BalanceConnections().graph(parameters: parameters, session: UserInfo().getUserSession(), GraphHandler: { result in
-            switch result {
-            case let .failure(error):
-                print(error)
-                GetFinishedHandler()
-            case let .success(result):
-                
-                
-                
-                GetFinishedHandler()
-            }
-        })
-        
         
         getCoinBalance(exchanges: "", symbol: symbol, GetCoinHandler: { result in
             switch result {
@@ -41,14 +29,27 @@ class CoinDetailsViewModel {
                 
                 BalanceConnections().exchange(exchanges: "", symbol: symbol, session: UserInfo().getUserSession(), ExchangeBalanceHandler: { result in
                     switch result {
-                    case let .success(result):
-                        
-                        guard let exchanges = result.more.exchange else { return }
-                        self.exchanges = exchanges
-                        GetFinishedHandler()
                     case let .failure(error):
                         print(error)
+                        
                         GetFinishedHandler()
+                    case let .success(result):
+                        guard let exchanges = result.more.exchange else { return }
+                        self.exchanges = exchanges
+                        
+                        BalanceConnections().graph(parameters: parameters, session: UserInfo().getUserSession(), GraphHandler: { result in
+                            switch result {
+                            case let .failure(error):
+                                print(error)
+                                GetFinishedHandler()
+                            case let .success(result):
+                                guard let summary = result.more.summary else {
+                                    return
+                                }
+                                self.summary = summary
+                                GetFinishedHandler()
+                            }
+                        })
                     }
                 })
             }

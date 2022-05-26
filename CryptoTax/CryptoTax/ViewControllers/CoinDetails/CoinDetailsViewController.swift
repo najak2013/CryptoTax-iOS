@@ -18,13 +18,16 @@ class CoinDetailsViewController: UIViewController {
     // 초기화 필요
     var transactions: [Transactions]?
     // 초기화 필요
-    var symbol: String?
+    var symbol: String = ""
     // 초기화 필요
     var yearLabels: [String : Int] = [:]
     // 초기화 필요
     var dateLabels: [String : Int] = [:]
     // 초기화 필요
     var exchanges: [Exchange]?
+    // 초기화 필요
+    var summary: Summary?
+    
     
     
     var coinDetailsViewModel = CoinDetailsViewModel()
@@ -38,7 +41,7 @@ class CoinDetailsViewController: UIViewController {
         coinDetailsTableView.dataSource = self
         coinDetailsTableView.delegate = self
         cellRegister()
-        symbol = selectedCoin?.ticker
+        symbol = selectedCoin?.ticker ?? ""
         getConnections()
     }
     
@@ -47,19 +50,22 @@ class CoinDetailsViewController: UIViewController {
 //        yearLabels.removeAll()
 //        dateLabels.removeAll()
             
-        coinDetailsViewModel.getCoinBalanceData(symbol: symbol ?? "") { [weak self] in
+        
+        let parameters: [String : String] = ["section":"month", "duration": "3M", "symbol": symbol, "price_type": "profit"]
+        
+        coinDetailsViewModel.getCoinBalanceData(symbol: symbol, parameters: parameters) { [weak self] in
             self?.selectedCoin = self?.coinDetailsViewModel.selectedCoin
             self?.exchanges = self?.coinDetailsViewModel.exchanges
+            self?.summary = self?.coinDetailsViewModel.summary
             DispatchQueue.main.async {
                 self?.coinDetailsTableView.reloadData()
                 self?.coinListCollectionView.reloadData()
             }
         }
         
-        coinDetailsViewModel.getTransactionsData(symbol: symbol ?? "") { [weak self] in
+        coinDetailsViewModel.getTransactionsData(symbol: symbol) { [weak self] in
             self?.transactions = self?.coinDetailsViewModel.transactions
             DispatchQueue.main.async {
-                print("이거 안됌?")
                 self?.coinDetailsTableView.reloadData()
                 self?.coinListCollectionView.reloadData()
             }
@@ -179,7 +185,7 @@ extension CoinDetailsViewController: UITableViewDataSource {
             guard let exchangeNameKoEn = transactions?[indexPath.row].exchangeName else { return UITableViewCell() }
             
             let orderName = exchangeNameKoEn.ko ?? exchangeNameKoEn.en ?? "error"
-            let exchangeName = exchangeNameKoEn.ko ?? exchangeNameKoEn.en ?? "error"
+//            let exchangeName = exchangeNameKoEn.ko ?? exchangeNameKoEn.en ?? "error"
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd H:m:s" // 2020-08-13 16:30
@@ -293,7 +299,7 @@ extension CoinDetailsViewController: UICollectionViewDataSource {
 
 extension CoinDetailsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        symbol = symbolList[indexPath.row].first
+        symbol = symbolList[indexPath.row].first ?? ""
         getConnections()
     }
 }
