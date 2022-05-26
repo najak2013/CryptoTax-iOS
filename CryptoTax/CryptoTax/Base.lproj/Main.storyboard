@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -530,7 +531,7 @@
                                                                         <attributes>
                                                                             <color key="NSBackgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="NSColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="13" name="SpoqaHanSansNeo-Regular"/>
+                                                                            <font key="NSFont" metaFont="system"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -538,7 +539,7 @@
                                                                         <attributes>
                                                                             <color key="NSBackgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="NSColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="13" name="SpoqaHanSansNeo-Regular"/>
+                                                                            <font key="NSFont" metaFont="system"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                             <integer key="NSUnderline" value="1"/>
                                                                         </attributes>
@@ -547,7 +548,7 @@
                                                                         <attributes>
                                                                             <color key="NSBackgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="NSColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="13" name="SpoqaHanSansNeo-Regular"/>
+                                                                            <font key="NSFont" metaFont="system"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -567,10 +568,10 @@
                                                         <rect key="frame" x="0.0" y="108" width="375" height="188"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsa-W6-R2g">
-                                                                <rect key="frame" x="146" y="0.0" width="83" height="18"/>
+                                                                <rect key="frame" x="147.33333333333334" y="0.0" width="80.333333333333343" height="18"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbQ-SC-mmB">
-                                                                        <rect key="frame" x="0.0" y="1" width="63" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="1" width="60" height="16"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="16" id="ED1-Sb-IbL"/>
                                                                         </constraints>
@@ -579,7 +580,7 @@
                                                                                 <attributes>
                                                                                     <color key="NSBackgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                     <color key="NSColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <font key="NSFont" size="13" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -587,7 +588,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_downpoint" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-cM-YfI">
-                                                                        <rect key="frame" x="70" y="6.6666666666666288" width="8.3333333333333286" height="5"/>
+                                                                        <rect key="frame" x="67" y="6.6666666666666288" width="8.3333333333333286" height="5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="8.3800000000000008" id="KZA-QZ-siZ"/>
                                                                             <constraint firstAttribute="height" constant="4.9400000000000004" id="mrW-tq-WLX"/>
@@ -1040,7 +1041,7 @@
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="IP주소 3.34.156.50">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="14" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="menu" size="14"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                         </attributedString>
@@ -1326,7 +1327,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpH-at-zQ7">
-                                                <rect key="frame" x="24" y="37" width="202.66666666666666" height="31"/>
+                                                <rect key="frame" x="24" y="37" width="194" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="7xP-ou-aAU"/>
                                                 </constraints>
@@ -1334,7 +1335,7 @@
                                                     <fragment content="어디를 연결할까요?">
                                                         <attributes>
                                                             <color key="NSColor" red="0.10196078431372549" green="0.11764705882352941" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="25" name="SpoqaHanSansNeo-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="25"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -1359,15 +1360,15 @@
                                                     <fragment content="지금">
                                                         <attributes>
                                                             <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
-                                                            <font key="NSOriginalFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content=" 연결할 수 있는 거래소와 서비스들이에요. 앞으로 더 많은 거래소들이 추가될 예정이에요.">
                                                         <attributes>
                                                             <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -1401,7 +1402,7 @@
                                                                 <fragment content="국내">
                                                                     <attributes>
                                                                         <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="18" name="SpoqaHanSansNeo-Medium"/>
+                                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
@@ -1418,7 +1419,7 @@
                                                                 <fragment content="해외">
                                                                     <attributes>
                                                                         <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="18" name="SpoqaHanSansNeo-Medium"/>
+                                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -1436,7 +1437,7 @@
                                                                 <fragment content="지갑·NFT">
                                                                     <attributes>
                                                                         <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="18" name="SpoqaHanSansNeo-Medium"/>
+                                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -1563,7 +1564,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-1p-nVZ">
-                                            <rect key="frame" x="24" y="49" width="87" height="22"/>
+                                            <rect key="frame" x="24.000000000000007" y="49" width="82.666666666666686" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="F9s-hd-Hwn"/>
                                             </constraints>
@@ -1571,14 +1572,14 @@
                                                 <fragment content="국내 거래소">
                                                     <attributes>
                                                         <color key="NSColor" red="0.10196078431372549" green="0.11764705882352941" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="18" name="SpoqaHanSansNeo-Bold"/>
+                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22s-ze-U3Y">
-                                            <rect key="frame" x="296.33333333333331" y="51" width="54.666666666666686" height="18"/>
+                                            <rect key="frame" x="298.66666666666669" y="51" width="52.333333333333314" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="KXj-cb-oQM"/>
                                             </constraints>
@@ -1586,7 +1587,7 @@
                                                 <fragment content="전체 선택">
                                                     <attributes>
                                                         <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="14" name="SpoqaHanSansNeo-Regular"/>
+                                                        <font key="NSFont" metaFont="system" size="14"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -1594,7 +1595,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvX-5l-GcP">
-                                            <rect key="frame" x="296.33333333333331" y="51" width="54.666666666666686" height="18"/>
+                                            <rect key="frame" x="298.66666666666669" y="51" width="52.333333333333314" height="18"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         </button>
                                     </subviews>
@@ -1759,15 +1760,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-he-hBq">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n18-CY-6eZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n18-CY-6eZ">
                                                 <rect key="frame" x="333" y="54" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="8xm-Bg-xM3"/>
                                                     <constraint firstAttribute="width" constant="24" id="sHq-Sh-bXC"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="ico_connection"/>
+                                                <state key="normal" image="ico_connection">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="topRightButton:" destination="ILM-XW-Eaa" eventType="touchUpInside" id="Ws7-nJ-U6z"/>
                                                 </connections>
@@ -1782,23 +1784,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-IJ-q70">
                                         <rect key="frame" x="0.0" y="88" width="375" height="94"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김택스님의 예상 세금이에요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95I-NJ-fiH">
-                                                <rect key="frame" x="24" y="15" width="164" height="64"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="64" id="SDc-h1-tOY"/>
-                                                    <constraint firstAttribute="width" constant="164" id="wKt-jb-fMr"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="김택스님의 예상 세금이에요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="95I-NJ-fiH">
+                                                <rect key="frame" x="24" y="-2" width="202" height="98"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="26"/>
                                                 <color key="textColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="95I-NJ-fiH" secondAttribute="bottom" constant="15" id="19z-Fq-xMh"/>
+                                            <constraint firstItem="95I-NJ-fiH" firstAttribute="centerY" secondItem="ULa-IJ-q70" secondAttribute="centerY" id="Khv-lb-8wE"/>
                                             <constraint firstAttribute="height" constant="94" id="N6O-vi-wA7"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="95I-NJ-fiH" secondAttribute="trailing" constant="187" id="PB9-a4-rQ7"/>
-                                            <constraint firstItem="95I-NJ-fiH" firstAttribute="leading" secondItem="ULa-IJ-q70" secondAttribute="leading" constant="24" id="um7-7X-mW9"/>
-                                            <constraint firstItem="95I-NJ-fiH" firstAttribute="top" secondItem="ULa-IJ-q70" secondAttribute="top" constant="15" id="vJK-yx-Jkn"/>
+                                            <constraint firstItem="95I-NJ-fiH" firstAttribute="leading" secondItem="ULa-IJ-q70" secondAttribute="leading" constant="24" id="X1g-VJ-ucS"/>
+                                            <constraint firstAttribute="trailing" secondItem="95I-NJ-fiH" secondAttribute="trailing" constant="187" id="sI7-VC-mD9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1841,7 +1838,7 @@
                                                                                     <fragment content="0원">
                                                                                         <attributes>
                                                                                             <color key="NSColor" red="0.10196078431372549" green="0.11764705882352941" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                            <font key="NSFont" size="29" name="SpoqaHanSansNeo-Bold"/>
+                                                                                            <font key="NSFont" metaFont="system" size="29"/>
                                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                         </attributes>
                                                                                     </fragment>
@@ -1897,7 +1894,7 @@
                                                                 <rect key="frame" x="24" y="84" width="327" height="20"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGx-sg-DDi">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="173" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="eeP-5l-Jzp"/>
                                                                         </constraints>
@@ -1905,20 +1902,20 @@
                                                                             <fragment content="신고일까지">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment content=" ">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment content="132일 남았어요">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.25490196078431371" green="0.40784313725490196" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -1958,24 +1955,24 @@
                                                                             <fragment content="예상 세금은">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="14" name="SpoqaHanSansNeo-Medium"/>
+                                                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment content=" ">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="14" name="SpoqaHanSansNeo-Medium"/>
+                                                                                    <font key="NSFont" metaFont="menu" size="14"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment content="거래 수익">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.25490196078431371" green="0.40784313725490196" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="14" name="SpoqaHanSansNeo-Medium"/>
+                                                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment content="에 따라 바뀔 수 있어요">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="14" name="SpoqaHanSansNeo-Medium"/>
+                                                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                         </attributedString>
@@ -2014,12 +2011,12 @@
                                                                 <rect key="frame" x="24" y="19" width="93" height="42"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKt-dM-SJ8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="소득세">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Bold"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2027,7 +2024,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBq-1y-UHY">
-                                                                        <rect key="frame" x="0.0" y="24" width="95.666666666666671" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="24" width="95.333333333333329" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="18" id="12A-xB-96T"/>
                                                                         </constraints>
@@ -2035,7 +2032,7 @@
                                                                             <fragment content="과세표준 X 20%">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="14" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2064,7 +2061,7 @@
                                                                     <fragment content="0원">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -2091,12 +2088,12 @@
                                                                 <rect key="frame" x="24" y="19" width="85" height="42"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVR-eD-6tu">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="지방소득세">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Bold"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2104,7 +2101,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8o-62-BUa">
-                                                                        <rect key="frame" x="0.0" y="24" width="87.333333333333329" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="24" width="86.666666666666671" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="18" id="kLc-H6-bpt"/>
                                                                         </constraints>
@@ -2112,7 +2109,7 @@
                                                                             <fragment content="과세표준 X 2%">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="14" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2141,7 +2138,7 @@
                                                                     <fragment content="0원">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -2200,20 +2197,20 @@
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="과세표준 금액은 ">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="20" name="SpoqaHanSansNeo-Bold"/>
+                                                                                    <font key="NSFont" metaFont="system" size="20"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment content="0원">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.25490196078431371" green="0.40784313725490196" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="20" name="SpoqaHanSansNeo-Bold"/>
+                                                                                    <font key="NSFont" metaFont="system" size="20"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment content="이에요">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="20" name="SpoqaHanSansNeo-Bold"/>
+                                                                                    <font key="NSFont" metaFont="system" size="20"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2248,7 +2245,7 @@
                                                                 <rect key="frame" x="24" y="20.666666666666629" width="327" height="19"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK2-Aq-49d">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="19"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="Jzg-Cb-vTQ"/>
                                                                         </constraints>
@@ -2256,14 +2253,14 @@
                                                                             <fragment content="전체 수익금액">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.20784313725490194" green="0.23529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Bold"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                 </attributes>
                                                                             </fragment>
                                                                         </attributedString>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbT-1p-Qiv">
-                                                                        <rect key="frame" x="302.66666666666669" y="0.0" width="24.333333333333314" height="19"/>
+                                                                        <rect key="frame" x="303.33333333333331" y="0.0" width="23.666666666666686" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="klu-Zj-FTf"/>
                                                                         </constraints>
@@ -2271,7 +2268,7 @@
                                                                             <fragment content="0원">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2327,7 +2324,7 @@
                                                                 <rect key="frame" x="24" y="20.666666666666629" width="327" height="19"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEe-Pf-g6I">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="77.333333333333329" height="19"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="xrQ-qA-bXe"/>
                                                                         </constraints>
@@ -2335,7 +2332,7 @@
                                                                             <fragment content="구매한 금액">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2343,7 +2340,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0m-LL-t4F">
-                                                                        <rect key="frame" x="302.66666666666669" y="0.0" width="24.333333333333314" height="19"/>
+                                                                        <rect key="frame" x="303.33333333333331" y="0.0" width="23.666666666666686" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="Ecv-Ml-EBu"/>
                                                                         </constraints>
@@ -2351,7 +2348,7 @@
                                                                             <fragment content="0원">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2387,7 +2384,7 @@
                                                                 <rect key="frame" x="24" y="20.666666666666629" width="327" height="19"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytF-zx-keW">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="19"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="6Oy-L8-kMy"/>
                                                                         </constraints>
@@ -2395,7 +2392,7 @@
                                                                             <fragment content="거래소 수수료">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2403,7 +2400,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP4-Zu-ZD8">
-                                                                        <rect key="frame" x="302.66666666666669" y="0.0" width="24.333333333333314" height="19"/>
+                                                                        <rect key="frame" x="303.33333333333331" y="0.0" width="23.666666666666686" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="ui6-xc-Rkc"/>
                                                                         </constraints>
@@ -2411,7 +2408,7 @@
                                                                             <fragment content="0원">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2447,7 +2444,7 @@
                                                                 <rect key="frame" x="24" y="20.666666666666629" width="327" height="19"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WS5-pV-lkZ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="62.666666666666664" height="19"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="Npc-ws-ksU"/>
                                                                         </constraints>
@@ -2455,7 +2452,7 @@
                                                                             <fragment content="기타 비용">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2463,7 +2460,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hae-zv-hgu">
-                                                                        <rect key="frame" x="276.66666666666669" y="0.0" width="24.333333333333314" height="19"/>
+                                                                        <rect key="frame" x="277.33333333333331" y="0.0" width="23.666666666666686" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="JqG-4p-9ny"/>
                                                                         </constraints>
@@ -2471,7 +2468,7 @@
                                                                             <fragment content="0원">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.25490196078431371" green="0.40784313725490196" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2519,7 +2516,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="86" height="19"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15w-E1-6n2">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="62.666666666666664" height="19"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="19"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="19" id="kbg-tc-dk5"/>
                                                                                 </constraints>
@@ -2527,7 +2524,7 @@
                                                                                     <fragment content="기본 공제">
                                                                                         <attributes>
                                                                                             <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                            <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                         </attributes>
                                                                                     </fragment>
@@ -2554,7 +2551,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28l-50-Xvz">
-                                                                        <rect key="frame" x="302.66666666666669" y="0.0" width="24.333333333333314" height="19"/>
+                                                                        <rect key="frame" x="303.33333333333331" y="0.0" width="23.666666666666686" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="hIl-J8-HCR"/>
                                                                         </constraints>
@@ -2562,7 +2559,7 @@
                                                                             <fragment content="0원">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.31372549019607843" green="0.34509803921568627" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2632,11 +2629,11 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goM-98-FUK">
-                                                                <rect key="frame" x="24" y="20" width="114" height="20"/>
+                                                                <rect key="frame" x="23.999999999999993" y="20" width="110.33333333333331" height="20"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="내 세금 계산 기준">
                                                                         <attributes>
-                                                                            <font key="NSFont" size="16" name="SpoqaHanSansNeo-Bold"/>
+                                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -2682,7 +2679,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="42"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HD-4s-Pjh">
-                                                                        <rect key="frame" x="31" y="0.0" width="63" height="16"/>
+                                                                        <rect key="frame" x="32.666666666666664" y="0.0" width="59.999999999999993" height="16"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="16" id="fVg-oJ-5G4"/>
                                                                         </constraints>
@@ -2690,7 +2687,7 @@
                                                                             <fragment content="이용 거래소">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="13" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2705,7 +2702,7 @@
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="0개">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Medium"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2728,7 +2725,7 @@
                                                                 <rect key="frame" x="125" y="0.0" width="125" height="42"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-9Z-91w">
-                                                                        <rect key="frame" x="29.666666666666657" y="0.0" width="65.666666666666671" height="16"/>
+                                                                        <rect key="frame" x="30.666666666666654" y="0.0" width="63.666666666666657" height="16"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="16" id="5gP-lF-STb"/>
                                                                         </constraints>
@@ -2736,7 +2733,7 @@
                                                                             <fragment content="거래 코인 수">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="13" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2751,7 +2748,7 @@
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="0개">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Medium"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2774,7 +2771,7 @@
                                                                 <rect key="frame" x="250" y="0.0" width="125" height="42"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK6-PV-Szj">
-                                                                        <rect key="frame" x="37" y="0.0" width="51" height="16"/>
+                                                                        <rect key="frame" x="38.333333333333314" y="0.0" width="48.666666666666657" height="16"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="16" id="yzZ-0k-x0k"/>
                                                                         </constraints>
@@ -2782,7 +2779,7 @@
                                                                             <fragment content="거래 횟수">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="13" name="SpoqaHanSansNeo-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2797,7 +2794,7 @@
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="0개">
                                                                                 <attributes>
-                                                                                    <font key="NSFont" size="16" name="SpoqaHanSansNeo-Medium"/>
+                                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
@@ -2859,7 +2856,7 @@
                                                                                     <fragment content="국내/해외 거래소, 지갑, NFT">
                                                                                         <attributes>
                                                                                             <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                            <font key="NSFont" size="14" name="SpoqaHanSansNeo-Regular"/>
+                                                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                                                         </attributes>
                                                                                     </fragment>
                                                                                 </attributedString>
@@ -3101,10 +3098,13 @@
                         <outlet property="floatViewBottomConstraint" destination="aZi-dv-H68" id="7S2-jI-Z8M"/>
                         <outlet property="incomeTaxLabel" destination="Gaf-Et-kuH" id="OJE-4k-NdL"/>
                         <outlet property="localTaxLabel" destination="EJA-Zf-Ipb" id="kwB-cW-g6w"/>
+                        <outlet property="mainScrollView" destination="YHB-Dx-fbF" id="jln-Hj-Sh7"/>
+                        <outlet property="navigationViewHeight" destination="spp-Rn-uUb" id="vjX-RN-PnF"/>
                         <outlet property="otherCostLabel" destination="hae-zv-hgu" id="X8e-OW-fq3"/>
                         <outlet property="purchaseAmountLabel" destination="g0m-LL-t4F" id="oDh-oB-B30"/>
                         <outlet property="remainLabel" destination="BGx-sg-DDi" id="Ci2-W0-GpM"/>
                         <outlet property="taxBaseAmountLabel" destination="7Gi-I4-B5m" id="ge4-b4-Jua"/>
+                        <outlet property="titleViewHeight" destination="N6O-vi-wA7" id="M4W-1T-QME"/>
                         <outlet property="topLabel" destination="95I-NJ-fiH" id="PnS-1B-5Rr"/>
                         <outlet property="totalRevenueAmountLabel" destination="bbT-1p-Qiv" id="yyP-Uh-EZa"/>
                         <outlet property="transactionCountLabel" destination="Ngs-HT-00i" id="dCX-fj-ttb"/>
@@ -3112,7 +3112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWj-G2-yg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-502" y="1155"/>
+            <point key="canvasLocation" x="-503.19999999999999" y="1154.9261083743843"/>
         </scene>
         <!--Transactions View Controller-->
         <scene sceneID="p5z-ff-BbM">
@@ -3722,7 +3722,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="잠깐만요, 시작하려면 권한이 필요해요">
                                                         <attributes>
-                                                            <font key="NSFont" size="20" name="SpoqaHanSansNeo-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -3855,12 +3855,12 @@
                                         <rect key="frame" x="0.0" y="343" width="375" height="38"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-RG-ZYu">
-                                                <rect key="frame" x="72" y="10" width="103.33333333333331" height="18"/>
+                                                <rect key="frame" x="72" y="10" width="102" height="18"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="개인정보처리방침">
                                                         <attributes>
                                                             <color key="NSColor" red="0.25490196078431371" green="0.40784313725490196" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="14" name="SpoqaHanSansNeo-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
@@ -3869,7 +3869,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRI-UT-edQ">
-                                                <rect key="frame" x="72" y="10" width="103.33333333333331" height="18"/>
+                                                <rect key="frame" x="72" y="10" width="102" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="f0M-bi-V6g"/>
                                                 </constraints>
@@ -3996,14 +3996,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cax-sd-Fj4">
-                                                <rect key="frame" x="24" y="30" width="188.66666666666666" height="30"/>
+                                                <rect key="frame" x="24" y="30" width="185" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="4uj-NN-WyG"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="통신사를 선택해주세요">
                                                         <attributes>
-                                                            <font key="NSFont" size="20" name="SpoqaHanSansNeo-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -4090,7 +4090,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="본인인증을 하려면 동의가 필요해요">
                                                         <attributes>
-                                                            <font key="NSFont" size="20" name="SpoqaHanSansNeo-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -4118,11 +4118,11 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvn-lE-XZz">
-                                                <rect key="frame" x="60.000000000000007" y="18.666666666666629" width="103.66666666666669" height="23"/>
+                                                <rect key="frame" x="60" y="18.666666666666629" width="102" height="23"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="모두 동의하기">
                                                         <attributes>
-                                                            <font key="NSFont" size="18" name="SpoqaHanSansNeo-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="18"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -4339,7 +4339,7 @@
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="계속하기">
                                                             <attributes>
-                                                                <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="16"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -4349,7 +4349,7 @@
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="확인">
                                                             <attributes>
-                                                                <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="16"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -4482,7 +4482,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBn-Id-VKb">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="휴대폰 번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChL-IS-DyN">
+                                            <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="휴대폰 번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChL-IS-DyN">
                                                 <rect key="frame" x="24" y="33.666666666666657" width="327" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="pk2-tm-Ryu"/>
@@ -4711,13 +4711,13 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJE-53-1ff">
                                 <rect key="frame" x="24" y="714" width="327" height="58"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.40784313729999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="WIZ-DN-Z48"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="본인 인증하기"/>
+                                <state key="normal" title="확인"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -5077,7 +5077,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="정호석님   환영합니다!">
                                                 <attributes>
-                                                    <font key="NSFont" size="32" name="SpoqaHanSansNeo-Bold"/>
+                                                    <font key="NSFont" metaFont="system" size="32"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -5389,6 +5389,9 @@
         <image name="navi_notification_off" width="25" height="24"/>
         <image name="navi_notification_on" width="25" height="24"/>
         <image name="testImage" width="427" height="428"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

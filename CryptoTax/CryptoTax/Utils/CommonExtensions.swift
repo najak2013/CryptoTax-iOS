@@ -18,3 +18,13 @@ extension UILabel {
         attributedText = attributedString
     }
 }
+
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+extension UIButton {
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+      let margin: CGFloat = 20
+      let hitArea = self.bounds.insetBy(dx: -margin, dy: -margin)
+      return hitArea.contains(point)
+    }
+}
+#endif

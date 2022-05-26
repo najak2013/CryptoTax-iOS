@@ -45,10 +45,18 @@ class MyTaxViewController: BaseViewController {
     // 거래 횟수
     @IBOutlet weak var transactionCountLabel: UILabel!
     
-  
+    @IBOutlet weak var navigationViewHeight: NSLayoutConstraint!
     
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+    @IBOutlet weak var titleViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var mainScrollView: UIScrollView!
+#endif
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+        self.mainScrollView.delegate = self
+#endif
         // Do any additional setup after loading the view.
     }
     
@@ -152,5 +160,33 @@ class MyTaxViewController: BaseViewController {
             self?.navigationController?.pushViewController(addExchangeVC, animated: true)
         }
     }
-    
 }
+
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+extension MyTaxViewController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if(scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height) / 3) {
+
+            self.navigationViewHeight.constant = 100
+            self.titleViewHeight.constant = 50
+            
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+                self.topLabel.text = "내 세금"
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+
+            
+        } else {
+            self.navigationViewHeight.constant = 182
+            self.titleViewHeight.constant = 94
+            
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+                self.topLabel.text = "\(UserInfo().getUserName())님의 \n예상 세금이에요"
+                self.view.layoutIfNeeded()
+            }) { result in
+                
+            }
+        }
+    }
+}
+#endif

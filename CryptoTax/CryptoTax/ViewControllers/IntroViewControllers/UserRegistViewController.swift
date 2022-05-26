@@ -55,13 +55,21 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
         super.viewDidLoad()
         viewAlphaInit()
         keyboardButtonInit()
-        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+#endif
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         textfieldInit()
         circleViewInit()
+        
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 //
@@ -80,6 +88,9 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
                 view.alpha = 0
             }
         }
+#if NAJAK_DEV
+        bottomBuntton.isHidden = true
+#endif
     }
     
     //MARK: - 주민번호 View 원형
@@ -104,27 +115,44 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
             // placeholder 정보 저장
             placeholders.append(textfield.placeholder!)
         }
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+        textfields.first!.becomeFirstResponder()
+#endif
     }
     
     //MARK: - 통신사 선택
     @IBAction func carrierButton(_ sender: Any) {
+#if NAJAK_DEV
+        getSelectCarrierModalVCCall()
+#else
+        guard let SelectCarrierModalVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCarrierModalViewController") as? SelectCarrierModalViewController else { return }
+        SelectCarrierModalVC.modalPresentationStyle = .overFullScreen
+        SelectCarrierModalVC.delegate = self
+        present(SelectCarrierModalVC, animated: false, completion: nil)
+#endif
+    }
+
+#if NAJAK_DEV
+    func getSelectCarrierModalVCCall() {
         guard let SelectCarrierModalVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCarrierModalViewController") as? SelectCarrierModalViewController else { return }
         SelectCarrierModalVC.modalPresentationStyle = .overFullScreen
         SelectCarrierModalVC.delegate = self
         present(SelectCarrierModalVC, animated: false, completion: nil)
     }
+#endif
     
     @IBAction func nextButton(_ sender: Any) {
         nextInputField()
     }
     
     func createJsonData() -> String {
-        var userJoinDictionary : [String: Any] = ["jumin": userRegNo, "name": ["ko": userName, "en": ["family": "", "given":""]], "phone": userPhone, "carrier": userCarrier, "home": [ "zipcode":"", "address":"", "tel":"" ], "company": [ "name":"", "zipcode":"", "address":"", "tel":"" ], "overseasTaxFlag":false ]
+        let userJoinDictionary : [String: Any] = ["jumin": userRegNo, "name": ["ko": userName, "en": ["family": "", "given":""]], "phone": userPhone, "carrier": userCarrier, "home": [ "zipcode":"", "address":"", "tel":"" ], "company": [ "name":"", "zipcode":"", "address":"", "tel":"" ], "overseasTaxFlag":false ]
         
         let jsonData = try! JSONSerialization.data(withJSONObject: userJoinDictionary, options: [])
         let jsonString = String(data: jsonData, encoding: .utf8)!
         return jsonString
     }
+    
     
     func nextInputField() {
         if inputfieldCheck() && inputField < 3 {
@@ -132,9 +160,20 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
                 textfields[1].becomeFirstResponder()
             }
             inputField += 1
+#if NAJAK_DEV
+            if inputField == 2 {
+                self.view.endEditing(true)
+                DispatchQueue.main.async {
+                    self.getSelectCarrierModalVCCall()
+                }
+            } else if inputField == 3 {
+                textfields[inputField].becomeFirstResponder()
+            }
+#endif
             if inputField != 4 {
                 inputfieldAnimation()
             }
+
         } else if inputfieldCheck() && inputField == 3 {
             guard let userAuthVC = self.storyboard?.instantiateViewController(withIdentifier: "UserAuthViewController") as? UserAuthViewController else { return }
             userAuthVC.modalPresentationStyle = .overFullScreen
@@ -205,6 +244,7 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
         TextFieldFloatLabelController().activeFloatLabel(textfield: textfields[2], userInputView: userInputViews[2], uiLabel: uiLabels[2], fontSize: fontSize)
         userCarrier = carrier
         textfields[2].text = carrier
+
         if inputField == 2 {
             nextInputField()
         }
@@ -221,6 +261,10 @@ class UserRegistViewController: UIViewController, SelectCarrierProtocol {
                 bottomButtonLeading.constant = -10
                 bottomButtonTrailing.constant = -10
                 bottomButtonBottom.constant = keyboardHeight
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+                self.bottomBuntton.isHidden = false
+                self.bottomButtonBottom.constant = keyboardHeight
+#endif
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
                     self.view.layoutIfNeeded()
                 }, completion: nil)
@@ -274,11 +318,35 @@ extension UserRegistViewController: UITextFieldDelegate {
     //MARK: - Textfield Edit 여부
     func textFieldDidBeginEditing(_ textfield: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textfield)!
+        
         if textfieldIndex != 4 {
             TextFieldFloatLabelController().activeFloatLabel(textfield: textfield, userInputView: userInputViews[textfieldIndex], uiLabel: uiLabels[textfieldIndex], fontSize: fontSize)
         }
         TextFieldUnderLineController().activeUnderLine(underLine: underLines[textfieldIndex])
+
     }
+    
+#if NAJAK_DEV       /* Najak 20220526 DEV */
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 5, string.count == 1 {         // 휴대 전화 번호
+            guard let text = textField.text else {
+                return false
+            }
+            let characterSet = CharacterSet(charactersIn: string)
+            if CharacterSet.decimalDigits.isSuperset(of: characterSet) == false {
+                return false
+            }
+            let formatter = DefaultTextInputFormatter(textPattern: "###-####-####")
+            let result = formatter.formatInput(currentText: text, range: range, replacementString: string)
+            textField.text = result.formattedText
+            let position = textField.position(from: textField.beginningOfDocument, offset: result.caretBeginOffset)!
+            textField.selectedTextRange = textField.textRange(from: position, to: position)
+
+            return false
+        }
+        return true
+    }
+#endif
     
     func textFieldDidEndEditing(_ textfield: UITextField) {
         let textfieldIndex = textfields.firstIndex(of: textfield)!
@@ -372,11 +440,6 @@ extension UserRegistViewController: NextViewProtocol {
                 print(error)
             }
         })
-        
-        
-        
-        
-        
     }
 }
 
